@@ -1,86 +1,86 @@
-<!--<!DOCTYPE html>-->
-<!--<html lang="zh-CN">-->
-
-<!--<head>-->
-<!--    <meta charset="UTF-8">-->
-<!--    <title>自动播放音乐的网页</title>-->
-<!--    <style>-->
-<!--        body {-->
-<!--            font-family: Arial, sans-serif;-->
-<!--            text-align: center;-->
-<!--        }-->
-
-<!--        h1 {-->
-<!--            color: #ff0000;-->
-<!--        }-->
-<!--    </style>-->
-<!--</head>-->
-
-<!--<body>-->
-<!--&lt;!&ndash;    <h1>自动播放音乐的网页</h1>&ndash;&gt;-->
-
-<!--&lt;!&ndash;    <button id="playButton">播放音乐</button>&ndash;&gt;-->
-<!--&lt;!&ndash;    <button id="volumeUpButton">增加音量</button>&ndash;&gt;-->
-<!--&lt;!&ndash;    <button id="volumeDownButton">减小音量</button>&ndash;&gt;-->
-
-<!--<audio id="myAudio" autoplay>-->
-<!--    <source src="music/xmm.mp3" type="audio/mpeg">-->
-<!--    您的浏览器不支持播放音乐。-->
-<!--</audio>-->
-
-<!--<script>-->
-
-
-<!--    window.addEventListener('DOMContentLoaded', function () {-->
-<!--        var audio = document.getElementById('myAudio');-->
-<!--        audio.volume = 1.0;-->
-<!--    });-->
-<!--    //         var audio = document.getElementById('myAudio');-->
-<!--    //         var playButton = document.getElementById('playButton');-->
-<!--    //         var volumeUpButton = document.getElementById('volumeUpButton');-->
-<!--    //         var volumeDownButton = document.getElementById('volumeDownButton');-->
-<!--    //-->
-<!--    //         playButton.addEventListener('click', function () {-->
-<!--    //             audio.play();-->
-<!--    //         });-->
-<!--    //-->
-<!--    //         volumeUpButton.addEventListener('click', function () {-->
-<!--    //             if (audio.volume < 1.0) {-->
-<!--    //                 audio.volume += 0.1;-->
-<!--    //             }-->
-<!--    //         });-->
-<!--    //-->
-<!--    //         volumeDownButton.addEventListener('click', function () {-->
-<!--    //             if (audio.volume > 0.0) {-->
-<!--    //                 audio.volume -= 0.1;-->
-<!--    //             }-->
-<!--    //         });-->
-<!--</script>-->
-<!--</body>-->
-
-<!--</html>-->
-
-
-
 <!DOCTYPE html>
-<html>
-<head>
-<script>
-window.onload = function() {
-  var audio = new Audio('');
-  audio.volume = 1; // 设置音量为最大值
-  audio.play(); // 播放音乐
+<html lang="zh-CN">
 
-  var video = document.getElementById('video');
-  video.addEventListener('loadedmetadata', function() {
-    video.play(); // 播放视频
-    video.volume = 1; // 设置音量为最大值
-    video.requestFullscreen(); // 全屏显示
-  });
-};
-</script>
+<head>
+    <meta charset="UTF-8">
+    <title>自动播放音乐的网页</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        h1 {
+            color: #ff0000;
+        }
+    </style>
 </head>
+
 <body>
-  <video id="video" src="music/xmm.mp3" autoplay></video>
+<!--    <h1>自动播放音乐的网页</h1>-->
+
+<!--    <button id="playButton">播放音乐</button>-->
+<!--    <button id="volumeUpButton">增加音量</button>-->
+<!--    <button id="volumeDownButton">减小音量</button>-->
+
+<audio id="myAudio" autoplay>
+    <source src="music/xmm.mp3" type="audio/mpeg">
+    您的浏览器不支持播放音乐。
+</audio>
+
+<script>
+
+
+    window.addEventListener('DOMContentLoaded', function () {
+        var audio = document.getElementById('myAudio');
+        audio.volume = 1.0;
+    });
+    //         var audio = document.getElementById('myAudio');
+    //         var playButton = document.getElementById('playButton');
+    //         var volumeUpButton = document.getElementById('volumeUpButton');
+    //         var volumeDownButton = document.getElementById('volumeDownButton');
+    //
+    //         playButton.addEventListener('click', function () {
+    //             audio.play();
+    //         });
+    //
+    //         volumeUpButton.addEventListener('click', function () {
+    //             if (audio.volume < 1.0) {
+    //                 audio.volume += 0.1;
+    //             }
+    //         });
+    //
+    //         volumeDownButton.addEventListener('click', function () {
+    //             if (audio.volume > 0.0) {
+    //                 audio.volume -= 0.1;
+    //             }
+    //         });
+</script>
 </body>
+
 </html>
+
+
+
+<!--<!DOCTYPE html>-->
+<!--<html>-->
+<!--<head>-->
+<!--<script>-->
+<!--window.onload = function() {-->
+<!--  var audio = new Audio('');-->
+<!--  audio.volume = 1; // 设置音量为最大值-->
+<!--  audio.play(); // 播放音乐-->
+
+<!--  var video = document.getElementById('video');-->
+<!--  video.addEventListener('loadedmetadata', function() {-->
+<!--    video.play(); // 播放视频-->
+<!--    video.volume = 1; // 设置音量为最大值-->
+<!--    video.requestFullscreen(); // 全屏显示-->
+<!--  });-->
+<!--};-->
+<!--</script>-->
+<!--</head>-->
+<!--<body>-->
+<!--  <video id="video" src="music/xmm.mp3" autoplay></video>-->
+<!--</body>-->
+<!--</html>-->
