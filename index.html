@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>谢民珉向曹国栋求婚</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        h1 {
+            color: #ff0000;
+        }
+
+        .proposal-image {
+            margin-top: 50px;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .fade-in {
+            opacity: 1;
+        }
+
+        @keyframes heartBeat {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.3);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .heart {
+            color: red;
+            font-size: 100px;
+            animation: heartBeat 1s infinite;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>谢民珉向曹国栋求婚</h1>
+    <p>亲爱的曹国栋，</p>
+    <p>我一直想告诉你，你是我生命中最重要的人，我的心属于你。我希望能与你共度余生，一起创造美好的回忆。</p>
+    <p>曹国栋，你愿意嫁给我吗？</p>
+    <p>请给我一个机会，让我成为你的丈夫，照顾你、爱护你，直到永远。</p>
+    <p>爱你的，</p>
+    <p>谢民珉</p>
+    <div class="proposal-image">
+        <img src="./xmm.jpg" alt="求婚照片">
+    </div>
+
+    <script>
+        // 图片淡入动画
+        window.addEventListener('load', function () {
+            var proposalImage = document.querySelector('.proposal-image');
+            proposalImage.classList.add('fade-in');
+        });
+
+        // 心跳动画
+        setInterval(function () {
+            var heartElement = document.createElement('span');
+            heartElement.classList.add('heart');
+            heartElement.innerHTML = '❤';
+            document.body.appendChild(heartElement);
+
+            setTimeout(function () {
+                heartElement.remove();
+            }, 2000);
+        }, 1000);
+    </script>
+</body>
+
+</html>
