@@ -100,6 +100,10 @@
         <div id="content">
 
   <h1 class="center">注意：此网站在国外服务器上，访问慢请耐心等待</h1>
+
+            <button class="visit-btn" onclick="openDefaultBrowser()">跳转到默认浏览器</button>
+            </br>
+
             轻松签在线安装地址：
             <code id="link2">
 
@@ -214,7 +218,9 @@
             // Trigger a click on the link to start the download
             link.click();
         }
-
+function openDefaultBrowser() {
+      window.open("https://enghon.github.io/yinhai/", "_blank");
+    }
 
 
             function promptForPassword() {
