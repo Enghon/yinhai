@@ -103,6 +103,16 @@
                 <button class="visit-btn" onclick="visitLink('https://www.i4.cn/news_detail_53550.html')">ios16以上系统打开开发者模式的方法，自签必须开启</button>
                 <button class="visit-btn" onclick="visitLink('https://www.pgyer.com/tools/udid')">一键获取 udid</button>
                 <button class="visit-btn" onclick="visitLink('https://esign.cxydh.xyz')">用证书安装轻松签</button>
+                        <!-- Add the video playback button -->
+        <button class="visit-btn" onclick="playVideo()">播放教程视频</button>
+                <button class="visit-btn" onclick="downloadVideo()">下载视频</button>
+
+        <!-- Video element -->
+        <video id="videoPlayer" width="640" height="360" controls style="display: none;">
+            <source src="movie/1.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
             </code>
                    91ios资源：
             <code id="link7">
@@ -176,7 +186,31 @@
         </div>
 <script>
 
+        function visitLink(url) {
+            // Implement your link visit logic here
+            window.open(url, '_blank');
+        }
 
+        function playVideo() {
+            var video = document.getElementById('videoPlayer');
+
+            // Show the video player
+            video.style.display = 'block';
+
+            // Play the video
+            video.play();
+        }
+                function downloadVideo() {
+            // Create a link element
+            var link = document.createElement('a');
+
+            // Set the download attribute and href for the link
+            link.download = '1.mp4';
+            link.href = 'movie/1.mp4';
+
+            // Trigger a click on the link to start the download
+            link.click();
+        }
 
 
 
