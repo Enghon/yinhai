@@ -130,12 +130,27 @@
             </code>
 
                         巨魔商店 2 支持的设备系统范围和安装方法
-            <code id="link0">
+              <code id="link0">
+        <button class="copy-btn" onclick="copyToClipboard('https://ios.cfw.guide/installing-trollstore/', 'link0')">点击复制</button>
+        <button class="visit-btn" onclick="visitLink('https://ios.cfw.guide/installing-trollstore/')">访问</button>
 
-                <button class="copy-btn" onclick="copyToClipboard('https://ios.cfw.guide/installing-trollstore/', 'link0')">点击复制</button>
-                <button class="visit-btn" onclick="visitLink('https://ios.cfw.guide/installing-trollstore/')">访问</button>
-                <button class="visit-btn" onclick="visitLink('apple-magnifier://install?url=https%3A%2F%2Fpan.zgios.cn%2Fd%2F%25E5%25B7%25A8%25E9%25AD%2594ipa%2FWiFi%25E5%25AF%2586%25E7%25A0%2581%25E6%259F%25A5%25E7%259C%258B%25E5%2599%25A8.ipa')">test</button>
-            </code>
+        <!-- Add the "换图标" button -->
+        <button class="change-icon-btn" onclick="openIconPopup()">换图标</button>
+
+        <!-- Icon Popup -->
+        <div id="iconPopup" style="display: none;">
+            <button onclick="downloadIcon('叮当猫图标.tar')">叮当猫图标.tar</button>
+            <button onclick="downloadIcon('坤哥头像.tar')">坤哥头像.tar</button>
+            <button onclick="downloadIcon('小樱图标.tar')">小樱图标.tar</button>
+            <button onclick="downloadIcon('小猫图标.tar')">小猫图标.tar</button>
+            <button onclick="downloadIcon('彩虹南通头.tar')">彩虹南通头.tar</button>
+            <button onclick="downloadIcon('美腿图标.tar')">美腿图标.tar</button>
+            <!-- Add more buttons for other icons in the "icon" folder -->
+
+            <!-- Close button for the popup -->
+            <button onclick="closeIconPopup()">关闭</button>
+        </div>
+    </code>
 
             企业证书（随时会失效，如果失效请等待最新的）：
             <code id="link1">
@@ -191,6 +206,45 @@
             </div>
         </div>
 <script>
+
+
+
+            function copyToClipboard(text, elementId) {
+            // Implementation for copying to clipboard
+            // You can use your existing logic here
+        }
+
+        function visitLink(url) {
+            // Implement your link visit logic here
+            window.open(url, '_blank');
+        }
+
+        function openIconPopup() {
+            // Show the icon popup
+            document.getElementById('iconPopup').style.display = 'block';
+        }
+
+        function closeIconPopup() {
+            // Close the icon popup
+            document.getElementById('iconPopup').style.display = 'none';
+        }
+
+        function downloadIcon(iconFileName) {
+            // Create a link element
+            var link = document.createElement('a');
+
+            // Set the download attribute and href for the link
+            link.download = iconFileName;
+            link.href = 'icon/' + iconFileName; // Assuming icons are in the "icon" folder
+
+            // Trigger a click on the link to start the download
+            link.click();
+        }
+
+
+
+
+
 
         function visitLink(url) {
             // Implement your link visit logic here
