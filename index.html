@@ -113,6 +113,10 @@
             <img id="displayedImage" width="300" height="400" alt="Displayed Image">
 
         </div>
+        <video id="videoPlayer" width="auto" height="auto" controls style="display: none;">
+    <!-- The source will be set dynamically using JavaScript -->
+    Your browser does not support the video tag.
+</video>
 
         <script>
             // JavaScript function to show images
@@ -128,6 +132,7 @@
             }
         </script>
     </code>
+
             轻松签在线安装地址：
             <code id="link2">
 
@@ -136,14 +141,73 @@
                 <button class="visit-btn" onclick="visitLink('https://esign.cxydh.xyz')">用证书安装轻松签</button>
 
                         <!-- Add the video playback button -->
-        <button class="visit-btn" onclick="playVideo()">播放教程视频</button>
-                <button class="visit-btn" onclick="downloadVideo()">下载视频</button>
 
-        <!-- Video element -->
-        <video id="videoPlayer" width="auto" height="auto" controls style="display: none;">
-            <source src="movie/1.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
+
+                <button class="visit-btn" onclick="playVideo('movie/1.mp4')">播放教程视频</button>
+                <button class="visit-btn" onclick="downloadVideo('movie/1.mp4')">下载视频</button>
+
+
+<!-- Video element -->
+
+
+<script>
+    function playVideo(videoPath) {
+        var video = document.getElementById('videoPlayer');
+
+        // Set the video source dynamically
+        video.src = videoPath;
+
+        // Show the video player
+        video.style.display = 'block';
+
+        // Play the video
+        video.play();
+    }
+
+    function downloadVideo(videoPath) {
+        // Create a link element
+        var link = document.createElement('a');
+
+        // Set the download attribute and href for the link
+        link.download = videoPath.split('/').pop(); // Extracts the filename from the path
+        link.href = videoPath;
+
+        // Trigger a click on the link to start the download
+        link.click();
+    }
+</script>
+
+
+<!--        <button class="visit-btn" onclick="playVideo()">播放教程视频</button>-->
+<!--                <button class="visit-btn" onclick="downloadVideo()">下载视频</button>-->
+
+<!--        &lt;!&ndash; Video element &ndash;&gt;-->
+<!--        <video id="videoPlayer" width="auto" height="auto" controls style="display: none;">-->
+<!--            <source src="movie/1.mp4" type="video/mp4">-->
+<!--            Your browser does not support the video tag.-->
+<!--        </video>-->
+<!--                <script>-->
+<!--                            function playVideo() {-->
+<!--            var video = document.getElementById('videoPlayer');-->
+
+<!--            // Show the video player-->
+<!--            video.style.display = 'block';-->
+
+<!--            // Play the video-->
+<!--            video.play();-->
+<!--        }-->
+<!--                function downloadVideo() {-->
+<!--            // Create a link element-->
+<!--            var link = document.createElement('a');-->
+
+<!--            // Set the download attribute and href for the link-->
+<!--            link.download = '1.mp4';-->
+<!--            link.href = 'movie/1.mp4';-->
+
+<!--            // Trigger a click on the link to start the download-->
+<!--            link.click();-->
+<!--        }-->
+<!--                </script>-->
 
             </code>
                    91ios资源：
@@ -163,6 +227,9 @@
 
 
         <!-- Add the "换图标" button -->
+                                  <button class="visit-btn" onclick="playVideo('movie/巨魔换图标.mp4')">播放教程视频</button>
+<button class="visit-btn" onclick="downloadVideo('movie/巨魔换图标.mp4')">下载视频</button>
+
         <button class="change-icon-btn" onclick="openIconPopup()">换图  标</button>
 
         <!-- Icon Popup -->
@@ -178,6 +245,7 @@
             <!-- Close button for the popup -->
             <button onclick="closeIconPopup()">关闭</button>
         </div>
+
     </code>
 
             企业证书（随时会失效，如果失效请等待最新的）：
@@ -270,32 +338,32 @@
 
 
 
+        //
+        // function visitLink(url) {
+        //     // Implement your link visit logic here
+        //     window.open(url, '_blank');
+        // }
 
-        function visitLink(url) {
-            // Implement your link visit logic here
-            window.open(url, '_blank');
-        }
-
-        function playVideo() {
-            var video = document.getElementById('videoPlayer');
-
-            // Show the video player
-            video.style.display = 'block';
-
-            // Play the video
-            video.play();
-        }
-                function downloadVideo() {
-            // Create a link element
-            var link = document.createElement('a');
-
-            // Set the download attribute and href for the link
-            link.download = '1.mp4';
-            link.href = 'movie/1.mp4';
-
-            // Trigger a click on the link to start the download
-            link.click();
-        }
+        // function playVideo() {
+        //     var video = document.getElementById('videoPlayer');
+        //
+        //     // Show the video player
+        //     video.style.display = 'block';
+        //
+        //     // Play the video
+        //     video.play();
+        // }
+        //         function downloadVideo() {
+        //     // Create a link element
+        //     var link = document.createElement('a');
+        //
+        //     // Set the download attribute and href for the link
+        //     link.download = '1.mp4';
+        //     link.href = 'movie/1.mp4';
+        //
+        //     // Trigger a click on the link to start the download
+        //     link.click();
+        // }
 
 
             function promptForPassword() {
