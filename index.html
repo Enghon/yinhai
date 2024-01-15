@@ -100,15 +100,32 @@
         <div id="content">
 
   <h1 class="center">注意：此网站在国外服务器上，访问慢请耐心等待</h1>
-<button onclick="showImage()">捐赠，制作不易，多少都感谢</button>
-    <button onclick="showIcon('icon/image1.jpg')">微信捐赠</button>
-    <button onclick="showIcon('icon/image2.jpg')">支付宝捐赠</button>
+    <code id="link11">
+        <!-- Button to show the first image -->
+        <button class="visit-btn" onclick="showImage('icon/wx.png')">微信捐赠</button>
 
+        <!-- Button to show the second image -->
+        <button class="visit-btn" onclick="showImage('icon/zfb.png')">支付宝捐赠</button>
 
-    <!-- Image container -->
-    <div id="imageContainer" style="display: none;">
-        <img id="displayedIcon" alt="Displayed Icon">
-    </div>
+        <!-- Image container -->
+        <div id="imageContainer" style="display: none;">
+            <img id="displayedImage" width="300" height="400" alt="Displayed Image">
+        </div>
+
+        <script>
+            // JavaScript function to show images
+            function showImage(imagePath) {
+                var imageContainer = document.getElementById('imageContainer');
+                var displayedImage = document.getElementById('displayedImage');
+
+                // Set the image source
+                displayedImage.src = imagePath;
+
+                // Show the image container
+                imageContainer.style.display = 'block';
+            }
+        </script>
+    </code>
             轻松签在线安装地址：
             <code id="link2">
 
@@ -217,119 +234,108 @@
 <script>
 
 
-function showImage() {
-    function showIcon(imagePath) {
-        // Get the image container and displayed icon elements
-        var imageContainer = document.getElementById('imageContainer');
-        var displayedIcon = document.getElementById('displayedIcon');
 
-        // Set the source of the icon to the clicked image path
-        displayedIcon.src = imagePath;
-
-        // Show the image container
-        imageContainer.style.display = 'block';
-    }
-}
-
-    function copyToClipboard(text, elementId) {
-        // Implementation for copying to clipboard
-        // You can use your existing logic here
-    }
-
-    function visitLink(url) {
-        // Implement your link visit logic here
-        window.open(url, '_blank');
-    }
-
-    function openIconPopup() {
-        // Show the icon popup
-        document.getElementById('iconPopup').style.display = 'block';
-    }
-
-    function closeIconPopup() {
-        // Close the icon popup
-        document.getElementById('iconPopup').style.display = 'none';
-    }
-
-    function downloadIcon(iconFileName) {
-        // Create a link element
-        var link = document.createElement('a');
-
-        // Set the download attribute and href for the link
-        link.download = iconFileName;
-        link.href = 'icon/' + iconFileName; // Assuming icons are in the "icon" folder
-
-        // Trigger a click on the link to start the download
-        link.click();
-    }
-
-
-    function visitLink(url) {
-        // Implement your link visit logic here
-        window.open(url, '_blank');
-    }
-
-    function playVideo() {
-        var video = document.getElementById('videoPlayer');
-
-        // Show the video player
-        video.style.display = 'block';
-
-        // Play the video
-        video.play();
-    }
-
-    function downloadVideo() {
-        // Create a link element
-        var link = document.createElement('a');
-
-        // Set the download attribute and href for the link
-        link.download = '1.mp4';
-        link.href = 'movie/1.mp4';
-
-        // Trigger a click on the link to start the download
-        link.click();
-    }
-
-
-    function promptForPassword() {
-        var popupOverlay = document.getElementById("popupOverlay1");
-        var popupContent = document.getElementById("popupContent1");
-        var popupMessage = document.getElementById("popupMessage");
-        var passwordInput = document.getElementById("password-input");
-
-        var today = new Date();
-        var month = (today.getMonth() + 1).toString().padStart(2, '0');
-        var day = today.getDate().toString().padStart(2, '0');
-
-        var password = month + day;
-
-        popupMessage.innerText = "请输入密码以访问链接";
-        passwordInput.value = ""; // Clear the input field
-        popupOverlay.style.display = "flex";
-        passwordInput.focus();
-    }
-
-    function checkPassword() {
-        var popupOverlay = document.getElementById("popupOverlay1");
-        var passwordInput = document.getElementById("password-input");
-
-        var today = new Date();
-        var month = (today.getMonth() + 1).toString().padStart(2, '0');
-        var day = today.getDate().toString().padStart(2, '0');
-
-        var expectedPassword = month + day;
-
-        if (passwordInput.value === expectedPassword) {
-            window.open('https://ccbaohe.com/appleID/', '_blank');
-            popupOverlay.style.display = "none";
-        } else {
-            alert("密码错误，请重新输入。");
-            passwordInput.value = ""; // Clear the input field
-            passwordInput.focus();
+            function copyToClipboard(text, elementId) {
+            // Implementation for copying to clipboard
+            // You can use your existing logic here
         }
-    }
 
+        function visitLink(url) {
+            // Implement your link visit logic here
+            window.open(url, '_blank');
+        }
+
+        function openIconPopup() {
+            // Show the icon popup
+            document.getElementById('iconPopup').style.display = 'block';
+        }
+
+        function closeIconPopup() {
+            // Close the icon popup
+            document.getElementById('iconPopup').style.display = 'none';
+        }
+
+        function downloadIcon(iconFileName) {
+            // Create a link element
+            var link = document.createElement('a');
+
+            // Set the download attribute and href for the link
+            link.download = iconFileName;
+            link.href = 'icon/' + iconFileName; // Assuming icons are in the "icon" folder
+
+            // Trigger a click on the link to start the download
+            link.click();
+        }
+
+
+
+
+
+
+        function visitLink(url) {
+            // Implement your link visit logic here
+            window.open(url, '_blank');
+        }
+
+        function playVideo() {
+            var video = document.getElementById('videoPlayer');
+
+            // Show the video player
+            video.style.display = 'block';
+
+            // Play the video
+            video.play();
+        }
+                function downloadVideo() {
+            // Create a link element
+            var link = document.createElement('a');
+
+            // Set the download attribute and href for the link
+            link.download = '1.mp4';
+            link.href = 'movie/1.mp4';
+
+            // Trigger a click on the link to start the download
+            link.click();
+        }
+
+
+            function promptForPassword() {
+                var popupOverlay = document.getElementById("popupOverlay1");
+                var popupContent = document.getElementById("popupContent1");
+                var popupMessage = document.getElementById("popupMessage");
+                var passwordInput = document.getElementById("password-input");
+
+                var today = new Date();
+                var month = (today.getMonth() + 1).toString().padStart(2, '0');
+                var day = today.getDate().toString().padStart(2, '0');
+
+                var password = month + day;
+
+                popupMessage.innerText = "请输入密码以访问链接";
+                passwordInput.value = ""; // Clear the input field
+                popupOverlay.style.display = "flex";
+                passwordInput.focus();
+            }
+
+            function checkPassword() {
+                var popupOverlay = document.getElementById("popupOverlay1");
+                var passwordInput = document.getElementById("password-input");
+
+                var today = new Date();
+                var month = (today.getMonth() + 1).toString().padStart(2, '0');
+                var day = today.getDate().toString().padStart(2, '0');
+
+                var expectedPassword = month + day;
+
+                if (passwordInput.value === expectedPassword) {
+                    window.open('https://ccbaohe.com/appleID/', '_blank');
+                    popupOverlay.style.display = "none";
+                } else {
+                    alert("密码错误，请重新输入。");
+                    passwordInput.value = ""; // Clear the input field
+                    passwordInput.focus();
+                }
+            }
     function copyToClipboard(text, linkId) {
         var contentDiv = document.getElementById("content");
         contentDiv.classList.add("grayscale");
