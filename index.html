@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-      <script>
-    window.addEventListener("load", getVisits);
-  </script>
+    <script>
+        window.addEventListener("load", getVisits);
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Enghon的收藏</title>
@@ -221,7 +221,6 @@
     91ios资源：
     <code id="link7">
 
-        <button class="copy-btn" onclick="copyToClipboard('https://alist.91ios.fun', 'link7')">点击复制网盘地址</button>
         <button class="copy-btn" onclick="copyToClipboard('#小程序://91IOS/hXIgxc5oSntvwuD', 'link9')">点击复制91ios 小程序地址
         </button>
         <button class="visit-btn" onclick="visitLink('https://alist.91ios.fun')">访问网盘</button>
@@ -233,9 +232,7 @@
 
     巨魔商店 2 支持的设备系统范围和安装方法
     <code id="link0">
-        <button class="copy-btn" onclick="copyToClipboard('https://ios.cfw.guide/installing-trollstore/', 'link0')">
-            点击复制
-        </button>
+
         <button class="visit-btn" onclick="visitLink('https://ios.cfw.guide/installing-trollstore/')">访问</button>
 
 
@@ -274,16 +271,11 @@
     </code>
     巨魔应用集合：
     <code id="link9">
-
-        <button class="copy-btn" onclick="copyToClipboard('https://www.123pan.com/s/1wUuVv-IcqVv', 'link4')">点击复制
-        </button>
         <button class="visit-btn" onclick="visitLink('https://www.123pan.com/s/1wUuVv-IcqVv')">访问</button>
     </code>
     16系统iPad改台前调度：
     <code id="link5">
 
-        <button class="copy-btn" onclick="copyToClipboard('https://github.com/khanhduytran0/TrollPad', 'link5')">点击复制
-        </button>
         <button class="visit-btn" onclick="visitLink('https://github.com/khanhduytran0/TrollPad')">访问</button>
     </code>
     宅哥资源：
@@ -296,6 +288,7 @@
     其它
     <code id="link12">
         <button class="visit-btn" onclick="visitLink('https://pan.cwser.club')">宠物鼠儿资源</button>
+        <button class="visit-btn" onclick="visitLink('https://dslsth.aitianhu1.top')">免费 ChatGPT</button>
 
     </code>
 
@@ -397,55 +390,55 @@
 
     <!--延迟加载范围到这里结束-->
 </a></center>
-     <p>访问次数：<span id="visitCount">加载中...</span></p>
+<p>访问次数：<span id="visitCount">加载中...</span></p>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            // 获取访问次数并更新显示
-            updateVisitCount();
-
-            // 每次访问增加次数
-            incrementVisitCount();
-        });
-
-        // 获取访问次数
-        function getVisitCount(callback) {
-            var xhr = new XMLHttpRequest();
-            xhr.onreadystatechange = function () {
-                if (xhr.readyState === XMLHttpRequest.DONE) {
-                    if (xhr.status === 200) {
-                        var count = parseInt(xhr.responseText) || 0;
-                        if (callback) {
-                            callback(count);
-                        }
-                    }
-                }
-            };
-            xhr.open('GET', 'times.txt', true);
-            xhr.send();
-        }
-
-        // 更新显示访问次数
-        function updateVisitCount() {
-            getVisitCount(function (count) {
-                var visitCountSpan = document.getElementById('visitCount');
-                visitCountSpan.textContent = count;
-            });
-        }
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // 获取访问次数并更新显示
+        updateVisitCount();
 
         // 每次访问增加次数
-        function incrementVisitCount() {
-            var xhr = new XMLHttpRequest();
-            xhr.onreadystatechange = function () {
-                if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
-                    // 访问次数已增加，更新显示
-                    updateVisitCount();
+        incrementVisitCount();
+    });
+
+    // 获取访问次数
+    function getVisitCount(callback) {
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === XMLHttpRequest.DONE) {
+                if (xhr.status === 200) {
+                    var count = parseInt(xhr.responseText) || 0;
+                    if (callback) {
+                        callback(count);
+                    }
                 }
-            };
-            xhr.open('POST', 'times.txt', true);
-            xhr.send();
-        }
-    </script>
+            }
+        };
+        xhr.open('GET', 'times.txt', true);
+        xhr.send();
+    }
+
+    // 更新显示访问次数
+    function updateVisitCount() {
+        getVisitCount(function (count) {
+            var visitCountSpan = document.getElementById('visitCount');
+            visitCountSpan.textContent = count;
+        });
+    }
+
+    // 每次访问增加次数
+    function incrementVisitCount() {
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+                // 访问次数已增加，更新显示
+                updateVisitCount();
+            }
+        };
+        xhr.open('POST', 'times.txt', true);
+        xhr.send();
+    }
+</script>
 
 <script>
 
