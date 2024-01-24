@@ -284,19 +284,17 @@
 </div>
 
 
-
-
 <!--开站时间开始-->
 </a>
 <center><a class="nav-link"
-           href=""
-           target="_blank">
+
+>
     <br>
 
     <span class="nav-item">
                 </span></a><a class="nav-link"
-                              href=""
-                              target="_blank">
+
+>
     <span id="timeDate"></span><span id="times"></span>
     <script language="javascript">
         var now = new Date();
@@ -331,55 +329,7 @@
 
     <!--延迟加载范围到这里结束-->
 </a></center>
-<p>访问次数：<span id="visitCount">加载中...</span></p>
 
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        // 获取访问次数并更新显示
-        updateVisitCount();
-
-        // 每次访问增加次数
-        incrementVisitCount();
-    });
-
-    // 获取访问次数
-    function getVisitCount(callback) {
-        var xhr = new XMLHttpRequest();
-        xhr.onreadystatechange = function () {
-            if (xhr.readyState === XMLHttpRequest.DONE) {
-                if (xhr.status === 200) {
-                    var count = parseInt(xhr.responseText) || 0;
-                    if (callback) {
-                        callback(count);
-                    }
-                }
-            }
-        };
-        xhr.open('GET', 'times.txt', true);
-        xhr.send();
-    }
-
-    // 更新显示访问次数
-    function updateVisitCount() {
-        getVisitCount(function (count) {
-            var visitCountSpan = document.getElementById('visitCount');
-            visitCountSpan.textContent = count;
-        });
-    }
-
-    // 每次访问增加次数
-    function incrementVisitCount() {
-        var xhr = new XMLHttpRequest();
-        xhr.onreadystatechange = function () {
-            if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
-                // 访问次数已增加，更新显示
-                updateVisitCount();
-            }
-        };
-        xhr.open('POST', 'times.txt', true);
-        xhr.send();
-    }
-</script>
 
 <script>
 
@@ -410,7 +360,6 @@
         // Trigger a click on the link to start the download
         link.click();
     }
-
 
 
     function promptForPassword() {
