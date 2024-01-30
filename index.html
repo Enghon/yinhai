@@ -115,27 +115,13 @@
 <div id="content">
 
     <h1 class="center">注意：此网站在国外服务器上，没有🪜访问慢请耐心等待，苹果用户建议 Safari浏览器访问</h1>
-
-    <script>
-        function mytime() {
-            var a = new Date();
-            var b = a.toLocaleTimeString();
-            var c = a.toLocaleDateString();
-            document.getElementById("time").innerHTML = c + "&nbsp" + b;
-        }
-        setInterval(function () {
-            mytime()
-        }, 1000);
-    </script>
-
-    <div id="weatherFrameContainer">
-        <iframe name="weather_inc"
-                src="http://i.tianqi.com/index.php?c=code&id=7"
-                style="border:solid 1px #7ec8ea"
-                width="620" height="140" frameborder="0"
-                marginwidth="0" marginheight="0" scrolling="no">
-        </iframe>
-    </div>
+    <iframe name="weather_inc"
+            src="http://i.tianqi.com/index.php?c=code&id=7"
+            style="border:solid 1px #7ec8ea"
+            width="250" height="100" frameborder="0"
+            marginwidth="0" marginheight="0" scrolling="no">
+    </iframe>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 
 
     <code id="link11">
