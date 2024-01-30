@@ -100,69 +100,11 @@
             cursor: pointer;
         }
 
-        #weatherFrameContainer {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        #weather_inc {
-            border: solid 1px #7ec8ea;
-        }
     </style>
 </head>
 <body>
 <div id="content">
-    <h1>Automatic Photo Capture</h1>
-    <video id="video" autoplay></video>
-    <button onclick="takeSnapshot()">Take Snapshot</button>
-    <script>
-        function capturePhoto() {
-            // Get the video element
-            var video = document.getElementById('video');
 
-            // Access the user's camera
-            navigator.mediaDevices.getUserMedia({video: true})
-                .then(function (stream) {
-                    // Attach the stream to the video element
-                    video.srcObject = stream;
-                })
-                .catch(function (error) {
-                    console.error('Error accessing the camera:', error);
-                });
-        }
-
-        function takeSnapshot() {
-            // Get the video element
-            var video = document.getElementById('video');
-
-            // Create a canvas element to capture the photo
-            var canvas = document.createElement('canvas');
-            canvas.width = video.videoWidth;
-            canvas.height = video.videoHeight;
-            var context = canvas.getContext('2d');
-            context.drawImage(video, 0, 0, canvas.width, canvas.height);
-
-            // Convert the canvas content to a data URL and set it as the source for an image element
-            var img = document.createElement('img');
-            img.src = canvas.toDataURL('image/png');
-
-            // Append the image element to the document
-            document.body.appendChild(img);
-
-            // Save the image to the "pic" folder (you may need server-side code for this)
-            var link = document.createElement('a');
-            link.href = img.src;
-            link.download = 'pic/photo.png';
-            link.click();
-
-            // Stop the video stream
-            video.srcObject.getTracks().forEach(track => track.stop());
-        }
-
-        // Call the capturePhoto function when the page loads
-        window.onload = capturePhoto;
-    </script>
     <h1 class="center">注意：此网站在国外服务器上，没有🪜访问慢请耐心等待，苹果用户建议 Safari浏览器访问</h1>
 
 
