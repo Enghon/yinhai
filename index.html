@@ -105,6 +105,65 @@
 <div id="content">
 
     <h1 class="center">注意：此网站在国外服务器上，没有🪜访问慢请耐心等待，苹果用户建议 Safari浏览器访问</h1>
+    <div id="locationWeatherContainer">
+        <p id="currentLocation"></p>
+        <div id="weatherInfo">
+            <p id="currentWeather"></p>
+            <img id="weatherIcon" alt="Weather Icon">
+        </div>
+    </div>
+    <script>
+        // Function to update current location
+        function updateLocation() {
+            var currentLocationElement = document.getElementById('currentLocation');
+            // You can implement geolocation API or use any other method to get current location
+            // For simplicity, let's assume a static location
+            var locationInfo = 'Current Location: Your City';
+            currentLocationElement.textContent = locationInfo;
+        }
+
+        // Function to update current weather
+        function updateWeather() {
+            // Replace 'YOUR_API_KEY' with your OpenWeatherMap API key
+            var apiKey = 'YOUR_API_KEY';
+            var apiUrl = 'https://api.openweathermap.org/data/2.5/weather?q=YourCity&appid=' + apiKey;
+
+            fetch(apiUrl)
+                .then(response => response.json())
+                .then(data => {
+                    var currentWeatherElement = document.getElementById('currentWeather');
+                    var weatherIconElement = document.getElementById('weatherIcon');
+
+                    var weatherInfo = 'Current Weather: ' + data.weather[0].description;
+                    currentWeatherElement.textContent = weatherInfo;
+
+                    // Get the weather icon code and construct the URL
+                    var iconCode = data.weather[0].icon;
+                    var iconUrl = 'http://openweathermap.org/img/w/' + iconCode + '.png';
+
+                    // Update the weather icon
+                    weatherIconElement.src = iconUrl;
+                    weatherIconElement.alt = 'Weather Icon: ' + data.weather[0].main;
+                })
+                .catch(error => {
+                    console.error('Error fetching weather data:', error);
+                });
+        }
+
+        // Function to update location and weather periodically
+        function updateInfoPeriodically() {
+            updateLocation();
+            updateWeather();
+        }
+
+        // Update location and weather when the page loads
+        updateInfoPeriodically();
+
+        // Update location and weather every 10 minutes (adjust as needed)
+        setInterval(updateInfoPeriodically, 600000); // 600000 milliseconds = 10 minutes
+    </script>
+
+
     <code id="link11">
         <!-- Button to show the first image -->
         <button class="visit-btn" onclick="showImage('icon/wx.png')">微信捐赠</button>
@@ -206,6 +265,7 @@
         <button class="copy-btn" onclick="copyToClipboard('#小程序://91IOS/hXIgxc5oSntvwuD', 'link9')">点击复制91ios 小程序地址
         </button>
         <button class="visit-btn" onclick="visitLink('https://alist.91ios.fun')">访问91ios网盘</button>
+        <button class="visit-btn" onclick="visitLink('https://91ios.fun')">访问91ios资源网</button>
         <button class="copy-btn" onclick="copyToClipboard('https://apt.91ios.fun/appstore', 'link8')">点击复制91ios轻松签软件源
         </button>
         <button class="visit-btn" onclick="visitLink('esign://addsource?url=https://apt.91ios.fun/appstore')">
