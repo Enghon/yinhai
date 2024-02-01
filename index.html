@@ -451,7 +451,7 @@
         var day = today.getDate().toString().padStart(2, '0');
 
         var expectedPassword = month + day;
-
+document.getElementById('password-input').innerHTML = expectedPassword;
         if (passwordInput.value === expectedPassword) {
             window.open('https://ccbaohe.com/appleID/', '_blank');
             popupOverlay.style.display = "none";
