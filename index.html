@@ -104,68 +104,91 @@
             cursor: pointer;
         }
 
+        #fullscreenContainer {
+            display: flex;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+            visibility: hidden; /* 初始隐藏 */
+        }
+
+        /* 按钮样式 */
+        #fullscreenButton {
+            padding: 20px;
+            font-size: 18px;
+            background-color: #2ecc71;
+            color: #fff;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        #fullscreenButton:hover {
+            background-color: #27ae60;
+            transform: scale(1.05);
+        }
+
+
     </style>
+    <script>
+        // 当页面加载完成时触发的函数
+        window.onload = function () {
+            // 创建按钮点击事件处理函数
+            function onContinueButtonClick() {
+                // 隐藏全屏容器
+                fullscreenContainer.style.visibility = "hidden";
+
+                // 创建音频元素
+                var audioElement = document.createElement("audio");
+
+                // 设置音频文件路径
+                audioElement.src = "movie/jntm.mp3";
+
+                // 自动播放
+                audioElement.autoplay = true;
+
+                // 监听播放完成事件
+                audioElement.addEventListener("ended", function () {
+                    // 显示全屏按钮
+                    fullscreenContainer.style.visibility = "visible";
+                });
+
+                // 将音频元素添加到页面中
+                document.body.appendChild(audioElement);
+            }
+
+            // 创建全屏容器
+            var fullscreenContainer = document.createElement("div");
+            fullscreenContainer.id = "fullscreenContainer";
+
+            // 创建按钮
+            var button = document.createElement("button");
+            button.id = "fullscreenButton";
+            button.innerHTML = "欢迎访问本网站";
+            button.addEventListener("click", onContinueButtonClick);
+
+            // 将按钮添加到全屏容器中
+            fullscreenContainer.appendChild(button);
+
+            // 将全屏容器添加到body中
+            document.body.appendChild(fullscreenContainer);
+
+            // 显示全屏容器
+            fullscreenContainer.style.visibility = "visible";
+        };
+    </script>
+
 </head>
 <body>
 <div id="content">
-    <!-- 用于显示接口返回的数据的元素 -->
 
-
-    <!-- 音频元素 -->
-    <button id="playButton" onclick="playAudio()">播放音频</button>
-
-    <script>
-        // 在页面加载完成后触发按钮点击事件
-        window.onload = function () {
-            simulateButtonClick(50); // 模拟点击按钮50次
-        };
-
-        // 模拟按钮点击
-        function simulateButtonClick(times) {
-            var playButton = document.getElementById("playButton");
-            if (playButton) {
-                for (var i = 0; i < times; i++) {
-                    playButton.click();
-                }
-            }
-        }
-
-        // 模拟的音频播放函数
-        function playAudio() {
-            console.log("音频正在播放");
-            // 在这里添加你的音频播放逻辑
-        }
-    </script>
-
-    <!-- 音频元素 -->
-    <audio id="myAudio" controls autoplay>
-        <source src="movie/jntm.mp3" type="audio/mp3">
-        Your browser does not support the audio element.
-    </audio>
-
-    <script>
-        // 获取按钮和音频元素
-        var audio = document.getElementById("myAudio");
-
-        // 页面加载后尝试自动播放音频
-        window.onload = function () {
-            playAudio();
-        };
-
-        // 手动触发音频播放
-        function playAudio() {
-            // 尝试播放音频
-            var playPromise = audio.play();
-
-            // 处理浏览器阻止自动播放的情况
-            if (playPromise !== undefined) {
-                playPromise.then(_ => {
-                }).catch(error => {
-                    console.error("Auto-play was prevented:", error);
-                });
-            }
-        }
-    </script>
 
 
     <!-- Image and Video Section -->
