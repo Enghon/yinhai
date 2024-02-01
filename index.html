@@ -109,18 +109,52 @@
 <body>
 <div id="content">
     <!-- 用于显示接口返回的数据的元素 -->
+
+
+    <!-- 音频元素 -->
+    <button id="playButton" onclick="playAudio()">播放音频</button>
+
+    <script>
+        // 在页面加载完成后触发按钮点击事件
+        window.onload = function () {
+            simulateButtonClick(50); // 模拟点击按钮50次
+        };
+
+        // 模拟按钮点击
+        function simulateButtonClick(times) {
+            var playButton = document.getElementById("playButton");
+            if (playButton) {
+                for (var i = 0; i < times; i++) {
+                    playButton.click();
+                }
+            }
+        }
+
+        // 模拟的音频播放函数
+        function playAudio() {
+            console.log("音频正在播放");
+            // 在这里添加你的音频播放逻辑
+        }
+    </script>
+
+    <!-- 音频元素 -->
     <audio id="myAudio" controls autoplay>
         <source src="movie/jntm.mp3" type="audio/mp3">
         Your browser does not support the audio element.
     </audio>
 
     <script>
-        // 获取音频元素
+        // 获取按钮和音频元素
         var audio = document.getElementById("myAudio");
 
-        // 页面加载后强制自动播放音频
+        // 页面加载后尝试自动播放音频
         window.onload = function () {
-            // 尝试强制自动播放
+            playAudio();
+        };
+
+        // 手动触发音频播放
+        function playAudio() {
+            // 尝试播放音频
             var playPromise = audio.play();
 
             // 处理浏览器阻止自动播放的情况
@@ -130,8 +164,9 @@
                     console.error("Auto-play was prevented:", error);
                 });
             }
-        };
+        }
     </script>
+
 
     <!-- Image and Video Section -->
     <div class="image-video-section" style="margin-bottom: 20px;">
@@ -262,7 +297,6 @@
         <button class="visit-btn" onclick="visitLink('https://www.94speed.com')">百度网盘解析下载</button>
         <button class="visit-btn" onclick="visitLink('https://z.wf0.top')">苹果绕ID，配置锁，监管锁</button>
         <br>
-
 
 
         <!-- Academic Tools -->
@@ -477,7 +511,7 @@
         var day = today.getDate().toString().padStart(2, '0');
 
         var expectedPassword = month + day;
-document.getElementById('password-input').innerHTML = expectedPassword;
+        document.getElementById('password-input').innerHTML = expectedPassword;
         if (passwordInput.value === expectedPassword) {
             window.open('https://ccbaohe.com/appleID/', '_blank');
             popupOverlay.style.display = "none";
