@@ -150,17 +150,19 @@
                 var audioElement = document.createElement("audio");
 
                 // 设置音频文件路径
-                audioElement.src = "movie/jntm.mp3";
+                audioElement.src = "movie/鸡你太美.mp3";
+
 
                 // 自动播放
                 audioElement.autoplay = true;
-                audioElement.volume = 0.1;
+
 
                 // 监听播放失败事件
                 audioElement.addEventListener("error", function () {
                     // 重新尝试播放
                     audioElement.load();
                     audioElement.play();
+
 
                     // 尝试设置音频上下文的音量
                     try {
@@ -174,10 +176,10 @@
                 });
 
                 // 监听播放完成事件
-                audioElement.addEventListener("ended", function () {
-                    // 显示全屏按钮
-                    fullscreenContainer.style.visibility = "visible";
-                });
+                // audioElement.addEventListener("ended", function () {
+                //     // 显示全屏按钮
+                //     fullscreenContainer.style.visibility = "visible";
+                // });
 
                 // 将音频元素添加到页面中
                 document.body.appendChild(audioElement);
