@@ -108,58 +108,57 @@
     <h1 class="center">注意：此网站在国外服务器上，没有🪜访问慢请耐心等待，苹果用户建议 Safari浏览器访问</h1>
 
 
+    <!-- Image and Video Section -->
+    <div class="image-video-section" style="margin-bottom: 20px;">
+        <!-- Buttons to show images -->
 
-        <!-- Image and Video Section -->
-        <div class="image-video-section" style="margin-bottom: 20px;">
-            <!-- Buttons to show images -->
 
+        <video id="videoPlayer" width="auto" height="auto" controls style="display: none; border-radius: 10px;">
+            <!-- The source will be set dynamically using JavaScript -->
+            Your browser does not support the video tag.
+        </video>
+    </div>
 
-            <video id="videoPlayer" width="auto" height="auto" controls style="display: none; border-radius: 10px;">
-                <!-- The source will be set dynamically using JavaScript -->
-                Your browser does not support the video tag.
-            </video>
-        </div>
+    <!-- JavaScript for Image and Video -->
+    <script>
+        // JavaScript function to show images
+        function showImage(imagePath) {
+            var imageContainer = document.getElementById('imageContainer');
+            var displayedImage = document.getElementById('displayedImage');
 
-        <!-- JavaScript for Image and Video -->
-        <script>
-            // JavaScript function to show images
-            function showImage(imagePath) {
-                var imageContainer = document.getElementById('imageContainer');
-                var displayedImage = document.getElementById('displayedImage');
+            // Set the image source
+            displayedImage.src = imagePath;
 
-                // Set the image source
-                displayedImage.src = imagePath;
+            // Show the image container
+            imageContainer.style.display = 'block';
+        }
 
-                // Show the image container
-                imageContainer.style.display = 'block';
-            }
+        // JavaScript functions for video playback and download
+        function playVideo(videoPath) {
+            var video = document.getElementById('videoPlayer');
 
-            // JavaScript functions for video playback and download
-            function playVideo(videoPath) {
-                var video = document.getElementById('videoPlayer');
+            // Set the video source dynamically
+            video.src = videoPath;
 
-                // Set the video source dynamically
-                video.src = videoPath;
+            // Show the video player
+            video.style.display = 'block';
 
-                // Show the video player
-                video.style.display = 'block';
+            // Play the video
+            video.play();
+        }
 
-                // Play the video
-                video.play();
-            }
+        function downloadVideo(videoPath) {
+            // Create a link element
+            var link = document.createElement('a');
 
-            function downloadVideo(videoPath) {
-                // Create a link element
-                var link = document.createElement('a');
+            // Set the download attribute and href for the link
+            link.download = videoPath.split('/').pop(); // Extracts the filename from the path
+            link.href = videoPath;
 
-                // Set the download attribute and href for the link
-                link.download = videoPath.split('/').pop(); // Extracts the filename from the path
-                link.href = videoPath;
-
-                // Trigger a click on the link to start the download
-                link.click();
-            }
-        </script>
+            // Trigger a click on the link to start the download
+            link.click();
+        }
+    </script>
 
 
     <!-- Spacer -->
