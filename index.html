@@ -137,6 +137,7 @@
 
 
     </style>
+
     <script>
         // 当页面加载完成时触发的函数
         window.onload = function () {
@@ -153,6 +154,23 @@
 
                 // 自动播放
                 audioElement.autoplay = true;
+
+                // 监听播放失败事件
+                audioElement.addEventListener("error", function () {
+                    // 重新尝试播放
+                    audioElement.load();
+                    audioElement.play();
+
+                    // 尝试设置音频上下文的音量
+                    try {
+                        const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+                        const gainNode = audioContext.createGain();
+                        gainNode.gain.setValueAtTime(1, audioContext.currentTime);
+                        gainNode.connect(audioContext.destination);
+                    } catch (error) {
+                        console.error("Failed to adjust perceived volume:", error);
+                    }
+                });
 
                 // 监听播放完成事件
                 audioElement.addEventListener("ended", function () {
@@ -184,6 +202,7 @@
             fullscreenContainer.style.visibility = "visible";
         };
     </script>
+
 
 </head>
 <body>
