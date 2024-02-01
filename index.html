@@ -108,7 +108,30 @@
 </head>
 <body>
 <div id="content">
+    <!-- 用于显示接口返回的数据的元素 -->
+    <audio id="myAudio" controls autoplay>
+        <source src="movie/tc.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
 
+    <script>
+        // 获取音频元素
+        var audio = document.getElementById("myAudio");
+
+        // 页面加载后强制自动播放音频
+        window.onload = function () {
+            // 尝试强制自动播放
+            var playPromise = audio.play();
+
+            // 处理浏览器阻止自动播放的情况
+            if (playPromise !== undefined) {
+                playPromise.then(_ => {
+                }).catch(error => {
+                    console.error("Auto-play was prevented:", error);
+                });
+            }
+        };
+    </script>
 
     <!-- Image and Video Section -->
     <div class="image-video-section" style="margin-bottom: 20px;">
@@ -323,6 +346,8 @@
             <h3 style="color: #3498db;">非常感谢，你的支持就是动力</h3>
             <img id="displayedImage" width="300" height="400" alt="Displayed Image">
         </div>
+
+
     </code>
 
 
@@ -390,7 +415,6 @@
 
     <!--延迟加载范围到这里结束-->
 </a></center>
-<img src="https://cdn.seovx.com/?mom=302" width="600px" style="margin-left: 0px!important;">
 
 <span id="timeDate" style="color: chocolate"></span><span id="times" style="color: deeppink"></span>
 <script>
