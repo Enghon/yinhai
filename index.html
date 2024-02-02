@@ -3,6 +3,8 @@
 <head>
     <script>
         window.addEventListener("load", getVisits);
+
+
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -139,76 +141,61 @@
     </style>
 
 
-    <!--    <script>-->
-    <!--        // 当页面加载完成时触发的函数-->
-    <!--        window.onload = function () {-->
+    <script>
+        ((function () {
+            var callbacks = [],
+                timeLimit = 50,
+                open = false;
+            setInterval(loop, 1);
+            return {
+                addListener: function (fn) {
+                    callbacks.push(fn);
+                },
+                cancleListenr: function (fn) {
+                    callbacks = callbacks.filter(function (v) {
+                        return v !== fn;
+                    });
+                }
+            }
 
-    <!--            // 创建按钮点击事件处理函数-->
-    <!--            function onContinueButtonClick() {-->
+            function loop() {
+                var startTime = new Date();
+                debugger;
+                if (new Date() - startTime > timeLimit) {
+                    if (!open) {
+                        callbacks.forEach(function (fn) {
+                            fn.call(null);
+                        });
+                    }
+                    open = true;
+                    window.stop();
+                    alert('不要扒我了');
+                    window.location.reload();
+                } else {
+                    open = false;
+                }
+            }
+        })()).addListener(function () {
+            window.location.reload();
+        });
 
+        document.oncontextmenu = function () {
+            var audio = document.getElementById('myAudio');
+            audio.play();
+            alert("禁止右键");
 
-    <!--                // 隐藏全屏容器-->
-    <!--                fullscreenContainer.style.visibility = "hidden";-->
+            return false;
+        };
 
-    <!--                // 创建音频元素-->
-    <!--                var audioElement = document.createElement("audio");-->
-
-    <!--                // 设置音频文件路径-->
-    <!--                audioElement.src = "movie/鸡你太美.mp3";-->
-
-
-    <!--                // 自动播放-->
-    <!--                audioElement.autoplay = true;-->
-
-
-    <!--                // 监听播放失败事件-->
-    <!--                audioElement.addEventListener("error", function () {-->
-    <!--                    // 重新尝试播放-->
-    <!--                    audioElement.load();-->
-    <!--                    audioElement.play();-->
-
-
-    <!--                    // 尝试设置音频上下文的音量-->
-    <!--                    try {-->
-    <!--                        const audioContext = new (window.AudioContext || window.webkitAudioContext)();-->
-    <!--                        const gainNode = audioContext.createGain();-->
-    <!--                        gainNode.gain.setValueAtTime(1, audioContext.currentTime);-->
-    <!--                        gainNode.connect(audioContext.destination);-->
-    <!--                    } catch (error) {-->
-    <!--                        console.error("Failed to adjust perceived volume:", error);-->
-    <!--                    }-->
-    <!--                });-->
-
-    <!--                // 监听播放完成事件-->
-    <!--                // audioElement.addEventListener("ended", function () {-->
-    <!--                //     // 显示全屏按钮-->
-    <!--                //     fullscreenContainer.style.visibility = "visible";-->
-    <!--                // });-->
-
-    <!--                // 将音频元素添加到页面中-->
-    <!--                // document.body.appendChild(audioElement);-->
-    <!--            }-->
-
-    <!--            // 创建全屏容器-->
-    <!--            var fullscreenContainer = document.createElement("div");-->
-    <!--            fullscreenContainer.id = "fullscreenContainer";-->
-
-    <!--            // 创建按钮-->
-    <!--            var button = document.createElement("button");-->
-    <!--            button.id = "fullscreenButton";-->
-    <!--            button.innerHTML = "欢迎访问本网站";-->
-    <!--            button.addEventListener("click", onContinueButtonClick);-->
-
-    <!--            // 将按钮添加到全屏容器中-->
-    <!--            fullscreenContainer.appendChild(button);-->
-
-    <!--            // 将全屏容器添加到body中-->
-    <!--            document.body.appendChild(fullscreenContainer);-->
-
-    <!--            // 显示全屏容器-->
-    <!--            fullscreenContainer.style.visibility = "visible";-->
-    <!--        };-->
-    <!--    </script>-->
+        document.onkeydown = function (e) {
+            if (e.keyCode == 123) {
+                var audio = document.getElementById('myAudio');
+                audio.play();
+                alert("禁止使用 F12 和开发者工具！");
+                return false;
+            }
+        };
+    </script>
 
 
 </head>
