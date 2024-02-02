@@ -2,232 +2,14 @@
 <html lang="en">
 <head>
     <script>
-        window.addEventListener("load", getVisits);
+        // window.addEventListener("load", getVisits);
     </script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Enghon的收藏</title>
-    <style>
-        .center {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-        }
-
-        body {
-            background: url('https://cdn.seovx.com/?mom=302');
-            background-size: 600px auto;
-
-
-            font-family: 'Arial', sans-serif;
-            line-height: 1.6;
-            padding: 20px;
-            margin: 0;
-            /* Remove overflow: hidden; to allow scrolling */
-            transition: filter 0.5s ease-in-out;
-        }
-
-        .grayscale {
-            filter: grayscale(100%);
-        }
-
-        .popup-overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            justify-content: center;
-            align-items: center;
-            z-index: 999;
-        }
-
-        .popup-overlay1 {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            justify-content: center;
-            align-items: center;
-            z-index: 999;
-        }
-
-        .popup {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 5px;
-            text-align: center;
-        }
-
-        code {
-            display: block;
-            padding: 10px;
-            background-color: #f0f0f0;
-            margin: 10px 0;
-            word-wrap: break-word;
-        }
-
-        .copy-btn, .visit-btn {
-            background-color: #4caf50;
-            border: none;
-            color: white;
-            padding: 8px 16px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 14px;
-            margin: 4px 2px;
-            cursor: pointer;
-            border-radius: 4px;
-        }
-
-        #password-input {
-            margin-top: 10px;
-            padding: 5px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-
-        #submit-password {
-            margin-top: 10px;
-            padding: 8px 16px;
-            background-color: #4caf50;
-            border: none;
-            color: white;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-
-        #fullscreenContainer {
-            display: flex;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-            justify-content: center;
-            align-items: center;
-            visibility: hidden; /* 初始隐藏 */
-        }
-
-        /* 按钮样式 */
-        #fullscreenButton {
-            padding: 20px;
-            font-size: 18px;
-            background-color: #2ecc71;
-            color: #fff;
-            border: none;
-            border-radius: 10px;
-            cursor: pointer;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-            transition: background-color 0.3s ease, transform 0.3s ease;
-        }
-
-        #fullscreenButton:hover {
-            background-color: #27ae60;
-            transform: scale(1.05);
-        }
-
-
-    </style>
-
-    <script>
-        document.oncontextmenu = function () {
-            var audio = document.getElementById('myAudio');
-            audio.play();
-            alert("禁止右键");
-
-            return false;
-        };
-
-        document.onkeydown = function (e) {
-            if (e.keyCode == 123) {
-                var audio = document.getElementById('myAudio');
-                audio.play();
-                alert("禁止使用 F12 和开发者工具！");
-                return false;
-            }
-        };
-    </script>
-
-
-    <!--    <script>-->
-    <!--        // 当页面加载完成时触发的函数-->
-    <!--        window.onload = function () {-->
-
-    <!--            // 创建按钮点击事件处理函数-->
-    <!--            function onContinueButtonClick() {-->
-
-
-    <!--                // 隐藏全屏容器-->
-    <!--                fullscreenContainer.style.visibility = "hidden";-->
-
-    <!--                // 创建音频元素-->
-    <!--                var audioElement = document.createElement("audio");-->
-
-    <!--                // 设置音频文件路径-->
-    <!--                audioElement.src = "movie/鸡你太美.mp3";-->
-
-
-    <!--                // 自动播放-->
-    <!--                audioElement.autoplay = true;-->
-
-
-    <!--                // 监听播放失败事件-->
-    <!--                audioElement.addEventListener("error", function () {-->
-    <!--                    // 重新尝试播放-->
-    <!--                    audioElement.load();-->
-    <!--                    audioElement.play();-->
-
-
-    <!--                    // 尝试设置音频上下文的音量-->
-    <!--                    try {-->
-    <!--                        const audioContext = new (window.AudioContext || window.webkitAudioContext)();-->
-    <!--                        const gainNode = audioContext.createGain();-->
-    <!--                        gainNode.gain.setValueAtTime(1, audioContext.currentTime);-->
-    <!--                        gainNode.connect(audioContext.destination);-->
-    <!--                    } catch (error) {-->
-    <!--                        console.error("Failed to adjust perceived volume:", error);-->
-    <!--                    }-->
-    <!--                });-->
-
-    <!--                // 监听播放完成事件-->
-    <!--                // audioElement.addEventListener("ended", function () {-->
-    <!--                //     // 显示全屏按钮-->
-    <!--                //     fullscreenContainer.style.visibility = "visible";-->
-    <!--                // });-->
-
-    <!--                // 将音频元素添加到页面中-->
-    <!--                // document.body.appendChild(audioElement);-->
-    <!--            }-->
-
-    <!--            // 创建全屏容器-->
-    <!--            var fullscreenContainer = document.createElement("div");-->
-    <!--            fullscreenContainer.id = "fullscreenContainer";-->
-
-    <!--            // 创建按钮-->
-    <!--            var button = document.createElement("button");-->
-    <!--            button.id = "fullscreenButton";-->
-    <!--            button.innerHTML = "欢迎访问本网站";-->
-    <!--            button.addEventListener("click", onContinueButtonClick);-->
-
-    <!--            // 将按钮添加到全屏容器中-->
-    <!--            fullscreenContainer.appendChild(button);-->
-
-    <!--            // 将全屏容器添加到body中-->
-    <!--            document.body.appendChild(fullscreenContainer);-->
-
-    <!--            // 显示全屏容器-->
-    <!--            fullscreenContainer.style.visibility = "visible";-->
-    <!--        };-->
-    <!--    </script>-->
+    <script src="js.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="css.css">
 
 
 </head>
@@ -236,54 +18,56 @@
 
     <!-- Image and Video Section -->
     <div class="image-video-section" style="margin-bottom: 20px;">
-        <!-- Buttons to show images -->
-
-
+        <!-- Buttons to show images and videos -->
+        <!--    <button onclick="showImage('path/to/image.jpg')">Show Image</button>-->
+        <!--    <button onclick="playVideo('path/to/video.mp4')">Play Video</button>-->
+        <!-- Close button for video player -->
+        <button onclick="closeVideo()" style="display: none; background-color: red" id="closeButton" class="visit-btn">
+            关闭视频
+        </button>
         <video id="videoPlayer" width="auto" height="auto" controls style="display: none; border-radius: 10px;">
             <!-- The source will be set dynamically using JavaScript -->
             Your browser does not support the video tag.
         </video>
     </div>
-
     <!-- JavaScript for Image and Video -->
     <script>
-        // JavaScript function to show images
-        function showImage(imagePath) {
-            var imageContainer = document.getElementById('imageContainer');
-            var displayedImage = document.getElementById('displayedImage');
-
-            // Set the image source
-            displayedImage.src = imagePath;
-
-            // Show the image container
-            imageContainer.style.display = 'block';
-        }
-
-        // JavaScript functions for video playback and download
-        function playVideo(videoPath) {
-            var video = document.getElementById('videoPlayer');
-
-            // Set the video source dynamically
-            video.src = videoPath;
-
-            // Show the video player
-            video.style.display = 'block';
-
-            // Play the video
-            video.play();
-        }
-
-        function downloadVideo(videoPath) {
-            // Create a link element
-            var link = document.createElement('a');
-
-            // Set the download attribute and href for the link
-            link.download = videoPath.split('/').pop(); // Extracts the filename from the path
-            link.href = videoPath;
-
-            // Trigger a click on the link to start the download
-            link.click();
-        }
+        // // JavaScript function to show images
+        // function showImage(imagePath) {
+        //     var imageContainer = document.getElementById('imageContainer');
+        //     var displayedImage = document.getElementById('displayedImage');
+        //     // Set the image source
+        //     displayedImage.src = imagePath;
+        //     // Show the image container
+        //     imageContainer.style.display = 'block';
+        //     // Show the close button for video player
+        //     document.getElementById('closeButton').style.display = 'none';
+        // }
+        //
+        // // JavaScript functions for video playback and download
+        // function playVideo(videoPath) {
+        //     var video = document.getElementById('videoPlayer');
+        //     var closeButton = document.getElementById('closeButton');
+        //     // Set the video source dynamically
+        //     video.src = videoPath;
+        //     // Show the video player
+        //     video.style.display = 'block';
+        //     // Show the close button for video player
+        //     closeButton.style.display = 'block';
+        //     // Play the video
+        //     video.play();
+        // }
+        //
+        // // JavaScript function to close the video player
+        // function closeVideo() {
+        //     var video = document.getElementById('videoPlayer');
+        //     var closeButton = document.getElementById('closeButton');
+        //     // Pause the video
+        //     video.pause();
+        //     // Hide the video player and close button
+        //     video.style.display = 'none';
+        //     closeButton.style.display = 'none';
+        // }
     </script>
 
 
@@ -296,14 +80,14 @@
     <!--    </button>-->
 
     <style>
-        .button-container {
-            text-align: center;
-        }
+        /*.button-container {*/
+        /*    text-align: center;*/
+        /*}*/
 
-        .visit-btn1 {
-            background-color: red;
-            animation: bounce 1s infinite;
-        }
+        /*.visit-btn1 {*/
+        /*    background-color: red;*/
+        /*    animation: bounce 1s infinite;*/
+        /*}*/
     </style>
 
     <div class="button-container">
@@ -313,29 +97,29 @@
         </button>
     </div>
     <script>
-        // 获取当前 IP 地址
-        var ip = "";
-        var request = new XMLHttpRequest();
-        request.open("GET", "https://api.ipify.org/?format=json", true);
-        request.onload = function () {
-            if (request.status === 200) {
-                ip = JSON.parse(request.responseText).ip;
-                document.getElementById("ip").innerHTML = ip;
-
-                // 获取当前 IP 地址的地区和运营商
-                var request2 = new XMLHttpRequest();
-                request2.open("GET", "https://ipinfo.io/" + ip + "/json", true);
-                request2.onload = function () {
-                    if (request2.status === 200) {
-                        var data = JSON.parse(request2.responseText);
-                        document.getElementById("region").innerHTML = data.region;
-                        document.getElementById("city").innerHTML = data.city;
-                    }
-                };
-                request2.send();
-            }
-        };
-        request.send();
+        // // 获取当前 IP 地址
+        // var ip = "";
+        // var request = new XMLHttpRequest();
+        // request.open("GET", "https://api.ipify.org/?format=json", true);
+        // request.onload = function () {
+        //     if (request.status === 200) {
+        //         ip = JSON.parse(request.responseText).ip;
+        //         document.getElementById("ip").innerHTML = ip;
+        //
+        //         // 获取当前 IP 地址的地区和运营商
+        //         var request2 = new XMLHttpRequest();
+        //         request2.open("GET", "https://ipinfo.io/" + ip + "/json", true);
+        //         request2.onload = function () {
+        //             if (request2.status === 200) {
+        //                 var data = JSON.parse(request2.responseText);
+        //                 document.getElementById("region").innerHTML = data.region;
+        //                 document.getElementById("city").innerHTML = data.city;
+        //             }
+        //         };
+        //         request2.send();
+        //     }
+        // };
+        // request.send();
     </script>
     <p>当前 IP 地址：<span id="ip"></span></p>
     <p>地区：<span id="region"></span></p>
@@ -343,23 +127,23 @@
 
 
     <style>
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% {
-                transform: translateY(0);
-            }
-            40% {
-                transform: translateY(-40px);
-            }
-            60% {
-                transform: translateY(-40px);
-            }
-        }
+        /*@keyframes bounce {*/
+        /*    0%, 20%, 50%, 80%, 100% {*/
+        /*        transform: translateY(0);*/
+        /*    }*/
+        /*    40% {*/
+        /*        transform: translateY(-40px);*/
+        /*    }*/
+        /*    60% {*/
+        /*        transform: translateY(-40px);*/
+        /*    }*/
+        /*}*/
 
-        .visit-btn1 {
-            margin: 0 auto;
-            background-color: red;
-            animation: bounce 1s infinite;
-        }
+        /*.visit-btn1 {*/
+        /*    margin: 0 auto;*/
+        /*    background-color: red;*/
+        /*    animation: bounce 1s infinite;*/
+        /*}*/
     </style>
     <audio id="myAudio">
         <source src="movie/鸡你太美.mp3" type="audio/mp3">
@@ -367,31 +151,31 @@
     </audio>
 
     <script>
-        function showElements() {
-            // 获取用户的 IP 地址，这是一个简化的示例，实际中需要使用后端服务获取
-
-
-            var audio = document.getElementById('myAudio');
-            audio.play();
-
-            // Show the initially hidden elements
-            document.getElementById('hiddenElements').style.display = 'block';
-            // Call the function to visit the website if needed
-            visitLink('http://hbkgds.com/api/tj.php?name=yhAPI&a=1');
-
-            // Show the initially hidden elements
-            // Show the initially hidden elements
-            document.getElementById('hiddenElements').style.display = 'block';
-
-            // Hide the button
-            document.querySelector('.visit-btn1').style.display = 'none';
-        }
-
-        // If you have the visitLink function, you can define it here
-        function visitLink(url) {
-            // Implement the logic to visit the link
-            window.location.href = url;
-        }
+        // function showElements() {
+        //     // 获取用户的 IP 地址，这是一个简化的示例，实际中需要使用后端服务获取
+        //
+        //
+        //     var audio = document.getElementById('myAudio');
+        //     audio.play();
+        //
+        //     // Show the initially hidden elements
+        //     document.getElementById('hiddenElements').style.display = 'block';
+        //     // Call the function to visit the website if needed
+        //     visitLink('http://hbkgds.com/api/tj.php?name=yhAPI&a=1');
+        //
+        //     // Show the initially hidden elements
+        //     // Show the initially hidden elements
+        //     document.getElementById('hiddenElements').style.display = 'block';
+        //
+        //     // Hide the button
+        //     document.querySelector('.visit-btn1').style.display = 'none';
+        // }
+        //
+        // // If you have the visitLink function, you can define it here
+        // function visitLink(url) {
+        //     // Implement the logic to visit the link
+        //     window.location.href = url;
+        // }
     </script>
 
     <div id="hiddenElements" style="display: none;">
@@ -569,7 +353,7 @@
 
             <!-- Image and Video container -->
             <div id="imageContainer" style="display: none;">
-                <h3 style="color: #3498db;">非常感谢，你的支持就是动力</h3>
+                <h3 style="color: #3498db;">非常感谢，你的支1持就是动力</h3>
                 <img id="displayedImage" width="300" height="400" alt="Displayed Image">
             </div>
 
@@ -609,308 +393,308 @@
         <!--    <span id="timeDate"></span><span id="times"></span>-->
 
         <script language="javascript">
-            var now = new Date();
-
-            function createtime() {
-                var grt = new Date("01/13/2024 00:00:00");/*---这里是网站的启用时间--*/
-                now.setTime(now.getTime() + 250);
-                days = (now - grt) / 1000 / 60 / 60 / 24;
-                dnum = Math.floor(days);
-                hours = (now - grt) / 1000 / 60 / 60 - (24 * dnum);
-                hnum = Math.floor(hours);
-                if (String(hnum).length == 1) {
-                    hnum = "0" + hnum;
-                }
-                minutes = (now - grt) / 1000 / 60 - (24 * 60 * dnum) - (60 * hnum);
-                mnum = Math.floor(minutes);
-                if (String(mnum).length == 1) {
-                    mnum = "0" + mnum;
-                }
-                seconds = (now - grt) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
-                snum = Math.round(seconds);
-                if (String(snum).length == 1) {
-                    snum = "0" + snum;
-                }
-                document.getElementById("timeDate").innerHTML = "️当前版本 1.1--本站已运行" + dnum + "天";
-                document.getElementById("times").innerHTML = hnum + "小时" + mnum + "分" + snum + "秒";
-            }
-
-            setInterval("createtime()", 250);
+            // var now = new Date();
+            //
+            // function createtime() {
+            //     var grt = new Date("01/13/2024 00:00:00");/*---这里是网站的启用时间--*/
+            //     now.setTime(now.getTime() + 250);
+            //     days = (now - grt) / 1000 / 60 / 60 / 24;
+            //     dnum = Math.floor(days);
+            //     hours = (now - grt) / 1000 / 60 / 60 - (24 * dnum);
+            //     hnum = Math.floor(hours);
+            //     if (String(hnum).length == 1) {
+            //         hnum = "0" + hnum;
+            //     }
+            //     minutes = (now - grt) / 1000 / 60 - (24 * 60 * dnum) - (60 * hnum);
+            //     mnum = Math.floor(minutes);
+            //     if (String(mnum).length == 1) {
+            //         mnum = "0" + mnum;
+            //     }
+            //     seconds = (now - grt) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+            //     snum = Math.round(seconds);
+            //     if (String(snum).length == 1) {
+            //         snum = "0" + snum;
+            //     }
+            //     document.getElementById("timeDate").innerHTML = "️当前版本 1.1--本站已运行" + dnum + "天";
+            //     document.getElementById("times").innerHTML = hnum + "小时" + mnum + "分" + snum + "秒";
+            // }
+            //
+            // setInterval("createtime()", 250);
         </script>
 
 
         <!--延迟加载范围到这里结束-->
     </a></center>
     <style>
-        /*太阳系*/
-        .solarsys {
+        /*!*太阳系*!*/
+        /*.solarsys {*/
 
-            width: 800px;
-            height: 800px;;
+        /*    width: 800px;*/
+        /*    height: 800px;;*/
 
-            margin: 0 auto;
-            background-color: #000000;
-            padding: 0;
-            transform: scale(1); /*缩放一倍*/
-        }
+        /*    margin: 0 auto;*/
+        /*    background-color: #000000;*/
+        /*    padding: 0;*/
+        /*    transform: scale(1); !*缩放一倍*!*/
+        /*}*/
 
-        /*太阳属性*/
-        .sun {
-            left: 357px;
-            top: 357px;
-            height: 90px;
-            width: 90px;
-            background-color: rgb(248, 107, 35);
-            border-radius: 50%; /*边框圆角*/
-            box-shadow: 5px 5px 10px rgb(248, 107, 35), -5px -5px 10px rgb(248, 107, 35), 5px -5px 10px rgb(248, 107, 35), -5px 5px 10px rgb(248, 107, 35); /*添加阴影*/
-            position: absolute; /*绝对定位*/
-            margin: 0;
-        }
+        /*!*太阳属性*!*/
+        /*.sun {*/
+        /*    left: 357px;*/
+        /*    top: 357px;*/
+        /*    height: 90px;*/
+        /*    width: 90px;*/
+        /*    background-color: rgb(248, 107, 35);*/
+        /*    border-radius: 50%; !*边框圆角*!*/
+        /*    box-shadow: 5px 5px 10px rgb(248, 107, 35), -5px -5px 10px rgb(248, 107, 35), 5px -5px 10px rgb(248, 107, 35), -5px 5px 10px rgb(248, 107, 35); !*添加阴影*!*/
+        /*    position: absolute; !*绝对定位*!*/
+        /*    margin: 0;*/
+        /*}*/
 
-        /*水星属性*/
-        .mercury {
-            left: 337.5px;
-            top: 395px; /*left和top属性与transform-origin属性分别相加就是中心*/
-            height: 10px;
-            width: 10px;
-            background-color: rgb(166, 138, 56);
-            border-radius: 50%;
-            position: absolute;
-            transform-origin: 62.5px 5px; /*设置旋转元素的基点位置 太阳系的基点中心为太阳圆心 这里设置高和宽为800px 所以中心为400*/
-            animation: rotate 1.5s infinite linear; /*元素动画 指定要绑定到选择器的关键帧名称 完成时间 播放次数（无限）如何完成周期*/
-        }
+        /*!*水星属性*!*/
+        /*.mercury {*/
+        /*    left: 337.5px;*/
+        /*    top: 395px; !*left和top属性与transform-origin属性分别相加就是中心*!*/
+        /*    height: 10px;*/
+        /*    width: 10px;*/
+        /*    background-color: rgb(166, 138, 56);*/
+        /*    border-radius: 50%;*/
+        /*    position: absolute;*/
+        /*    transform-origin: 62.5px 5px; !*设置旋转元素的基点位置 太阳系的基点中心为太阳圆心 这里设置高和宽为800px 所以中心为400*!*/
+        /*    animation: rotate 1.5s infinite linear; !*元素动画 指定要绑定到选择器的关键帧名称 完成时间 播放次数（无限）如何完成周期*!*/
+        /*}*/
 
-        /*水星轨道*/
-        .mercuryOrbit {
-            left: 342.5px;
-            top: 342.5px;
-            height: 115px;
-            width: 115px; /*height和width取半径与left和top相加刚好等于400，所以行星才会和其相应的轨道相匹配*/
-            background-color: transparent; /*指定背景元素为透明*/
-            border-radius: 50%;
-            border-style: dashed; /*轨道类型*/
-            border-color: gray;
-            position: absolute;
-            border-width: 1px;
-            margin: 0px;
-            padding: 0px;
-        }
+        /*!*水星轨道*!*/
+        /*.mercuryOrbit {*/
+        /*    left: 342.5px;*/
+        /*    top: 342.5px;*/
+        /*    height: 115px;*/
+        /*    width: 115px; !*height和width取半径与left和top相加刚好等于400，所以行星才会和其相应的轨道相匹配*!*/
+        /*    background-color: transparent; !*指定背景元素为透明*!*/
+        /*    border-radius: 50%;*/
+        /*    border-style: dashed; !*轨道类型*!*/
+        /*    border-color: gray;*/
+        /*    position: absolute;*/
+        /*    border-width: 1px;*/
+        /*    margin: 0px;*/
+        /*    padding: 0px;*/
+        /*}*/
 
-        /*金星属性*/
-        .venus {
-            left: 309px;
-            top: 389px;
-            height: 22px;
-            width: 22px;
-            background-color: rgb(246, 157, 97);
-            border-radius: 50%;
-            position: absolute;
-            transform-origin: 91px 11px;
-            animation: rotate 3.84s infinite linear;
-        }
+        /*!*金星属性*!*/
+        /*.venus {*/
+        /*    left: 309px;*/
+        /*    top: 389px;*/
+        /*    height: 22px;*/
+        /*    width: 22px;*/
+        /*    background-color: rgb(246, 157, 97);*/
+        /*    border-radius: 50%;*/
+        /*    position: absolute;*/
+        /*    transform-origin: 91px 11px;*/
+        /*    animation: rotate 3.84s infinite linear;*/
+        /*}*/
 
-        /*金星轨道*/
-        .venusOrbit {
-            left: 320px;
-            top: 320px;
-            height: 160px;
-            width: 160px;
-            background-color: transparent;
-            border-radius: 50%;
-            border-style: dashed;
-            border-color: gray;
-            position: absolute;
-            border-width: 1px;
-            margin: 0px;
-            padding: 0px;
-        }
+        /*!*金星轨道*!*/
+        /*.venusOrbit {*/
+        /*    left: 320px;*/
+        /*    top: 320px;*/
+        /*    height: 160px;*/
+        /*    width: 160px;*/
+        /*    background-color: transparent;*/
+        /*    border-radius: 50%;*/
+        /*    border-style: dashed;*/
+        /*    border-color: gray;*/
+        /*    position: absolute;*/
+        /*    border-width: 1px;*/
+        /*    margin: 0px;*/
+        /*    padding: 0px;*/
+        /*}*/
 
-        /*地球属性*/
-        .earth {
-            left: 266.5px;
-            top: 391px;
-            height: 18px;
-            width: 18px;
-            background-color: rgb(115, 114, 174);
-            border-radius: 50%;
-            position: absolute;
-            transform-origin: 134px 9px;
-            animation: rotate 6.25s infinite linear;
-        }
+        /*!*地球属性*!*/
+        /*.earth {*/
+        /*    left: 266.5px;*/
+        /*    top: 391px;*/
+        /*    height: 18px;*/
+        /*    width: 18px;*/
+        /*    background-color: rgb(115, 114, 174);*/
+        /*    border-radius: 50%;*/
+        /*    position: absolute;*/
+        /*    transform-origin: 134px 9px;*/
+        /*    animation: rotate 6.25s infinite linear;*/
+        /*}*/
 
-        /*地球轨道*/
-        .earthOrbit {
-            left: 275px;
-            top: 275px;
-            height: 250px;
-            width: 250px;
-            background-color: transparent;
-            border-radius: 50%;
-            border-style: dashed;
-            border-color: gray;
-            position: absolute;
-            border-width: 1px;
-            margin: 0px;
-            padding: 0px;
-        }
+        /*!*地球轨道*!*/
+        /*.earthOrbit {*/
+        /*    left: 275px;*/
+        /*    top: 275px;*/
+        /*    height: 250px;*/
+        /*    width: 250px;*/
+        /*    background-color: transparent;*/
+        /*    border-radius: 50%;*/
+        /*    border-style: dashed;*/
+        /*    border-color: gray;*/
+        /*    position: absolute;*/
+        /*    border-width: 1px;*/
+        /*    margin: 0px;*/
+        /*    padding: 0px;*/
+        /*}*/
 
-        /*火星属性*/
-        .mars {
-            left: 222.5px;
-            top: 392.5px;
-            height: 15px;
-            width: 15px;
-            background-color: rgb(140, 119, 63);
-            border-radius: 50%;
-            position: absolute;
-            transform-origin: 177.5px 7.5px;
-            animation: rotate 11.75s infinite linear;
-        }
+        /*!*火星属性*!*/
+        /*.mars {*/
+        /*    left: 222.5px;*/
+        /*    top: 392.5px;*/
+        /*    height: 15px;*/
+        /*    width: 15px;*/
+        /*    background-color: rgb(140, 119, 63);*/
+        /*    border-radius: 50%;*/
+        /*    position: absolute;*/
+        /*    transform-origin: 177.5px 7.5px;*/
+        /*    animation: rotate 11.75s infinite linear;*/
+        /*}*/
 
-        /*火星轨道*/
-        .marsOrbit {
-            left: 230px;
-            top: 230px;
-            height: 340px;
-            width: 340px;
-            background-color: transparent;
-            border-radius: 50%;
-            border-style: dashed;
-            border-color: gray;
-            position: absolute;
-            border-width: 1px;
-            margin: 0px;
-            padding: 0px;
-        }
+        /*!*火星轨道*!*/
+        /*.marsOrbit {*/
+        /*    left: 230px;*/
+        /*    top: 230px;*/
+        /*    height: 340px;*/
+        /*    width: 340px;*/
+        /*    background-color: transparent;*/
+        /*    border-radius: 50%;*/
+        /*    border-style: dashed;*/
+        /*    border-color: gray;*/
+        /*    position: absolute;*/
+        /*    border-width: 1px;*/
+        /*    margin: 0px;*/
+        /*    padding: 0px;*/
+        /*}*/
 
-        /*木星属性*/
-        .jupiter {
-            left: 134px;
-            top: 379px;
-            height: 42px;
-            width: 42px;
-            background-color: rgb(156, 164, 143);
-            border-radius: 50%;
-            position: absolute;
-            transform-origin: 266px 21px;
-            animation: rotate 74.04s infinite linear;
-        }
+        /*!*木星属性*!*/
+        /*.jupiter {*/
+        /*    left: 134px;*/
+        /*    top: 379px;*/
+        /*    height: 42px;*/
+        /*    width: 42px;*/
+        /*    background-color: rgb(156, 164, 143);*/
+        /*    border-radius: 50%;*/
+        /*    position: absolute;*/
+        /*    transform-origin: 266px 21px;*/
+        /*    animation: rotate 74.04s infinite linear;*/
+        /*}*/
 
-        /*木星轨道*/
-        .jupiterOrbit {
-            left: 155px;
-            top: 155px;
-            height: 490px;
-            width: 490px;
-            background-color: transparent;
-            border-radius: 50%;
-            border-style: dashed;
-            border-color: gray;
-            position: absolute;
-            border-width: 1px;
-            margin: 0px;
-            padding: 0px;
-        }
+        /*!*木星轨道*!*/
+        /*.jupiterOrbit {*/
+        /*    left: 155px;*/
+        /*    top: 155px;*/
+        /*    height: 490px;*/
+        /*    width: 490px;*/
+        /*    background-color: transparent;*/
+        /*    border-radius: 50%;*/
+        /*    border-style: dashed;*/
+        /*    border-color: gray;*/
+        /*    position: absolute;*/
+        /*    border-width: 1px;*/
+        /*    margin: 0px;*/
+        /*    padding: 0px;*/
+        /*}*/
 
-        /*土星属性*/
-        .saturn {
-            left: 92px;
-            top: 387px;
-            height: 26px;
-            width: 26px;
-            background-color: rgb(215, 171, 68);
-            border-radius: 50%;
-            position: absolute;
-            transform-origin: 308px 13px;
-            animation: rotate 183.92s infinite linear;
-        }
+        /*!*土星属性*!*/
+        /*.saturn {*/
+        /*    left: 92px;*/
+        /*    top: 387px;*/
+        /*    height: 26px;*/
+        /*    width: 26px;*/
+        /*    background-color: rgb(215, 171, 68);*/
+        /*    border-radius: 50%;*/
+        /*    position: absolute;*/
+        /*    transform-origin: 308px 13px;*/
+        /*    animation: rotate 183.92s infinite linear;*/
+        /*}*/
 
-        /*土星轨道*/
-        .saturnOrbit {
-            left: 105px;
-            top: 105px;
-            height: 590px;
-            width: 590px;
-            background-color: transparent;
-            border-radius: 50%;
-            border-style: dashed;
-            border-color: gray;
-            position: absolute;
-            border-width: 1px;
-            margin: 0px;
-            padding: 0px;
-        }
+        /*!*土星轨道*!*/
+        /*.saturnOrbit {*/
+        /*    left: 105px;*/
+        /*    top: 105px;*/
+        /*    height: 590px;*/
+        /*    width: 590px;*/
+        /*    background-color: transparent;*/
+        /*    border-radius: 50%;*/
+        /*    border-style: dashed;*/
+        /*    border-color: gray;*/
+        /*    position: absolute;*/
+        /*    border-width: 1px;*/
+        /*    margin: 0px;*/
+        /*    padding: 0px;*/
+        /*}*/
 
-        /*天王星属性*/
-        .uranus {
-            left: 41.5px;
-            top: 386.5px;
-            height: 27px;
-            width: 27px;
-            background-color: rgb(164, 192, 206);
-            border-radius: 50%;
-            position: absolute;
-            transform-origin: 358.5px 13.5px;
-            animation: rotate 524.46s infinite linear;
-        }
+        /*!*天王星属性*!*/
+        /*.uranus {*/
+        /*    left: 41.5px;*/
+        /*    top: 386.5px;*/
+        /*    height: 27px;*/
+        /*    width: 27px;*/
+        /*    background-color: rgb(164, 192, 206);*/
+        /*    border-radius: 50%;*/
+        /*    position: absolute;*/
+        /*    transform-origin: 358.5px 13.5px;*/
+        /*    animation: rotate 524.46s infinite linear;*/
+        /*}*/
 
-        /*天王星轨道*/
-        .uranusOrbit {
-            left: 55px;
-            top: 55px;
-            height: 690px;
-            width: 690px;
-            background-color: transparent;
-            border-radius: 50%;
-            border-style: dashed;
-            border-color: gray;
-            position: absolute;
-            border-width: 1px;
-            margin: 0px;
-            padding: 0px;
-        }
+        /*!*天王星轨道*!*/
+        /*.uranusOrbit {*/
+        /*    left: 55px;*/
+        /*    top: 55px;*/
+        /*    height: 690px;*/
+        /*    width: 690px;*/
+        /*    background-color: transparent;*/
+        /*    border-radius: 50%;*/
+        /*    border-style: dashed;*/
+        /*    border-color: gray;*/
+        /*    position: absolute;*/
+        /*    border-width: 1px;*/
+        /*    margin: 0px;*/
+        /*    padding: 0px;*/
+        /*}*/
 
-        /*海王星属性*/
-        .neptune {
-            left: 10px;
-            top: 390px;
-            height: 20px;
-            width: 20px;
-            background-color: rgb(133, 136, 180);
-            border-radius: 50%;
-            position: absolute;
-            transform-origin: 390px 10px;
-            animation: rotate 1028.76s infinite linear;
-        }
+        /*!*海王星属性*!*/
+        /*.neptune {*/
+        /*    left: 10px;*/
+        /*    top: 390px;*/
+        /*    height: 20px;*/
+        /*    width: 20px;*/
+        /*    background-color: rgb(133, 136, 180);*/
+        /*    border-radius: 50%;*/
+        /*    position: absolute;*/
+        /*    transform-origin: 390px 10px;*/
+        /*    animation: rotate 1028.76s infinite linear;*/
+        /*}*/
 
-        /*海王星轨道*/
-        .neptuneOrbit {
-            left: 20px;
-            top: 20px;
-            height: 760px;
-            width: 760px;
-            background-color: transparent;
-            border-radius: 50%;
-            border-style: dashed;
-            border-color: gray;
-            position: absolute;
-            border-width: 1px;
-            margin: 0px;
-            padding: 0px;
-        }
+        /*!*海王星轨道*!*/
+        /*.neptuneOrbit {*/
+        /*    left: 20px;*/
+        /*    top: 20px;*/
+        /*    height: 760px;*/
+        /*    width: 760px;*/
+        /*    background-color: transparent;*/
+        /*    border-radius: 50%;*/
+        /*    border-style: dashed;*/
+        /*    border-color: gray;*/
+        /*    position: absolute;*/
+        /*    border-width: 1px;*/
+        /*    margin: 0px;*/
+        /*    padding: 0px;*/
+        /*}*/
 
-        @keyframes rotate {
-            100% {
-                transform: rotate(-360deg); /*100%表示动画完成时*/
-            }
-        }
+        /*@keyframes rotate {*/
+        /*    100% {*/
+        /*        transform: rotate(-360deg); !*100%表示动画完成时*!*/
+        /*    }*/
+        /*}*/
 
-        @media only screen and (max-width: 600px) {
-            /* 隐藏太阳系容器及其内部元素 */
-            .solarsys {
-                display: none;
-            }
-        }
+        /*@media only screen and (max-width: 600px) {*/
+        /*    !* 隐藏太阳系容器及其内部元素 *!*/
+        /*    .solarsys {*/
+        /*        display: none;*/
+        /*    }*/
+        /*}*/
     </style>
     <div class="solarsys">
         <!--太阳-->
@@ -976,103 +760,103 @@
     <script>
 
 
-        function visitLink(url) {
-            // Implement your link visit logic here
-            window.open(url, '_blank');
-        }
-
-        function openIconPopup() {
-            // Show the icon popup
-            document.getElementById('iconPopup').style.display = 'block';
-        }
-
-        function closeIconPopup() {
-            // Close the icon popup
-            document.getElementById('iconPopup').style.display = 'none';
-        }
-
-        function downloadIcon(iconFileName) {
-            // Create a link element
-            var link = document.createElement('a');
-
-            // Set the download attribute and href for the link
-            link.download = iconFileName;
-            link.href = 'icon/' + iconFileName; // Assuming icons are in the "icon" folder
-
-            // Trigger a click on the link to start the download
-            link.click();
-        }
-
-
-        function promptForPassword() {
-            var popupOverlay = document.getElementById("popupOverlay1");
-            var popupContent = document.getElementById("popupContent1");
-            var popupMessage = document.getElementById("popupMessage");
-            var passwordInput = document.getElementById("password-input");
-
-            var today = new Date();
-            var month = (today.getMonth() + 1).toString().padStart(2, '0');
-            var day = today.getDate().toString().padStart(2, '0');
-
-            var password = month + day;
-
-            popupMessage.innerText = "请输入密码以访问链接";
-            passwordInput.value = ""; // Clear the input field
-            popupOverlay.style.display = "flex";
-            passwordInput.focus();
-        }
-
-        function checkPassword() {
-            var popupOverlay = document.getElementById("popupOverlay1");
-            var passwordInput = document.getElementById("password-input");
-
-            var today = new Date();
-            var month = (today.getMonth() + 1).toString().padStart(2, '0');
-            var day = today.getDate().toString().padStart(2, '0');
-
-            var expectedPassword = month + day;
-            document.getElementById('password-input').innerHTML = expectedPassword;
-            if (passwordInput.value === expectedPassword) {
-                window.open('https://ccbaohe.com/appleID/', '_blank');
-                popupOverlay.style.display = "none";
-            } else {
-                alert("密码错误，请重新输入。");
-                passwordInput.value = ""; // Clear the input field
-                passwordInput.focus();
-            }
-        }
-
-        function copyToClipboard(text, linkId) {
-            var contentDiv = document.getElementById("content");
-            contentDiv.classList.add("grayscale");
-
-            var textarea = document.createElement("textarea");
-            textarea.value = text;
-            document.body.appendChild(textarea);
-            textarea.select();
-            document.execCommand('copy');
-            document.body.removeChild(textarea);
-
-            // Show popup notification
-            var popupOverlay = document.getElementById("popupOverlay");
-            var popupContent = document.getElementById("popupContent");
-            popupOverlay.style.display = "flex";
-
-            // Countdown and close popup
-            var seconds = 3;
-            var countdownElement = document.getElementById("countdown");
-            var countdownInterval = setInterval(function () {
-                seconds--;
-                countdownElement.innerText = seconds;
-
-                if (seconds <= 0) {
-                    clearInterval(countdownInterval);
-                    popupOverlay.style.display = "none";
-                    contentDiv.classList.remove("grayscale");
-                }
-            }, 1000);
-        }
-
+        //        function visitLink(url) {
+        //            // Implement your link visit logic here
+        //            window.open(url, '_blank');
+        //        }
+        //
+        //        function openIconPopup() {
+        //            // Show the icon popup
+        //            document.getElementById('iconPopup').style.display = 'block';
+        //        }
+        //
+        //        function closeIconPopup() {
+        //            // Close the icon popup
+        //            document.getElementById('iconPopup').style.display = 'none';
+        //        }
+        //
+        //        function downloadIcon(iconFileName) {
+        //            // Create a link element
+        //            var link = document.createElement('a');
+        //
+        //            // Set the download attribute and href for the link
+        //            link.download = iconFileName;
+        //            link.href = 'icon/' + iconFileName; // Assuming icons are in the "icon" folder
+        //
+        //            // Trigger a click on the link to start the download
+        //            link.click();
+        //        }
+        //
+        //
+        //        function promptForPassword() {
+        //            var popupOverlay = document.getElementById("popupOverlay1");
+        //            var popupContent = document.getElementById("popupContent1");
+        //            var popupMessage = document.getElementById("popupMessage");
+        //            var passwordInput = document.getElementById("password-input");
+        //
+        //            var today = new Date();
+        //            var month = (today.getMonth() + 1).toString().padStart(2, '0');
+        //            var day = today.getDate().toString().padStart(2, '0');
+        //
+        //            var password = month + day;
+        //
+        //            popupMessage.innerText = "请输入密码以访问链接";
+        //            passwordInput.value = ""; // Clear the input field
+        //            popupOverlay.style.display = "flex";
+        //            passwordInput.focus();
+        //        }
+        //
+        //        function checkPassword() {
+        //            var popupOverlay = document.getElementById("popupOverlay1");
+        //            var passwordInput = document.getElementById("password-input");
+        //
+        //            var today = new Date();
+        //            var month = (today.getMonth() + 1).toString().padStart(2, '0');
+        //            var day = today.getDate().toString().padStart(2, '0');
+        //
+        //            var expectedPassword = month + day;
+        //            document.getElementById('password-input').innerHTML = expectedPassword;
+        //            if (passwordInput.value === expectedPassword) {
+        //                window.open('https://ccbaohe.com/appleID/', '_blank');
+        //                popupOverlay.style.display = "none";
+        //            } else {
+        //                alert("密码错误，请重新输入。");
+        //                passwordInput.value = ""; // Clear the input field
+        //                passwordInput.focus();
+        //            }
+        //        }
+        //
+        //        function copyToClipboard(text, linkId) {
+        //            var contentDiv = document.getElementById("content");
+        //            contentDiv.classList.add("grayscale");
+        //
+        //            var textarea = document.createElement("textarea");
+        //            textarea.value = text;
+        //            document.body.appendChild(textarea);
+        //            textarea.select();
+        //            document.execCommand('copy');
+        //            document.body.removeChild(textarea);
+        //
+        //            // Show popup notification
+        //            var popupOverlay = document.getElementById("popupOverlay");
+        //            var popupContent = document.getElementById("popupContent");
+        //            popupOverlay.style.display = "flex";
+        //
+        //            // Countdown and close popup
+        //            var seconds = 3;
+        //            var countdownElement = document.getElementById("countdown");
+        //            var countdownInterval = setInterval(function () {
+        //                seconds--;
+        //                countdownElement.innerText = seconds;
+        //
+        //                if (seconds <= 0) {
+        //                    clearInterval(countdownInterval);
+        //                    popupOverlay.style.display = "none";
+        //                    contentDiv.classList.remove("grayscale");
+        //                }
+        //            }, 1000);
+        //        }
+        //
 
     </script>
 
