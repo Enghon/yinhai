@@ -293,8 +293,6 @@
             显示所有内容请点击，然后返回此网页
         </button>
     </div>
-
-
     <script>
         // 获取当前 IP 地址
         var ip = "";
@@ -313,17 +311,6 @@
                         var data = JSON.parse(request2.responseText);
                         document.getElementById("region").innerHTML = data.region;
                         document.getElementById("city").innerHTML = data.city;
-
-                        // 获取当前城市的天气情况
-                        var request3 = new XMLHttpRequest();
-                        request3.open("GET", "https://api.openweathermap.org/data/2.5/weather?q=" + data.city + "&appid=YOUR_API_KEY", true);
-                        request3.onload = function () {
-                            if (request3.status === 200) {
-                                var data2 = JSON.parse(request3.responseText);
-                                document.getElementById("weather").innerHTML = data2.weather[0].description;
-                            }
-                        };
-                        request3.send();
                     }
                 };
                 request2.send();
@@ -334,11 +321,6 @@
     <p>当前 IP 地址：<span id="ip"></span></p>
     <p>地区：<span id="region"></span></p>
     <p>定位位置：<span id="city"></span></p>
-    <p>天气：<span id="weather"></span></p>
-    <p>地图：
-        <iframe src="https://maps.google.com/maps?q=" + data.city +
-        "&output=embed" width="600" height="450" frameBorder="0"></iframe></p>
-    <p>当前位置的名字：<span id="location"></span></p>
 
 
     <style>
