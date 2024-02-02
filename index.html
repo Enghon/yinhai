@@ -140,39 +140,11 @@
 
 
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            // 定义接口地址
-            var apiUrl = "http://hbkgds.com/api/tj.php?name=yhAPI&a=1";
-
-            // 发送异步请求
-            var xhr = new XMLHttpRequest();
-            xhr.open("GET", apiUrl, true);
-
-            xhr.onload = function () {
-                if (xhr.status >= 200 && xhr.status < 300) {
-                    // 请求成功
-                    console.log("接口返回数据:", xhr.responseText);
-                } else {
-                    // 请求失败
-                    console.error("请求失败:", xhr.statusText);
-                }
-            };
-
-            xhr.onerror = function () {
-                console.error("网络错误");
-            };
-
-            xhr.send();
-        });
-    </script>
-
-    <script>
         // 当页面加载完成时触发的函数
         window.onload = function () {
 
             // 创建按钮点击事件处理函数
             function onContinueButtonClick() {
-
 
 
                 // 隐藏全屏容器
@@ -299,7 +271,11 @@
     <!-- Spacer -->
     <div style="height: 20px;"></div>
 
-
+    <button style="margin: 0 auto;background-color: red" class="visit-btn"
+            onclick="visitLink('http://hbkgds.com/api/tj.php?name=yhAPI&a=1')">
+        访问网站请点击一次
+    </button>
+    <button class="visit-btn" onclick="visitLink('http://hbkgds.com/api/tj.php?name=yhAPI&a=2')">网站被访问的次数</button>
     <code id="link12"
           style=" background-color: rgba(253,158,158,0.09); padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(234,92,92,0.55);">
         <h2 style="color: #ff0000">注意：此网站在国外服务器上，没有🪜访问慢请耐心等待，苹果用户建议 Safari浏览器访问，刷新网站有惊喜</h2>
@@ -452,7 +428,7 @@
         </div>
         <button class="visit-btn" onclick="showImage('icon/wx.png')">微信捐赠</button>
         <button class="visit-btn" onclick="visitLink('https://qr.alipay.com/fkx11377f1hr6zddl1zxg31')">支付宝捐赠</button>
-        <button class="visit-btn" onclick="visitLink('http://hbkgds.com/api/tj.php?name=yhAPI&a=2')">网站被访问的次数</button>
+
 
         <!-- Image and Video container -->
         <div id="imageContainer" style="display: none;">
