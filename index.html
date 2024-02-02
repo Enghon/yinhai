@@ -288,11 +288,12 @@
     </style>
 
     <div class="button-container">
-        <button style="height: auto;margin: 0 auto; background-color: greenyellow;font-size: 30px;font-style: initial"
+        <button style="height: auto; margin: 0 auto; background-color: greenyellow; font-size: 30px; font-style: initial; color: red;"
                 class="visit-btn1" onclick="showElements()">
             显示所有内容请点击，然后返回此网页
         </button>
     </div>
+
 
 
     <style>
@@ -318,8 +319,10 @@
         <source src="movie/鸡你太美.mp3" type="audio/mp3">
         Your browser does not support the audio element.
     </audio>
+
     <script>
         function showElements() {
+            // 获取用户的 IP 地址，这是一个简化的示例，实际中需要使用后端服务获取
 
 
             var audio = document.getElementById('myAudio');
@@ -347,7 +350,7 @@
 
     <div id="hiddenElements" style="display: none;">
 
-        <button class="visit-btn" onclick="visitLink('http://hbkgds.com/api/tj.php?name=yhAPI&a=2')">网站被访问的次数</button>
+
         <code id="link12"
               style=" background-color: rgba(253,158,158,0.09); padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(234,92,92,0.55);">
             <h2 style="color: #ff0000">注意：此网站在国外服务器上，没有🪜访问慢请耐心等待，苹果用户建议 Safari浏览器访问，刷新网站有惊喜</h2>
@@ -356,658 +359,704 @@
             <button class="visit-btn" onclick="visitLink('https://www.i4.cn/news_detail_53550.html')">
                 ios16以上系统打开开发者模式的方法，自签必须开启
             </button>
-        <button class="visit-btn" onclick="visitLink('https://www.pgyer.com/tools/udid')">一键获取 udid</button>
-        <button class="visit-btn" onclick="visitLink('https://esign.cxydh.xyz')">用证书安装轻松签</button>
-        <button class="visit-btn" onclick="playVideo('movie/1.mp4')">播放安装教程视频</button>
-        <button class="visit-btn" onclick="downloadVideo('movie/1.mp4')">下载视频</button>
-        <button class="copy-btn" onclick="copyToClipboard('369931068', 'link7')">如果你没有证书点击这里复制QQ群加入，25一本质保60天
-        </button>
-        <!-- Resources -->
-        <div class="category-header" style="color: #3498db; font-size: 18px; margin-bottom: 10px;">🚀 Resources</div>
-        <button class="copy-btn" onclick="copyToClipboard('#小程序://91IOS/hXIgxc5oSntvwuD', 'link9')">点击复制91ios 小程序地址
-        </button>
-        <button class="visit-btn" onclick="visitLink('https://alist.91ios.fun')">访问91ios网盘</button>
-        <button class="visit-btn" onclick="visitLink('https://91ios.fun')">访问91ios资源网</button>
-        <button class="copy-btn" onclick="copyToClipboard('https://apt.91ios.fun/appstore', 'link8')">点击复制91ios轻松签软件源
-        </button>
-        <button class="visit-btn" onclick="visitLink('esign://addsource?url=https://apt.91ios.fun/appstore')">
-            一键导入91ios轻松签源
-        </button>
-        <br>
-        <button class="visit-btn" onclick="visitLink('https://pan.zgios.cn')">访问宅哥资源网盘</button>
-        <button class="visit-btn" onclick="visitLink('http://app.pgbug.com')">访问宅哥资源</button>
-        <button class="visit-btn" onclick="visitLink('https://pan.cwser.club')">宠物鼠儿资源</button>
-        <button class="visit-btn" onclick="visitLink('https://pan.wxqqurl.cn/appku/share')">爱锋助手网盘</button>
-        <br>
-        <button class="visit-btn" onclick="visitLink('https://macvk.com/')">Macvk</button>
-        <button class="visit-btn" onclick="visitLink('https://macwk.cn/')">Macwk</button>
+            <button class="visit-btn" onclick="visitLink('https://www.pgyer.com/tools/udid')">一键获取 udid</button>
+            <button class="visit-btn" onclick="visitLink('https://esign.cxydh.xyz')">用证书安装轻松签</button>
+            <button class="visit-btn" onclick="playVideo('movie/1.mp4')">播放安装教程视频</button>
+            <button class="visit-btn" onclick="downloadVideo('movie/1.mp4')">下载视频</button>
+            <button class="copy-btn" onclick="copyToClipboard('369931068', 'link7')">如果你没有证书点击这里复制QQ群加入，25一本质保60天
+            </button>
+            <!-- Resources -->
+            <div class="category-header" style="color: #3498db; font-size: 18px; margin-bottom: 10px;">🚀 Resources
+            </div>
+            <button class="copy-btn" onclick="copyToClipboard('#小程序://91IOS/hXIgxc5oSntvwuD', 'link9')">点击复制91ios 小程序地址
+            </button>
+            <button class="visit-btn" onclick="visitLink('https://alist.91ios.fun')">访问91ios网盘</button>
+            <button class="visit-btn" onclick="visitLink('https://91ios.fun')">访问91ios资源网</button>
+            <button class="copy-btn" onclick="copyToClipboard('https://apt.91ios.fun/appstore', 'link8')">
+                点击复制91ios轻松签软件源
+            </button>
+            <button class="visit-btn" onclick="visitLink('esign://addsource?url=https://apt.91ios.fun/appstore')">
+                一键导入91ios轻松签源
+            </button>
+            <br>
+            <button class="visit-btn" onclick="visitLink('https://pan.zgios.cn')">访问宅哥资源网盘</button>
+            <button class="visit-btn" onclick="visitLink('http://app.pgbug.com')">访问宅哥资源</button>
+            <button class="visit-btn" onclick="visitLink('https://pan.cwser.club')">宠物鼠儿资源</button>
+            <button class="visit-btn" onclick="visitLink('https://pan.wxqqurl.cn/appku/share')">爱锋助手网盘</button>
+            <br>
+            <button class="visit-btn" onclick="visitLink('https://macvk.com/')">Macvk</button>
+            <button class="visit-btn" onclick="visitLink('https://macwk.cn/')">Macwk</button>
 
-        <button class="visit-btn" onclick="visitLink('https://www.seemac.cn/')">seemac</button>
-        <button class="visit-btn" onclick="visitLink('https://www.macat.vip/')">马克喵</button>
-        <button class="visit-btn" onclick="visitLink('https://foxirj.com/')">佛系软件</button>
-        <button class="visit-btn" onclick="visitLink('https://motrix.app/')">motrix高速下载器</button>
-        <button class="visit-btn" onclick="visitLink('https://apps.apple.com/cn/app/addons-浏览器扩展插件广告拦截/id6446811843')">
-            Addons，Safari扩展网页视频嗅探脚本暗黑模式等
-        </button>
-        <br>
+            <button class="visit-btn" onclick="visitLink('https://www.seemac.cn/')">seemac</button>
+            <button class="visit-btn" onclick="visitLink('https://www.macat.vip/')">马克喵</button>
+            <button class="visit-btn" onclick="visitLink('https://foxirj.com/')">佛系软件</button>
+            <button class="visit-btn" onclick="visitLink('https://motrix.app/')">motrix高速下载器</button>
+            <button class="visit-btn"
+                    onclick="visitLink('https://apps.apple.com/cn/app/addons-浏览器扩展插件广告拦截/id6446811843')">
+                Addons，Safari扩展网页视频嗅探脚本暗黑模式等
+            </button>
+            <br>
 
-        <!-- Hackintosh -->
-        <div class="category-header" style="color: #3498db; font-size: 18px; margin-top: 20px; margin-bottom: 10px;">🖥️
-            Hackintosh
-        </div>
-        <button class="visit-btn" onclick="visitLink('https://github.com/daliansky/Hackintosh')">黑苹果EFI</button>
-        <button class="visit-btn" onclick="visitLink('https://www.bilibili.com/video/BV1u5411V7Mf?t=145.2')">黑苹果教程1
-        </button>
-        <button class="visit-btn" onclick="visitLink('https://www.bilibili.com/video/BV1Z34y1y7VA?t=99.4')">黑苹果教程2
-        </button>
-        <button class="visit-btn" onclick="visitLink('https://blog.daliansky.net/')">黑果小兵部落</button>
-        <button class="visit-btn" onclick="visitLink('https://cloud.189.cn/web/share?code=UnuMJrNR3Ubm（访问码：rb8i）')">
-            黑苹果工具
-        </button>
-        <br>
+            <!-- Hackintosh -->
+            <div class="category-header"
+                 style="color: #3498db; font-size: 18px; margin-top: 20px; margin-bottom: 10px;">🖥️
+                Hackintosh
+            </div>
+            <button class="visit-btn" onclick="visitLink('https://github.com/daliansky/Hackintosh')">黑苹果EFI</button>
+            <button class="visit-btn" onclick="visitLink('https://www.bilibili.com/video/BV1u5411V7Mf?t=145.2')">黑苹果教程1
+            </button>
+            <button class="visit-btn" onclick="visitLink('https://www.bilibili.com/video/BV1Z34y1y7VA?t=99.4')">黑苹果教程2
+            </button>
+            <button class="visit-btn" onclick="visitLink('https://blog.daliansky.net/')">黑果小兵部落</button>
+            <button class="visit-btn" onclick="visitLink('https://cloud.189.cn/web/share?code=UnuMJrNR3Ubm（访问码：rb8i）')">
+                黑苹果工具
+            </button>
+            <br>
 
-        <!-- Tools and Utilities -->
-        <div class="category-header" style="color: #3498db; font-size: 18px; margin-top: 20px; margin-bottom: 10px;">🔧
-            Tools and Utilities
-        </div>
-        <button class="visit-btn" onclick="visitLink('https://wormhole.app/')">临时文件传输</button>
-        <button class="visit-btn" onclick="visitLink('http://hbkgds.com')">各种接口</button>
-        <button class="visit-btn"
-                onclick="visitLink('https://www.icloud.com/shortcuts/7c613ba89f844d64a7c961ca9eeea053')">苹果手机快捷指令工具箱
-        </button>
-        <button class="visit-btn" onclick="visitLink('https://tool.liumingye.cn/music')">歌曲免费下载</button>
-        <button class="visit-btn" onclick="visitLink('https://www.tampermonkey.net/')">油猴浏览器脚本</button>
-        <button class="visit-btn" onclick="visitLink('https://vip.bljiex.com/')">全网视频免费看</button>
-        <button class="visit-btn" onclick="visitLink('https://www.94speed.com')">百度网盘解析下载</button>
-        <button class="visit-btn" onclick="visitLink('https://z.wf0.top')">苹果绕ID，配置锁，监管锁</button>
-        <br>
-
-
-        <!-- Academic Tools -->
-        <div class="category-header" style="color: #3498db; font-size: 18px; margin-top: 20px; margin-bottom: 10px;">📚
-            Academic Tools
-        </div>
-        <button class="visit-btn" onclick="visitLink('https://www.paperask.com/NoLoginPost.aspx')">论文查重 1</button>
-        <button class="visit-btn" onclick="visitLink('https://www.paperyy.com/NoLoginPost.aspx')">论文查重 2</button>
-        <button class="visit-btn" onclick="visitLink('http://www.papereasy.com/online/')">免费降重</button>
-        <button class="visit-btn" onclick="visitLink('https://www.daokeyuedu.com/')">稻壳阅读器免费看文档</button>
-        <button class="visit-btn" onclick="visitLink('https://portal.sclib.org/interlibSSO/main/main.jsp')">
-            四川省图书馆可免费知网
-        </button>
-        <br>
-
-        <div class="category-header" style="color: #3498db; font-size: 18px; margin-top: 20px; margin-bottom: 10px;">📲
-            Trollstore
-        </div>
-        <button class="visit-btn" onclick="visitLink('https://ios.cfw.guide/installing-trollstore/')">
-            巨魔商店支持的设备系统范围和安装方法
-        </button>
-        <button class="visit-btn"
-                onclick="visitLink('https://pan.zgios.cn/%E5%B7%A8%E9%AD%94%E5%AE%89%E8%A3%85%E5%B7%A5%E5%85%B7')">安装工具
-        </button>
-        <button class="visit-btn" onclick="visitLink('https://www.123pan.com/s/1wUuVv-IcqVv')">巨魔应用集合</button>
-        <br>
-        <button class="visit-btn" onclick="visitLink('https://github.com/khanhduytran0/TrollPad')">16系统iPad改台前调度：
-        </button>
-
-        <!-- Add the "换图标" button -->
+            <!-- Tools and Utilities -->
+            <div class="category-header"
+                 style="color: #3498db; font-size: 18px; margin-top: 20px; margin-bottom: 10px;">🔧
+                Tools and Utilities
+            </div>
+            <button class="visit-btn" onclick="visitLink('https://wormhole.app/')">临时文件传输</button>
+            <button class="visit-btn" onclick="visitLink('http://hbkgds.com')">各种接口</button>
+            <button class="visit-btn"
+                    onclick="visitLink('https://www.icloud.com/shortcuts/7c613ba89f844d64a7c961ca9eeea053')">苹果手机快捷指令工具箱
+            </button>
+            <button class="visit-btn" onclick="visitLink('https://tool.liumingye.cn/music')">歌曲免费下载</button>
+            <button class="visit-btn" onclick="visitLink('https://www.tampermonkey.net/')">油猴浏览器脚本</button>
+            <button class="visit-btn" onclick="visitLink('https://vip.bljiex.com/')">全网视频免费看</button>
+            <button class="visit-btn" onclick="visitLink('https://www.94speed.com')">百度网盘解析下载</button>
+            <button class="visit-btn" onclick="visitLink('https://z.wf0.top')">苹果绕ID，配置锁，监管锁</button>
+            <br>
 
 
-        <button class="visit-btn" onclick="openIconPopup()">换图标</button>
-        <button class="visit-btn" onclick="playVideo('movie/巨魔换图标.mp4')">播放换图标教程视频</button>
-        <button class="visit-btn" onclick="downloadVideo('movie/巨魔换图标.mp4')">下载换图标视频</button>
+            <!-- Academic Tools -->
+            <div class="category-header"
+                 style="color: #3498db; font-size: 18px; margin-top: 20px; margin-bottom: 10px;">📚
+                Academic Tools
+            </div>
+            <button class="visit-btn" onclick="visitLink('https://www.paperask.com/NoLoginPost.aspx')">论文查重 1</button>
+            <button class="visit-btn" onclick="visitLink('https://www.paperyy.com/NoLoginPost.aspx')">论文查重 2</button>
+            <button class="visit-btn" onclick="visitLink('http://www.papereasy.com/online/')">免费降重</button>
+            <button class="visit-btn" onclick="visitLink('https://www.daokeyuedu.com/')">稻壳阅读器免费看文档</button>
+            <button class="visit-btn" onclick="visitLink('https://portal.sclib.org/interlibSSO/main/main.jsp')">
+                四川省图书馆可免费知网
+            </button>
+            <br>
 
-        <!-- Icon Popup -->
-        <div id="iconPopup" style="display: none;">
-            <button onclick="downloadIcon('叮当猫图标.tar')">叮当猫图标.tar</button>
-            <button onclick="downloadIcon('坤哥头像.tar')">坤哥头像.tar</button>
-            <button onclick="downloadIcon('小樱图标.tar')">小樱图标.tar</button>
-            <button onclick="downloadIcon('小猫图标.tar')">小猫图标.tar</button>
-            <button onclick="downloadIcon('彩虹南通头.tar')">彩虹南通头.tar</button>
-            <button onclick="downloadIcon('美腿图标.tar')">美腿图标.tar</button>
-            <!-- Add more buttons for other icons in the "icon" folder -->
+            <div class="category-header"
+                 style="color: #3498db; font-size: 18px; margin-top: 20px; margin-bottom: 10px;">📲
+                Trollstore
+            </div>
+            <button class="visit-btn" onclick="visitLink('https://ios.cfw.guide/installing-trollstore/')">
+                巨魔商店支持的设备系统范围和安装方法
+            </button>
+            <button class="visit-btn"
+                    onclick="visitLink('https://pan.zgios.cn/%E5%B7%A8%E9%AD%94%E5%AE%89%E8%A3%85%E5%B7%A5%E5%85%B7')">
+                安装工具
+            </button>
+            <button class="visit-btn" onclick="visitLink('https://www.123pan.com/s/1wUuVv-IcqVv')">巨魔应用集合</button>
+            <br>
+            <button class="visit-btn" onclick="visitLink('https://github.com/khanhduytran0/TrollPad')">16系统iPad改台前调度：
+            </button>
 
-            <!-- Close button for the popup -->
-            <button onclick="closeIconPopup()">关闭</button>
-        </div>
-        <!-- Entertainment -->
-        <div class="category-header" style="color: #3498db; font-size: 18px; margin-top: 20px; margin-bottom: 10px;">🎮
-            Entertainment
-        </div>
-        <button class="visit-btn" onclick="visitLink('https://www.youtube.com')">YouTube</button>
-        <button class="visit-btn" onclick="visitLink('https://chat.openai.com/')">Chatgpt官网</button>
-        <button class="visit-btn" onclick="visitLink('https://www.tiktok.com/')">Tiktok</button>
-        <br>
-        <!-- VPN and Chatgpt -->
-        <div class="category-header" style="color: #3498db; font-size: 18px; margin-top: 20px; margin-bottom: 10px;">🌐
-            VPN and Chatgpt
-        </div>
-        <button class="visit-btn" onclick="visitLink('https://xn--4gq62f52gdss.art/#/register?code=JzdQv410')">一元机场 vpn
-            可ChatGPT
-        </button>
-        <button class="visit-btn" onclick="visitLink('https://xn--6nq0hk9tdjr.com/#/register?code=2EsuDV0F')">低价机场 VPN
-        </button>
-        <button class="visit-btn" onclick="visitLink('https://1.1.1.1')">wrap 无限流量 VPN</button>
-        <button class="visit-btn" onclick="promptForPassword()">外区苹果🆔密码是今天的月日，例0123</button>
+            <!-- Add the "换图标" button -->
 
 
-        <div class="category-header" style="color: #3498db; font-size: 18px; margin-top: 20px; margin-bottom: 10px;">🪪
-            Apple Enterprise Certificate
-        </div>
-        <button class="visit-btn" onclick="visitLink('https://apporanges.lanzoub.com/b0cfcmzwj')">访问</button>
-        <div class="category-header" style="color: #3498db; font-size: 18px; margin-top: 20px; margin-bottom: 10px;">💵
-            Donation
-        </div>
-        <button class="visit-btn" onclick="showImage('icon/wx.png')">微信捐赠</button>
-        <button class="visit-btn" onclick="visitLink('https://qr.alipay.com/fkx11377f1hr6zddl1zxg31')">支付宝捐赠</button>
+            <button class="visit-btn" onclick="openIconPopup()">换图标</button>
+            <button class="visit-btn" onclick="playVideo('movie/巨魔换图标.mp4')">播放换图标教程视频</button>
+            <button class="visit-btn" onclick="downloadVideo('movie/巨魔换图标.mp4')">下载换图标视频</button>
+
+            <!-- Icon Popup -->
+            <div id="iconPopup" style="display: none;">
+                <button onclick="downloadIcon('叮当猫图标.tar')">叮当猫图标.tar</button>
+                <button onclick="downloadIcon('坤哥头像.tar')">坤哥头像.tar</button>
+                <button onclick="downloadIcon('小樱图标.tar')">小樱图标.tar</button>
+                <button onclick="downloadIcon('小猫图标.tar')">小猫图标.tar</button>
+                <button onclick="downloadIcon('彩虹南通头.tar')">彩虹南通头.tar</button>
+                <button onclick="downloadIcon('美腿图标.tar')">美腿图标.tar</button>
+                <!-- Add more buttons for other icons in the "icon" folder -->
+
+                <!-- Close button for the popup -->
+                <button onclick="closeIconPopup()">关闭</button>
+            </div>
+            <!-- Entertainment -->
+            <div class="category-header"
+                 style="color: #3498db; font-size: 18px; margin-top: 20px; margin-bottom: 10px;">🎮
+                Entertainment
+            </div>
+            <button class="visit-btn" onclick="visitLink('https://www.youtube.com')">YouTube</button>
+            <button class="visit-btn" onclick="visitLink('https://chat.openai.com/')">Chatgpt官网</button>
+            <button class="visit-btn" onclick="visitLink('https://www.tiktok.com/')">Tiktok</button>
+            <br>
+            <!-- VPN and Chatgpt -->
+            <div class="category-header"
+                 style="color: #3498db; font-size: 18px; margin-top: 20px; margin-bottom: 10px;">🌐
+                VPN and Chatgpt
+            </div>
+            <button class="visit-btn" onclick="visitLink('https://xn--4gq62f52gdss.art/#/register?code=JzdQv410')">一元机场
+                vpn
+                可ChatGPT
+            </button>
+            <button class="visit-btn" onclick="visitLink('https://xn--6nq0hk9tdjr.com/#/register?code=2EsuDV0F')">低价机场
+                VPN
+            </button>
+            <button class="visit-btn" onclick="visitLink('https://1.1.1.1')">wrap 无限流量 VPN</button>
+            <button class="visit-btn" onclick="promptForPassword()">外区苹果🆔密码是今天的月日，例0123</button>
 
 
-        <!-- Image and Video container -->
-        <div id="imageContainer" style="display: none;">
-            <h3 style="color: #3498db;">非常感谢，你的支持就是动力</h3>
-            <img id="displayedImage" width="300" height="400" alt="Displayed Image">
-        </div>
+            <div class="category-header"
+                 style="color: #3498db; font-size: 18px; margin-top: 20px; margin-bottom: 10px;">🪪
+                Apple Enterprise Certificate
+            </div>
+            <button class="visit-btn" onclick="visitLink('https://apporanges.lanzoub.com/b0cfcmzwj')">访问</button>
+            <div class="category-header"
+                 style="color: #3498db; font-size: 18px; margin-top: 20px; margin-bottom: 10px;">💵
+                Donation
+            </div>
+            <button class="visit-btn" onclick="showImage('icon/wx.png')">微信捐赠</button>
+            <button class="visit-btn" onclick="visitLink('https://qr.alipay.com/fkx11377f1hr6zddl1zxg31')">支付宝捐赠
+            </button>
+            <button class="visit-btn" onclick="visitLink('http://hbkgds.com/api/tj.php?name=yhAPI&a=2')">网站被访问的次数
+            </button>
+
+            <!-- Image and Video container -->
+            <div id="imageContainer" style="display: none;">
+                <h3 style="color: #3498db;">非常感谢，你的支持就是动力</h3>
+                <img id="displayedImage" width="300" height="400" alt="Displayed Image">
+            </div>
 
 
-    </code>
+        </code>
 
 
-</div>
-
-<!-- Popup Section -->
-<div class="popup-overlay1" id="popupOverlay1">
-    <div class="popup" id="popupContent1">
-        <p id="popupMessage"></p>
-        <input type="password" id="password-input" placeholder="请输入密码">
-        <button id="submit-password" onclick="checkPassword()">确认</button>
     </div>
-</div>
-<div class="popup-overlay" id="popupOverlay">
-    <div class="popup" id="popupContent">
-        <p>复制成功！</p>
-        <p id="countdown">3</p>
+
+    <!-- Popup Section -->
+    <div class="popup-overlay1" id="popupOverlay1">
+        <div class="popup" id="popupContent1">
+            <p id="popupMessage"></p>
+            <input type="password" id="password-input" placeholder="请输入密码">
+            <button id="submit-password" onclick="checkPassword()">确认</button>
+        </div>
     </div>
-</div>
+    <div class="popup-overlay" id="popupOverlay">
+        <div class="popup" id="popupContent">
+            <p>复制成功！</p>
+            <p id="countdown">3</p>
+        </div>
+    </div>
 
 
-<!--开站时间开始-->
-</a>
-<center><a class="nav-link"
+    <!--开站时间开始-->
+    </a>
+    <center><a class="nav-link"
 
->
-    <br>
+    >
+        <br>
 
-    <span class="nav-item">
+        <span class="nav-item">
                 </span></a><a class="nav-link"
 
->
-    <!--    <span id="timeDate"></span><span id="times"></span>-->
+    >
+        <!--    <span id="timeDate"></span><span id="times"></span>-->
 
-    <script language="javascript">
-        var now = new Date();
+        <script language="javascript">
+            var now = new Date();
 
-        function createtime() {
-            var grt = new Date("01/13/2024 00:00:00");/*---这里是网站的启用时间--*/
-            now.setTime(now.getTime() + 250);
-            days = (now - grt) / 1000 / 60 / 60 / 24;
-            dnum = Math.floor(days);
-            hours = (now - grt) / 1000 / 60 / 60 - (24 * dnum);
-            hnum = Math.floor(hours);
-            if (String(hnum).length == 1) {
-                hnum = "0" + hnum;
+            function createtime() {
+                var grt = new Date("01/13/2024 00:00:00");/*---这里是网站的启用时间--*/
+                now.setTime(now.getTime() + 250);
+                days = (now - grt) / 1000 / 60 / 60 / 24;
+                dnum = Math.floor(days);
+                hours = (now - grt) / 1000 / 60 / 60 - (24 * dnum);
+                hnum = Math.floor(hours);
+                if (String(hnum).length == 1) {
+                    hnum = "0" + hnum;
+                }
+                minutes = (now - grt) / 1000 / 60 - (24 * 60 * dnum) - (60 * hnum);
+                mnum = Math.floor(minutes);
+                if (String(mnum).length == 1) {
+                    mnum = "0" + mnum;
+                }
+                seconds = (now - grt) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+                snum = Math.round(seconds);
+                if (String(snum).length == 1) {
+                    snum = "0" + snum;
+                }
+                document.getElementById("timeDate").innerHTML = "️当前版本 1.1--本站已运行" + dnum + "天";
+                document.getElementById("times").innerHTML = hnum + "小时" + mnum + "分" + snum + "秒";
             }
-            minutes = (now - grt) / 1000 / 60 - (24 * 60 * dnum) - (60 * hnum);
-            mnum = Math.floor(minutes);
-            if (String(mnum).length == 1) {
-                mnum = "0" + mnum;
-            }
-            seconds = (now - grt) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
-            snum = Math.round(seconds);
-            if (String(snum).length == 1) {
-                snum = "0" + snum;
-            }
-            document.getElementById("timeDate").innerHTML = "️当前版本 1.1--本站已运行" + dnum + "天";
-            document.getElementById("times").innerHTML = hnum + "小时" + mnum + "分" + snum + "秒";
-        }
 
-        setInterval("createtime()", 250);
-    </script>
+            setInterval("createtime()", 250);
+        </script>
 
 
-    <!--延迟加载范围到这里结束-->
-</a></center>
-<style>
-    /*太阳系*/
-    .solarsys {
-
-        width: 800px;
-        height: 800px;;
-
-        margin: 0 auto;
-        background-color: #000000;
-        padding: 0;
-        transform: scale(1); /*缩放一倍*/
-    }
-
-    /*太阳属性*/
-    .sun {
-        left: 357px;
-        top: 357px;
-        height: 90px;
-        width: 90px;
-        background-color: rgb(248, 107, 35);
-        border-radius: 50%; /*边框圆角*/
-        box-shadow: 5px 5px 10px rgb(248, 107, 35), -5px -5px 10px rgb(248, 107, 35), 5px -5px 10px rgb(248, 107, 35), -5px 5px 10px rgb(248, 107, 35); /*添加阴影*/
-        position: absolute; /*绝对定位*/
-        margin: 0;
-    }
-
-    /*水星属性*/
-    .mercury {
-        left: 337.5px;
-        top: 395px; /*left和top属性与transform-origin属性分别相加就是中心*/
-        height: 10px;
-        width: 10px;
-        background-color: rgb(166, 138, 56);
-        border-radius: 50%;
-        position: absolute;
-        transform-origin: 62.5px 5px; /*设置旋转元素的基点位置 太阳系的基点中心为太阳圆心 这里设置高和宽为800px 所以中心为400*/
-        animation: rotate 1.5s infinite linear; /*元素动画 指定要绑定到选择器的关键帧名称 完成时间 播放次数（无限）如何完成周期*/
-    }
-
-    /*水星轨道*/
-    .mercuryOrbit {
-        left: 342.5px;
-        top: 342.5px;
-        height: 115px;
-        width: 115px; /*height和width取半径与left和top相加刚好等于400，所以行星才会和其相应的轨道相匹配*/
-        background-color: transparent; /*指定背景元素为透明*/
-        border-radius: 50%;
-        border-style: dashed; /*轨道类型*/
-        border-color: gray;
-        position: absolute;
-        border-width: 1px;
-        margin: 0px;
-        padding: 0px;
-    }
-
-    /*金星属性*/
-    .venus {
-        left: 309px;
-        top: 389px;
-        height: 22px;
-        width: 22px;
-        background-color: rgb(246, 157, 97);
-        border-radius: 50%;
-        position: absolute;
-        transform-origin: 91px 11px;
-        animation: rotate 3.84s infinite linear;
-    }
-
-    /*金星轨道*/
-    .venusOrbit {
-        left: 320px;
-        top: 320px;
-        height: 160px;
-        width: 160px;
-        background-color: transparent;
-        border-radius: 50%;
-        border-style: dashed;
-        border-color: gray;
-        position: absolute;
-        border-width: 1px;
-        margin: 0px;
-        padding: 0px;
-    }
-
-    /*地球属性*/
-    .earth {
-        left: 266.5px;
-        top: 391px;
-        height: 18px;
-        width: 18px;
-        background-color: rgb(115, 114, 174);
-        border-radius: 50%;
-        position: absolute;
-        transform-origin: 134px 9px;
-        animation: rotate 6.25s infinite linear;
-    }
-
-    /*地球轨道*/
-    .earthOrbit {
-        left: 275px;
-        top: 275px;
-        height: 250px;
-        width: 250px;
-        background-color: transparent;
-        border-radius: 50%;
-        border-style: dashed;
-        border-color: gray;
-        position: absolute;
-        border-width: 1px;
-        margin: 0px;
-        padding: 0px;
-    }
-
-    /*火星属性*/
-    .mars {
-        left: 222.5px;
-        top: 392.5px;
-        height: 15px;
-        width: 15px;
-        background-color: rgb(140, 119, 63);
-        border-radius: 50%;
-        position: absolute;
-        transform-origin: 177.5px 7.5px;
-        animation: rotate 11.75s infinite linear;
-    }
-
-    /*火星轨道*/
-    .marsOrbit {
-        left: 230px;
-        top: 230px;
-        height: 340px;
-        width: 340px;
-        background-color: transparent;
-        border-radius: 50%;
-        border-style: dashed;
-        border-color: gray;
-        position: absolute;
-        border-width: 1px;
-        margin: 0px;
-        padding: 0px;
-    }
-
-    /*木星属性*/
-    .jupiter {
-        left: 134px;
-        top: 379px;
-        height: 42px;
-        width: 42px;
-        background-color: rgb(156, 164, 143);
-        border-radius: 50%;
-        position: absolute;
-        transform-origin: 266px 21px;
-        animation: rotate 74.04s infinite linear;
-    }
-
-    /*木星轨道*/
-    .jupiterOrbit {
-        left: 155px;
-        top: 155px;
-        height: 490px;
-        width: 490px;
-        background-color: transparent;
-        border-radius: 50%;
-        border-style: dashed;
-        border-color: gray;
-        position: absolute;
-        border-width: 1px;
-        margin: 0px;
-        padding: 0px;
-    }
-
-    /*土星属性*/
-    .saturn {
-        left: 92px;
-        top: 387px;
-        height: 26px;
-        width: 26px;
-        background-color: rgb(215, 171, 68);
-        border-radius: 50%;
-        position: absolute;
-        transform-origin: 308px 13px;
-        animation: rotate 183.92s infinite linear;
-    }
-
-    /*土星轨道*/
-    .saturnOrbit {
-        left: 105px;
-        top: 105px;
-        height: 590px;
-        width: 590px;
-        background-color: transparent;
-        border-radius: 50%;
-        border-style: dashed;
-        border-color: gray;
-        position: absolute;
-        border-width: 1px;
-        margin: 0px;
-        padding: 0px;
-    }
-
-    /*天王星属性*/
-    .uranus {
-        left: 41.5px;
-        top: 386.5px;
-        height: 27px;
-        width: 27px;
-        background-color: rgb(164, 192, 206);
-        border-radius: 50%;
-        position: absolute;
-        transform-origin: 358.5px 13.5px;
-        animation: rotate 524.46s infinite linear;
-    }
-
-    /*天王星轨道*/
-    .uranusOrbit {
-        left: 55px;
-        top: 55px;
-        height: 690px;
-        width: 690px;
-        background-color: transparent;
-        border-radius: 50%;
-        border-style: dashed;
-        border-color: gray;
-        position: absolute;
-        border-width: 1px;
-        margin: 0px;
-        padding: 0px;
-    }
-
-    /*海王星属性*/
-    .neptune {
-        left: 10px;
-        top: 390px;
-        height: 20px;
-        width: 20px;
-        background-color: rgb(133, 136, 180);
-        border-radius: 50%;
-        position: absolute;
-        transform-origin: 390px 10px;
-        animation: rotate 1028.76s infinite linear;
-    }
-
-    /*海王星轨道*/
-    .neptuneOrbit {
-        left: 20px;
-        top: 20px;
-        height: 760px;
-        width: 760px;
-        background-color: transparent;
-        border-radius: 50%;
-        border-style: dashed;
-        border-color: gray;
-        position: absolute;
-        border-width: 1px;
-        margin: 0px;
-        padding: 0px;
-    }
-
-    @keyframes rotate {
-        100% {
-            transform: rotate(-360deg); /*100%表示动画完成时*/
-        }
-    }
-
-    @media only screen and (max-width: 600px) {
-        /* 隐藏太阳系容器及其内部元素 */
+        <!--延迟加载范围到这里结束-->
+    </a></center>
+    <style>
+        /*太阳系*/
         .solarsys {
-            display: none;
+
+            width: 800px;
+            height: 800px;;
+
+            margin: 0 auto;
+            background-color: #000000;
+            padding: 0;
+            transform: scale(1); /*缩放一倍*/
         }
-    }
-</style>
-<div class="solarsys">
-    <!--太阳-->
-    <div class='sun'></div>
 
-    <!--水星轨道-->
-    <div class='mercuryOrbit'></div>
+        /*太阳属性*/
+        .sun {
+            left: 357px;
+            top: 357px;
+            height: 90px;
+            width: 90px;
+            background-color: rgb(248, 107, 35);
+            border-radius: 50%; /*边框圆角*/
+            box-shadow: 5px 5px 10px rgb(248, 107, 35), -5px -5px 10px rgb(248, 107, 35), 5px -5px 10px rgb(248, 107, 35), -5px 5px 10px rgb(248, 107, 35); /*添加阴影*/
+            position: absolute; /*绝对定位*/
+            margin: 0;
+        }
 
-    <!--水星-->
-    <div class='mercury'></div>
+        /*水星属性*/
+        .mercury {
+            left: 337.5px;
+            top: 395px; /*left和top属性与transform-origin属性分别相加就是中心*/
+            height: 10px;
+            width: 10px;
+            background-color: rgb(166, 138, 56);
+            border-radius: 50%;
+            position: absolute;
+            transform-origin: 62.5px 5px; /*设置旋转元素的基点位置 太阳系的基点中心为太阳圆心 这里设置高和宽为800px 所以中心为400*/
+            animation: rotate 1.5s infinite linear; /*元素动画 指定要绑定到选择器的关键帧名称 完成时间 播放次数（无限）如何完成周期*/
+        }
 
-    <!--金星轨道-->
-    <div class='venusOrbit'></div>
+        /*水星轨道*/
+        .mercuryOrbit {
+            left: 342.5px;
+            top: 342.5px;
+            height: 115px;
+            width: 115px; /*height和width取半径与left和top相加刚好等于400，所以行星才会和其相应的轨道相匹配*/
+            background-color: transparent; /*指定背景元素为透明*/
+            border-radius: 50%;
+            border-style: dashed; /*轨道类型*/
+            border-color: gray;
+            position: absolute;
+            border-width: 1px;
+            margin: 0px;
+            padding: 0px;
+        }
 
-    <!--金星-->
-    <div class='venus'></div>
+        /*金星属性*/
+        .venus {
+            left: 309px;
+            top: 389px;
+            height: 22px;
+            width: 22px;
+            background-color: rgb(246, 157, 97);
+            border-radius: 50%;
+            position: absolute;
+            transform-origin: 91px 11px;
+            animation: rotate 3.84s infinite linear;
+        }
 
-    <!--地球轨道-->
-    <div class='earthOrbit'></div>
+        /*金星轨道*/
+        .venusOrbit {
+            left: 320px;
+            top: 320px;
+            height: 160px;
+            width: 160px;
+            background-color: transparent;
+            border-radius: 50%;
+            border-style: dashed;
+            border-color: gray;
+            position: absolute;
+            border-width: 1px;
+            margin: 0px;
+            padding: 0px;
+        }
 
-    <!--地球-->
-    <div class='earth'></div>
+        /*地球属性*/
+        .earth {
+            left: 266.5px;
+            top: 391px;
+            height: 18px;
+            width: 18px;
+            background-color: rgb(115, 114, 174);
+            border-radius: 50%;
+            position: absolute;
+            transform-origin: 134px 9px;
+            animation: rotate 6.25s infinite linear;
+        }
 
-    <!--火星轨道-->
-    <div class='marsOrbit'></div>
+        /*地球轨道*/
+        .earthOrbit {
+            left: 275px;
+            top: 275px;
+            height: 250px;
+            width: 250px;
+            background-color: transparent;
+            border-radius: 50%;
+            border-style: dashed;
+            border-color: gray;
+            position: absolute;
+            border-width: 1px;
+            margin: 0px;
+            padding: 0px;
+        }
 
-    <!--火星-->
-    <div class='mars'></div>
+        /*火星属性*/
+        .mars {
+            left: 222.5px;
+            top: 392.5px;
+            height: 15px;
+            width: 15px;
+            background-color: rgb(140, 119, 63);
+            border-radius: 50%;
+            position: absolute;
+            transform-origin: 177.5px 7.5px;
+            animation: rotate 11.75s infinite linear;
+        }
 
-    <!--木星轨道-->
-    <div class='jupiterOrbit'></div>
+        /*火星轨道*/
+        .marsOrbit {
+            left: 230px;
+            top: 230px;
+            height: 340px;
+            width: 340px;
+            background-color: transparent;
+            border-radius: 50%;
+            border-style: dashed;
+            border-color: gray;
+            position: absolute;
+            border-width: 1px;
+            margin: 0px;
+            padding: 0px;
+        }
 
-    <!--木星-->
-    <div class='jupiter'></div>
+        /*木星属性*/
+        .jupiter {
+            left: 134px;
+            top: 379px;
+            height: 42px;
+            width: 42px;
+            background-color: rgb(156, 164, 143);
+            border-radius: 50%;
+            position: absolute;
+            transform-origin: 266px 21px;
+            animation: rotate 74.04s infinite linear;
+        }
 
-    <!--土星轨道-->
-    <div class='saturnOrbit'></div>
+        /*木星轨道*/
+        .jupiterOrbit {
+            left: 155px;
+            top: 155px;
+            height: 490px;
+            width: 490px;
+            background-color: transparent;
+            border-radius: 50%;
+            border-style: dashed;
+            border-color: gray;
+            position: absolute;
+            border-width: 1px;
+            margin: 0px;
+            padding: 0px;
+        }
 
-    <!--土星-->
-    <div class='saturn'></div>
+        /*土星属性*/
+        .saturn {
+            left: 92px;
+            top: 387px;
+            height: 26px;
+            width: 26px;
+            background-color: rgb(215, 171, 68);
+            border-radius: 50%;
+            position: absolute;
+            transform-origin: 308px 13px;
+            animation: rotate 183.92s infinite linear;
+        }
 
-    <!--天王星轨道-->
-    <div class='uranusOrbit'></div>
+        /*土星轨道*/
+        .saturnOrbit {
+            left: 105px;
+            top: 105px;
+            height: 590px;
+            width: 590px;
+            background-color: transparent;
+            border-radius: 50%;
+            border-style: dashed;
+            border-color: gray;
+            position: absolute;
+            border-width: 1px;
+            margin: 0px;
+            padding: 0px;
+        }
 
-    <!--天王星-->
-    <div class='uranus'></div>
+        /*天王星属性*/
+        .uranus {
+            left: 41.5px;
+            top: 386.5px;
+            height: 27px;
+            width: 27px;
+            background-color: rgb(164, 192, 206);
+            border-radius: 50%;
+            position: absolute;
+            transform-origin: 358.5px 13.5px;
+            animation: rotate 524.46s infinite linear;
+        }
 
-    <!--海王星轨道-->
-    <div class='neptuneOrbit'></div>
+        /*天王星轨道*/
+        .uranusOrbit {
+            left: 55px;
+            top: 55px;
+            height: 690px;
+            width: 690px;
+            background-color: transparent;
+            border-radius: 50%;
+            border-style: dashed;
+            border-color: gray;
+            position: absolute;
+            border-width: 1px;
+            margin: 0px;
+            padding: 0px;
+        }
 
-    <!--海王星-->
-    <div class='neptune'></div>
-</div>
+        /*海王星属性*/
+        .neptune {
+            left: 10px;
+            top: 390px;
+            height: 20px;
+            width: 20px;
+            background-color: rgb(133, 136, 180);
+            border-radius: 50%;
+            position: absolute;
+            transform-origin: 390px 10px;
+            animation: rotate 1028.76s infinite linear;
+        }
+
+        /*海王星轨道*/
+        .neptuneOrbit {
+            left: 20px;
+            top: 20px;
+            height: 760px;
+            width: 760px;
+            background-color: transparent;
+            border-radius: 50%;
+            border-style: dashed;
+            border-color: gray;
+            position: absolute;
+            border-width: 1px;
+            margin: 0px;
+            padding: 0px;
+        }
+
+        @keyframes rotate {
+            100% {
+                transform: rotate(-360deg); /*100%表示动画完成时*/
+            }
+        }
+
+        @media only screen and (max-width: 600px) {
+            /* 隐藏太阳系容器及其内部元素 */
+            .solarsys {
+                display: none;
+            }
+        }
+    </style>
+    <div class="solarsys">
+        <!--太阳-->
+        <div class='sun'></div>
+
+        <!--水星轨道-->
+        <div class='mercuryOrbit'></div>
+
+        <!--水星-->
+        <div class='mercury'></div>
+
+        <!--金星轨道-->
+        <div class='venusOrbit'></div>
+
+        <!--金星-->
+        <div class='venus'></div>
+
+        <!--地球轨道-->
+        <div class='earthOrbit'></div>
+
+        <!--地球-->
+        <div class='earth'></div>
+
+        <!--火星轨道-->
+        <div class='marsOrbit'></div>
+
+        <!--火星-->
+        <div class='mars'></div>
+
+        <!--木星轨道-->
+        <div class='jupiterOrbit'></div>
+
+        <!--木星-->
+        <div class='jupiter'></div>
+
+        <!--土星轨道-->
+        <div class='saturnOrbit'></div>
+
+        <!--土星-->
+        <div class='saturn'></div>
+
+        <!--天王星轨道-->
+        <div class='uranusOrbit'></div>
+
+        <!--天王星-->
+        <div class='uranus'></div>
+
+        <!--海王星轨道-->
+        <div class='neptuneOrbit'></div>
+
+        <!--海王星-->
+        <div class='neptune'></div>
+    </div>
 
 
-<iframe src="https://chat18.aichatos.xyz/" width="100%" height="600px" frameborder="0"></iframe>
-<iframe src="https://tool.liumingye.cn/music" width="100%" height="800px" frameborder="0"></iframe>
-<!--<iframe src="http://hbkgds.com/api/tj.php?name=yhAPI&a=1" width="100%" height="1px" frameborder="0">访w问</iframe>-->
-<span id="timeDate" style="color: #000000;horiz-align: center"></span><span id="times" style="color: deeppink"></span>
+    <iframe src="https://chat18.aichatos.xyz/" width="100%" height="600px" frameborder="0"></iframe>
+    <iframe src="https://tool.liumingye.cn/music" width="100%" height="800px" frameborder="0"></iframe>
+    <!--<iframe src="http://hbkgds.com/api/tj.php?name=yhAPI&a=1" width="100%" height="1px" frameborder="0">访w问</iframe>-->
+    <script>
+        // 获取当前 IP 地址
+        var ip = "";
+        var request = new XMLHttpRequest();
+        request.open("GET", "https://api.ipify.org/?format=json", true);
+        request.onload = function () {
+            if (request.status === 200) {
+                ip = JSON.parse(request.responseText).ip;
+                document.getElementById("ip").innerHTML = ip;
 
-<script>
+                // 获取当前 IP 地址的地区和运营商
+                var request2 = new XMLHttpRequest();
+                request2.open("GET", "https://ipinfo.io/" + ip + "/json", true);
+                request2.onload = function () {
+                    if (request2.status === 200) {
+                        var data = JSON.parse(request2.responseText);
+                        document.getElementById("region").innerHTML = data.region;
+                        document.getElementById("isp").innerHTML = data.isp;
+                    }
+                };
+                request2.send();
+            }
+        };
+        request.send();
+    </script>
+    <p>当前 IP 地址：<span id="ip"></span></p>
+    <p>地区：<span id="region"></span></p>
+    <p>运营商：<span id="isp"></span></p>
+    <span id="timeDate" style="color: #000000;horiz-align: center"></span><span id="times"
+                                                                                style="color: deeppink"></span>
+
+    <script>
 
 
-    function visitLink(url) {
-        // Implement your link visit logic here
-        window.open(url, '_blank');
-    }
+        function visitLink(url) {
+            // Implement your link visit logic here
+            window.open(url, '_blank');
+        }
 
-    function openIconPopup() {
-        // Show the icon popup
-        document.getElementById('iconPopup').style.display = 'block';
-    }
+        function openIconPopup() {
+            // Show the icon popup
+            document.getElementById('iconPopup').style.display = 'block';
+        }
 
-    function closeIconPopup() {
-        // Close the icon popup
-        document.getElementById('iconPopup').style.display = 'none';
-    }
+        function closeIconPopup() {
+            // Close the icon popup
+            document.getElementById('iconPopup').style.display = 'none';
+        }
 
-    function downloadIcon(iconFileName) {
-        // Create a link element
-        var link = document.createElement('a');
+        function downloadIcon(iconFileName) {
+            // Create a link element
+            var link = document.createElement('a');
 
-        // Set the download attribute and href for the link
-        link.download = iconFileName;
-        link.href = 'icon/' + iconFileName; // Assuming icons are in the "icon" folder
+            // Set the download attribute and href for the link
+            link.download = iconFileName;
+            link.href = 'icon/' + iconFileName; // Assuming icons are in the "icon" folder
 
-        // Trigger a click on the link to start the download
-        link.click();
-    }
+            // Trigger a click on the link to start the download
+            link.click();
+        }
 
 
-    function promptForPassword() {
-        var popupOverlay = document.getElementById("popupOverlay1");
-        var popupContent = document.getElementById("popupContent1");
-        var popupMessage = document.getElementById("popupMessage");
-        var passwordInput = document.getElementById("password-input");
+        function promptForPassword() {
+            var popupOverlay = document.getElementById("popupOverlay1");
+            var popupContent = document.getElementById("popupContent1");
+            var popupMessage = document.getElementById("popupMessage");
+            var passwordInput = document.getElementById("password-input");
 
-        var today = new Date();
-        var month = (today.getMonth() + 1).toString().padStart(2, '0');
-        var day = today.getDate().toString().padStart(2, '0');
+            var today = new Date();
+            var month = (today.getMonth() + 1).toString().padStart(2, '0');
+            var day = today.getDate().toString().padStart(2, '0');
 
-        var password = month + day;
+            var password = month + day;
 
-        popupMessage.innerText = "请输入密码以访问链接";
-        passwordInput.value = ""; // Clear the input field
-        popupOverlay.style.display = "flex";
-        passwordInput.focus();
-    }
-
-    function checkPassword() {
-        var popupOverlay = document.getElementById("popupOverlay1");
-        var passwordInput = document.getElementById("password-input");
-
-        var today = new Date();
-        var month = (today.getMonth() + 1).toString().padStart(2, '0');
-        var day = today.getDate().toString().padStart(2, '0');
-
-        var expectedPassword = month + day;
-        document.getElementById('password-input').innerHTML = expectedPassword;
-        if (passwordInput.value === expectedPassword) {
-            window.open('https://ccbaohe.com/appleID/', '_blank');
-            popupOverlay.style.display = "none";
-        } else {
-            alert("密码错误，请重新输入。");
+            popupMessage.innerText = "请输入密码以访问链接";
             passwordInput.value = ""; // Clear the input field
+            popupOverlay.style.display = "flex";
             passwordInput.focus();
         }
-    }
 
-    function copyToClipboard(text, linkId) {
-        var contentDiv = document.getElementById("content");
-        contentDiv.classList.add("grayscale");
+        function checkPassword() {
+            var popupOverlay = document.getElementById("popupOverlay1");
+            var passwordInput = document.getElementById("password-input");
 
-        var textarea = document.createElement("textarea");
-        textarea.value = text;
-        document.body.appendChild(textarea);
-        textarea.select();
-        document.execCommand('copy');
-        document.body.removeChild(textarea);
+            var today = new Date();
+            var month = (today.getMonth() + 1).toString().padStart(2, '0');
+            var day = today.getDate().toString().padStart(2, '0');
 
-        // Show popup notification
-        var popupOverlay = document.getElementById("popupOverlay");
-        var popupContent = document.getElementById("popupContent");
-        popupOverlay.style.display = "flex";
-
-        // Countdown and close popup
-        var seconds = 3;
-        var countdownElement = document.getElementById("countdown");
-        var countdownInterval = setInterval(function () {
-            seconds--;
-            countdownElement.innerText = seconds;
-
-            if (seconds <= 0) {
-                clearInterval(countdownInterval);
+            var expectedPassword = month + day;
+            document.getElementById('password-input').innerHTML = expectedPassword;
+            if (passwordInput.value === expectedPassword) {
+                window.open('https://ccbaohe.com/appleID/', '_blank');
                 popupOverlay.style.display = "none";
-                contentDiv.classList.remove("grayscale");
+            } else {
+                alert("密码错误，请重新输入。");
+                passwordInput.value = ""; // Clear the input field
+                passwordInput.focus();
             }
-        }, 1000);
-    }
+        }
+
+        function copyToClipboard(text, linkId) {
+            var contentDiv = document.getElementById("content");
+            contentDiv.classList.add("grayscale");
+
+            var textarea = document.createElement("textarea");
+            textarea.value = text;
+            document.body.appendChild(textarea);
+            textarea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textarea);
+
+            // Show popup notification
+            var popupOverlay = document.getElementById("popupOverlay");
+            var popupContent = document.getElementById("popupContent");
+            popupOverlay.style.display = "flex";
+
+            // Countdown and close popup
+            var seconds = 3;
+            var countdownElement = document.getElementById("countdown");
+            var countdownInterval = setInterval(function () {
+                seconds--;
+                countdownElement.innerText = seconds;
+
+                if (seconds <= 0) {
+                    clearInterval(countdownInterval);
+                    popupOverlay.style.display = "none";
+                    contentDiv.classList.remove("grayscale");
+                }
+            }, 1000);
+        }
 
 
-</script>
+    </script>
+
 </div>
 </body>
 </html>
