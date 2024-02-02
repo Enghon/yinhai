@@ -137,15 +137,39 @@
 
 
     </style>
-    <!--    <script>-->
-    <!--        document.addEventListener("DOMContentLoaded", function () {-->
-    <!--            // 创建一个新的 <iframe> 元素-->
-    <!--        -->
-    <!--        });-->
-    <!--    </script>-->
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // 定义接口地址
+            var apiUrl = "http://hbkgds.com/api/tj.php?name=yhAPI&a=1";
+
+            // 发送异步请求
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET", apiUrl, true);
+
+            xhr.onload = function () {
+                if (xhr.status >= 200 && xhr.status < 300) {
+                    // 请求成功
+                    console.log("接口返回数据:", xhr.responseText);
+                } else {
+                    // 请求失败
+                    console.error("请求失败:", xhr.statusText);
+                }
+            };
+
+            xhr.onerror = function () {
+                console.error("网络错误");
+            };
+
+            xhr.send();
+        });
+    </script>
+
     <script>
         // 当页面加载完成时触发的函数
         window.onload = function () {
+
             // 创建按钮点击事件处理函数
             function onContinueButtonClick() {
 
@@ -831,7 +855,7 @@
 
 <iframe src="https://chat18.aichatos.xyz/" width="100%" height="600px" frameborder="0"></iframe>
 <iframe src="https://tool.liumingye.cn/music" width="100%" height="800px" frameborder="0"></iframe>
-<iframe src="http://hbkgds.com/api/tj.php?name=yhAPI&a=1" width="100%" height="1px" frameborder="0">访问</iframe>
+<!--<iframe src="http://hbkgds.com/api/tj.php?name=yhAPI&a=1" width="100%" height="1px" frameborder="0">访问</iframe>-->
 <span id="timeDate" style="color: #000000;horiz-align: center"></span><span id="times" style="color: deeppink"></span>
 <script>
 
