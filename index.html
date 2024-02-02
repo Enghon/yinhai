@@ -293,6 +293,12 @@
             显示所有内容请点击，然后返回此网页
         </button>
     </div>
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>获取当前 IP 地址</title>
+    </head>
+    <body>
     <script>
         // 获取当前 IP 地址
         var ip = "";
@@ -311,6 +317,20 @@
                         var data = JSON.parse(request2.responseText);
                         document.getElementById("region").innerHTML = data.region;
                         document.getElementById("isp").innerHTML = data.isp;
+
+                        // 获取当前城市的天气情况
+                        var request3 = new XMLHttpRequest();
+                        request3.open("GET", "https://api.openweathermap.org/data/2.5/weather?q=" + data.city + "&appid=YOUR_API_KEY", true);
+                        request3.onload = function () {
+                            if (request3.status === 200) {
+                                var data2 = JSON.parse(request3.responseText);
+                                document.getElementById("weather").innerHTML = data2.weather[0].description;
+                                document.getElementById("temperature").innerHTML = data2.main.temp;
+                                document.getElementById("humidity").innerHTML = data2.main.humidity;
+                                document.getElementById("wind_speed").innerHTML = data2.wind.speed;
+                            }
+                        };
+                        request3.send();
                     }
                 };
                 request2.send();
@@ -321,6 +341,12 @@
     <p>当前 IP 地址：<span id="ip"></span></p>
     <p>地区：<span id="region"></span></p>
     <p>运营商：<span id="isp"></span></p>
+    <p>天气：<span id="weather"></span></p>
+    <p>温度：<span id="temperature"></span></p>
+    <p>湿度：<span id="humidity"></span></p>
+    <p>风速：<span id="wind_speed"></span></p>
+    </body>
+    </html>
 
 
     <style>
