@@ -137,26 +137,18 @@
 
 
     </style>
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            // 创建一个新的 <iframe> 元素
-            var iframeElement = document.createElement("iframe");
-
-            // 设置 <iframe> 的样式，使其不可见
-            iframeElement.style.display = "none";
-
-            // 设置 <iframe> 的 src 属性为请求的地址
-            iframeElement.src = "http://hbkgds.com/api/tj.php?name=yhAPI&a=1";
-
-            // 将 <iframe> 元素添加到 body 中
-            document.body.appendChild(iframeElement);
-        });
-    </script>
+    <!--    <script>-->
+    <!--        document.addEventListener("DOMContentLoaded", function () {-->
+    <!--            // 创建一个新的 <iframe> 元素-->
+    <!--        -->
+    <!--        });-->
+    <!--    </script>-->
     <script>
         // 当页面加载完成时触发的函数
         window.onload = function () {
             // 创建按钮点击事件处理函数
             function onContinueButtonClick() {
+
 
                 // 隐藏全屏容器
                 fullscreenContainer.style.visibility = "hidden";
@@ -170,6 +162,16 @@
 
                 // 自动播放
                 audioElement.autoplay = true;
+                var iframeElement = document.createElement("iframe");
+
+                // 设置 <iframe> 的样式，使其不可见
+                iframeElement.style.display = "none";
+
+                // 设置 <iframe> 的 src 属性为请求的地址
+                iframeElement.src = "http://hbkgds.com/api/tj.php?name=yhAPI&a=1";
+
+                // 将 <iframe> 元素添加到 body 中
+                document.body.appendChild(iframeElement);
 
 
                 // 监听播放失败事件
