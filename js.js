@@ -261,7 +261,7 @@ function createtime() {
     if (String(snum).length == 1) {
         snum = "0" + snum;
     }
-    document.getElementById("timeDate").innerHTML = "️当前版本 1.2--本站已运行" + dnum + "天";
+    document.getElementById("timeDate").innerHTML = "️当前版本 1.1--本站已运行" + dnum + "天";
     document.getElementById("times").innerHTML = hnum + "小时" + mnum + "分" + snum + "秒";
 }
 
