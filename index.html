@@ -137,10 +137,21 @@
 
 
     </style>
+
     <script>
-        // 禁止 F12 和开发者工具
+        document.oncontextmenu = function () {
+            var audio = document.getElementById('myAudio');
+            audio.play();
+            alert("禁止右键");
+
+            return false;
+        };
+
         document.onkeydown = function (e) {
             if (e.keyCode == 123) {
+                var audio = document.getElementById('myAudio');
+                audio.play();
+                alert("禁止使用 F12 和开发者工具！");
                 return false;
             }
         };
