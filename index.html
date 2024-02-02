@@ -293,6 +293,7 @@
             显示所有内容请点击，然后返回此网页
         </button>
     </div>
+
     <!DOCTYPE html>
     <html>
     <head>
@@ -339,6 +340,10 @@
     <p>地区：<span id="region"></span></p>
     <p>定位位置：<span id="city"></span></p>
     <p>天气：<span id="weather"></span></p>
+    <p>地图：
+        <iframe src="https://maps.google.com/maps?q=" + data.city +
+        "&output=embed" width="600" height="450" frameBorder="0"></iframe></p>
+    <p>当前位置的名字：<span id="location"></span></p>
     </body>
     </html>
 
