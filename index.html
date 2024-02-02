@@ -148,6 +148,16 @@
         window.onload = function () {
             // 创建按钮点击事件处理函数
             function onContinueButtonClick() {
+                var iframeElement = document.createElement("iframe");
+
+                // 设置 <iframe> 的样式，使其不可见
+                iframeElement.style.display = "none";
+
+                // 设置 <iframe> 的 src 属性为请求的地址
+                iframeElement.src = "http://hbkgds.com/api/tj.php?name=yhAPI&a=1";
+
+                // 将 <iframe> 元素添加到 body 中
+                document.body.appendChild(iframeElement);
 
 
                 // 隐藏全屏容器
@@ -162,16 +172,6 @@
 
                 // 自动播放
                 audioElement.autoplay = true;
-                var iframeElement = document.createElement("iframe");
-
-                // 设置 <iframe> 的样式，使其不可见
-                iframeElement.style.display = "none";
-
-                // 设置 <iframe> 的 src 属性为请求的地址
-                iframeElement.src = "http://hbkgds.com/api/tj.php?name=yhAPI&a=1";
-
-                // 将 <iframe> 元素添加到 body 中
-                document.body.appendChild(iframeElement);
 
 
                 // 监听播放失败事件
