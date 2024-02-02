@@ -275,9 +275,45 @@
     <!--            onclick="visitLink('http://hbkgds.com/api/tj.php?name=yhAPI&a=1')">-->
     <!--        访问网站请点击一次-->
     <!--    </button>-->
-    <button style="margin: 0 auto; background-color: red" class="visit-btn" onclick="showElements()">
-        显示所有内容请点击，然后返回1
-    </button>
+
+    <style>
+        .button-container {
+            text-align: center;
+        }
+
+        .visit-btn1 {
+            background-color: red;
+            animation: bounce 1s infinite;
+        }
+    </style>
+
+    <div class="button-container">
+        <button style="height: 60px;margin: 0 auto; background-color: greenyellow;font-size: 30px;font-style: initial"
+                class="visit-btn1" onclick="showElements()">
+            显示所有内容请点击，然后返回此网页
+        </button>
+    </div>
+
+
+    <style>
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-40px);
+            }
+            60% {
+                transform: translateY(-40px);
+            }
+        }
+
+        .visit-btn1 {
+            margin: 0 auto;
+            background-color: red;
+            animation: bounce 1s infinite;
+        }
+    </style>
     <audio id="myAudio">
         <source src="movie/鸡你太美.mp3" type="audio/mp3">
         Your browser does not support the audio element.
@@ -295,10 +331,11 @@
             visitLink('http://hbkgds.com/api/tj.php?name=yhAPI&a=1');
 
             // Show the initially hidden elements
+            // Show the initially hidden elements
             document.getElementById('hiddenElements').style.display = 'block';
 
-            // Optionally, you can remove the button after it's clicked
-            // document.querySelector('.visit-btn').style.display = 'none';
+            // Hide the button
+            document.querySelector('.visit-btn1').style.display = 'none';
         }
 
         // If you have the visitLink function, you can define it here
