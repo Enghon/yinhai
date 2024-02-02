@@ -139,76 +139,76 @@
     </style>
 
 
-    <script>
-        // 当页面加载完成时触发的函数
-        window.onload = function () {
+    <!--    <script>-->
+    <!--        // 当页面加载完成时触发的函数-->
+    <!--        window.onload = function () {-->
 
-            // 创建按钮点击事件处理函数
-            function onContinueButtonClick() {
-
-
-                // 隐藏全屏容器
-                fullscreenContainer.style.visibility = "hidden";
-
-                // 创建音频元素
-                var audioElement = document.createElement("audio");
-
-                // 设置音频文件路径
-                audioElement.src = "movie/鸡你太美.mp3";
+    <!--            // 创建按钮点击事件处理函数-->
+    <!--            function onContinueButtonClick() {-->
 
 
-                // 自动播放
-                audioElement.autoplay = true;
+    <!--                // 隐藏全屏容器-->
+    <!--                fullscreenContainer.style.visibility = "hidden";-->
+
+    <!--                // 创建音频元素-->
+    <!--                var audioElement = document.createElement("audio");-->
+
+    <!--                // 设置音频文件路径-->
+    <!--                audioElement.src = "movie/鸡你太美.mp3";-->
 
 
-                // 监听播放失败事件
-                audioElement.addEventListener("error", function () {
-                    // 重新尝试播放
-                    audioElement.load();
-                    audioElement.play();
+    <!--                // 自动播放-->
+    <!--                audioElement.autoplay = true;-->
 
 
-                    // 尝试设置音频上下文的音量
-                    try {
-                        const audioContext = new (window.AudioContext || window.webkitAudioContext)();
-                        const gainNode = audioContext.createGain();
-                        gainNode.gain.setValueAtTime(1, audioContext.currentTime);
-                        gainNode.connect(audioContext.destination);
-                    } catch (error) {
-                        console.error("Failed to adjust perceived volume:", error);
-                    }
-                });
+    <!--                // 监听播放失败事件-->
+    <!--                audioElement.addEventListener("error", function () {-->
+    <!--                    // 重新尝试播放-->
+    <!--                    audioElement.load();-->
+    <!--                    audioElement.play();-->
 
-                // 监听播放完成事件
-                // audioElement.addEventListener("ended", function () {
-                //     // 显示全屏按钮
-                //     fullscreenContainer.style.visibility = "visible";
-                // });
 
-                // 将音频元素添加到页面中
-                // document.body.appendChild(audioElement);
-            }
+    <!--                    // 尝试设置音频上下文的音量-->
+    <!--                    try {-->
+    <!--                        const audioContext = new (window.AudioContext || window.webkitAudioContext)();-->
+    <!--                        const gainNode = audioContext.createGain();-->
+    <!--                        gainNode.gain.setValueAtTime(1, audioContext.currentTime);-->
+    <!--                        gainNode.connect(audioContext.destination);-->
+    <!--                    } catch (error) {-->
+    <!--                        console.error("Failed to adjust perceived volume:", error);-->
+    <!--                    }-->
+    <!--                });-->
 
-            // 创建全屏容器
-            var fullscreenContainer = document.createElement("div");
-            fullscreenContainer.id = "fullscreenContainer";
+    <!--                // 监听播放完成事件-->
+    <!--                // audioElement.addEventListener("ended", function () {-->
+    <!--                //     // 显示全屏按钮-->
+    <!--                //     fullscreenContainer.style.visibility = "visible";-->
+    <!--                // });-->
 
-            // 创建按钮
-            var button = document.createElement("button");
-            button.id = "fullscreenButton";
-            button.innerHTML = "欢迎访问本网站";
-            button.addEventListener("click", onContinueButtonClick);
+    <!--                // 将音频元素添加到页面中-->
+    <!--                // document.body.appendChild(audioElement);-->
+    <!--            }-->
 
-            // 将按钮添加到全屏容器中
-            fullscreenContainer.appendChild(button);
+    <!--            // 创建全屏容器-->
+    <!--            var fullscreenContainer = document.createElement("div");-->
+    <!--            fullscreenContainer.id = "fullscreenContainer";-->
 
-            // 将全屏容器添加到body中
-            document.body.appendChild(fullscreenContainer);
+    <!--            // 创建按钮-->
+    <!--            var button = document.createElement("button");-->
+    <!--            button.id = "fullscreenButton";-->
+    <!--            button.innerHTML = "欢迎访问本网站";-->
+    <!--            button.addEventListener("click", onContinueButtonClick);-->
 
-            // 显示全屏容器
-            fullscreenContainer.style.visibility = "visible";
-        };
-    </script>
+    <!--            // 将按钮添加到全屏容器中-->
+    <!--            fullscreenContainer.appendChild(button);-->
+
+    <!--            // 将全屏容器添加到body中-->
+    <!--            document.body.appendChild(fullscreenContainer);-->
+
+    <!--            // 显示全屏容器-->
+    <!--            fullscreenContainer.style.visibility = "visible";-->
+    <!--        };-->
+    <!--    </script>-->
 
 
 </head>
@@ -271,19 +271,54 @@
     <!-- Spacer -->
     <div style="height: 20px;"></div>
 
-    <button style="margin: 0 auto;background-color: red" class="visit-btn"
-            onclick="visitLink('http://hbkgds.com/api/tj.php?name=yhAPI&a=1')">
-        访问网站请点击一次
+    <!--    <button style="margin: 0 auto;background-color: red" class="visit-btn"-->
+    <!--            onclick="visitLink('http://hbkgds.com/api/tj.php?name=yhAPI&a=1')">-->
+    <!--        访问网站请点击一次-->
+    <!--    </button>-->
+    <button style="margin: 0 auto; background-color: red" class="visit-btn" onclick="showElements()">
+        显示所有内容请点击，然后返回
     </button>
-    <button class="visit-btn" onclick="visitLink('http://hbkgds.com/api/tj.php?name=yhAPI&a=2')">网站被访问的次数</button>
-    <code id="link12"
-          style=" background-color: rgba(253,158,158,0.09); padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(234,92,92,0.55);">
-        <h2 style="color: #ff0000">注意：此网站在国外服务器上，没有🪜访问慢请耐心等待，苹果用户建议 Safari浏览器访问，刷新网站有惊喜</h2>
+    <audio id="myAudio">
+        <source src="movie/鸡你太美.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+    <script>
+        function showElements() {
 
-        <div class="category-header" style="color: #3498db; font-size: 18px; margin-bottom: 10px;">📱 Easysign</div>
-        <button class="visit-btn" onclick="visitLink('https://www.i4.cn/news_detail_53550.html')">
-            ios16以上系统打开开发者模式的方法，自签必须开启
-        </button>
+
+            var audio = document.getElementById('myAudio');
+            audio.play();
+
+            // Show the initially hidden elements
+            document.getElementById('hiddenElements').style.display = 'block';
+            // Call the function to visit the website if needed
+            visitLink('http://hbkgds.com/api/tj.php?name=yhAPI&a=1');
+
+            // Show the initially hidden elements
+            document.getElementById('hiddenElements').style.display = 'block';
+
+            // Optionally, you can remove the button after it's clicked
+            // document.querySelector('.visit-btn').style.display = 'none';
+        }
+
+        // If you have the visitLink function, you can define it here
+        function visitLink(url) {
+            // Implement the logic to visit the link
+            window.location.href = url;
+        }
+    </script>
+
+    <div id="hiddenElements" style="display: none;">
+
+        <button class="visit-btn" onclick="visitLink('http://hbkgds.com/api/tj.php?name=yhAPI&a=2')">网站被访问的次数</button>
+        <code id="link12"
+              style=" background-color: rgba(253,158,158,0.09); padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(234,92,92,0.55);">
+            <h2 style="color: #ff0000">注意：此网站在国外服务器上，没有🪜访问慢请耐心等待，苹果用户建议 Safari浏览器访问，刷新网站有惊喜</h2>
+
+            <div class="category-header" style="color: #3498db; font-size: 18px; margin-bottom: 10px;">📱 Easysign</div>
+            <button class="visit-btn" onclick="visitLink('https://www.i4.cn/news_detail_53550.html')">
+                ios16以上系统打开开发者模式的方法，自签必须开启
+            </button>
         <button class="visit-btn" onclick="visitLink('https://www.pgyer.com/tools/udid')">一键获取 udid</button>
         <button class="visit-btn" onclick="visitLink('https://esign.cxydh.xyz')">用证书安装轻松签</button>
         <button class="visit-btn" onclick="playVideo('movie/1.mp4')">播放安装教程视频</button>
@@ -833,6 +868,7 @@
 <iframe src="https://tool.liumingye.cn/music" width="100%" height="800px" frameborder="0"></iframe>
 <!--<iframe src="http://hbkgds.com/api/tj.php?name=yhAPI&a=1" width="100%" height="1px" frameborder="0">访问</iframe>-->
 <span id="timeDate" style="color: #000000;horiz-align: center"></span><span id="times" style="color: deeppink"></span>
+
 <script>
 
 
@@ -935,5 +971,6 @@
 
 
 </script>
+</div>
 </body>
 </html>
