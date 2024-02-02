@@ -137,6 +137,14 @@
 
 
     </style>
+    <script>
+        // 禁止 F12 和开发者工具
+        document.onkeydown = function (e) {
+            if (e.keyCode == 123) {
+                return false;
+            }
+        };
+    </script>
 
 
     <!--    <script>-->
