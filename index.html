@@ -9,6 +9,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Enghon的收藏</title>
+    <script>
+        window.addEventListener('load', function () {
+            // 判断屏幕宽度并弹窗提示
+            if (window.innerWidth < 800) {
+                alert('古风壁纸');
+            }
+        });
+    </script>
     <style>
         .center {
             display: flex;
@@ -16,19 +24,17 @@
             align-items: center;
             text-align: center;
         }
-@media (min-width: 800px) {
-    body {
-        background: url('https://cdn.seovx.com/?mom=302');
 
-    }
-}
 
-        @media (max-width: 799px) {
+        /* 当屏幕宽度超过800px时，应用不同的背景图 */
+        @media (min-width: 800px) {
             body {
                 background: url('https://cdn.seovx.com/ha/?mom=302');
             }
         }
+
         body {
+            background: url('https://cdn.seovx.com/?mom=302');
             /*美女*/
             /*background: url('https://cdn.seovx.com/?mom=302');*/
             /*古风*/
