@@ -295,7 +295,7 @@
                 request2.onload = function () {
                     if (request2.status === 200) {
                         var data = JSON.parse(request2.responseText);
-                        document.getElementById("region").innerHTML = data.country + "-" + data.region + "-" + data.city + "/" + data.loc;
+                        document.getElementById("region").innerHTML = data.country + "-" + data.region + "-" + data.city + "/(" + data.loc + ")-" + data.asn.name;
 
                     }
                 };
