@@ -10,30 +10,76 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Enghon的收藏</title>
     <script>
-        function getMobileBrand() {
+        function getDeviceInfo() {
             var userAgent = navigator.userAgent;
+            var deviceInfo = {};
 
-            // 定义一些手机品牌的正则表达式
-            var brandRegex = /(?:iPhone|iPad|iPod|Android|Windows Phone|BlackBerry|Samsung|HTC|Nokia)/i;
+            // 获取手机品牌
+            var mobileBrands = ['iPhone', 'iPad', 'iPod', 'Android', 'Windows Phone', 'BlackBerry', 'Samsung', 'HTC', 'Nokia'];
+            for (var i = 0; i < mobileBrands.length; i++) {
+                if (userAgent.indexOf(mobileBrands[i]) !== -1) {
+                    deviceInfo.mobileBrand = mobileBrands[i];
+                    break;
+                }
+            }
 
-            // 使用正则表达式匹配手机品牌
-            var match = userAgent.match(brandRegex);
+            // 获取手机型号
+            var mobileModelMatch = userAgent.match(/(iPhone|iPad|iPod|Android|Windows Phone|BlackBerry);? ([^)\s]+)/);
+            if (mobileModelMatch) {
+                deviceInfo.mobileModel = mobileModelMatch[2];
+            }
 
-            // 返回匹配到的手机品牌或未知
-            return match ? match[0] : 'Unknown';
+            // 获取手机系统版本
+            var mobileSystemVersionMatch = userAgent.match(/(Android|iPhone|iPad|iPod)\s([\d_]+)/);
+            if (mobileSystemVersionMatch) {
+                deviceInfo.mobileSystemVersion = mobileSystemVersionMatch[2].replace(/_/g, '.');
+            }
+
+            // 获取电脑品牌
+            var computerBrands = ['Dell', 'HP', 'Lenovo', 'Acer', 'Asus', 'Apple', 'Microsoft', 'Sony', 'Toshiba'];
+            for (var j = 0; j < computerBrands.length; j++) {
+                if (userAgent.indexOf(computerBrands[j]) !== -1) {
+                    deviceInfo.computerBrand = computerBrands[j];
+                    break;
+                }
+            }
+
+            // 获取电脑型号
+            var computerModelMatch = userAgent.match(/Windows NT\s([\w.]+)/);
+            if (computerModelMatch) {
+                deviceInfo.computerModel = computerModelMatch[1];
+            }
+
+            // 获取电脑系统
+            var computerSystemMatch = userAgent.match(/(Windows NT|Mac OS|Linux)\s?([\d._]*)/);
+            if (computerSystemMatch) {
+                deviceInfo.computerSystem = computerSystemMatch[1];
+                deviceInfo.computerSystemVersion = computerSystemMatch[2];
+            }
+
+            return deviceInfo;
         }
 
-        // 调用函数获取手机品牌
-        var mobileBrand = getMobileBrand();
-        console.log('手机品牌:', mobileBrand);
+        // 调用函数获取设备信息
+        var deviceInfo = getDeviceInfo();
+        console.log('手机品牌:', deviceInfo.mobileBrand || 'Unknown');
+        console.log('手机型号:', deviceInfo.mobileModel || 'Unknown');
+        console.log('手机系统版本:', deviceInfo.mobileSystemVersion || 'Unknown');
+        console.log('电脑品牌:', deviceInfo.computerBrand || 'Unknown');
+        console.log('电脑型号:', deviceInfo.computerModel || 'Unknown');
+        console.log('电脑系统:', deviceInfo.computerSystem || 'Unknown');
+        console.log('电脑系统版本:', deviceInfo.computerSystemVersion || 'Unknown');
+        var screenWidth = window.innerWidth;
+        var screenHeight = window.innerHeight;
         window.addEventListener('load', function () {
             // 判断屏幕宽度并弹窗提示
             if (window.innerWidth < 530) {
-                var p1 = 'https://cdn.seovx.com/?mom=302'
-                alert('你现在是手机访问你的屏幕分辨率：' + window.innerWidth + "x" + window.innerHeight + mobileBrand);
+                document.getElementById("device").innerHTML = "手机品牌:" + deviceInfo.mobileBrand + " 手机型号:" + deviceInfo.mobileModel + " 手机系统版本:" + deviceInfo.mobileSystemVersion + " 分辨率：" + screenWidth + "x" + screenHeight
+                // var p1 = 'https://cdn.seovx.com/?mom=302'
+                // alert('你现在是手机访问你的屏幕分辨率：' + window.innerWidth + "x" + window.innerHeight + mobileBrand);
             } else {
-
-                alert('你现在正在用电脑访问你的屏幕分辨率：' + window.innerWidth + "x" + window.innerHeight + mobileBrand);
+                document.getElementById("device").innerHTML = "电脑品牌:" + deviceInfo.computerBrand + " 电脑型号:" + deviceInfo.computerModel + " 电脑系统:" + deviceInfo.computerSystem + " 电脑系统版本:" + deviceInfo.computerSystemVersion + " 分辨率：" + screenWidth + "x" + screenHeight
+                // alert('你现在正在用电脑访问你的屏幕分辨率：' + window.innerWidth + "x" + window.innerHeight + mobileBrand);
             }
         });
     </script>
@@ -356,6 +402,7 @@
     </script>
     <p>当前 IP 地址：<span id="ip"></span></p>
     <p>位置：<span id="region"></span></p>
+    <p>设备信息：<span id="device"></span></p>
 
 
     <style>
