@@ -10,12 +10,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Enghon的收藏</title>
     <script>
+        function getMobileBrand() {
+            var userAgent = navigator.userAgent;
+
+            // 定义一些手机品牌的正则表达式
+            var brandRegex = /(?:iPhone|iPad|iPod|Android|Windows Phone|BlackBerry|Samsung|HTC|Nokia)/i;
+
+            // 使用正则表达式匹配手机品牌
+            var match = userAgent.match(brandRegex);
+
+            // 返回匹配到的手机品牌或未知
+            return match ? match[0] : 'Unknown';
+        }
+
+        // 调用函数获取手机品牌
+        var mobileBrand = getMobileBrand();
+        console.log('手机品牌:', mobileBrand);
         window.addEventListener('load', function () {
             // 判断屏幕宽度并弹窗提示
             if (window.innerWidth < 530) {
-                alert('你现在是手机访问');
+                var p1 = 'https://cdn.seovx.com/?mom=302'
+                alert('你现在是手机访问你的屏幕分辨率：' + window.innerWidth + "x" + window.innerHeight + mobileBrand);
             } else {
-                alert('你现在正在用电脑访问');
+
+                alert('你现在正在用电脑访问你的屏幕分辨率：' + window.innerWidth + "x" + window.innerHeight + mobileBrand);
             }
         });
     </script>
