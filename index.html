@@ -912,7 +912,24 @@
     以下视频西瓜视频在线，请关闭梯子看
     <iframe src="https://www.y821.com/" width="100%" height="800px" frameborder="0"
             style="background-color: rgba(253,158,158,0.1)"></iframe>
+    <span id="span_tag"></span>
 
+    <script>
+        // 发送HTTP GET请求，获取响应内容
+        var response = new XMLHttpRequest();
+        response.open("GET", "http://hbkgds.com/api/tj.php?name=yhAPI&a=2", true);
+        response.send();
+
+        // 获取响应内容的文本
+        response.onreadystatechange = function () {
+            if (this.readyState == 4 || this.status == 200) {
+                var text = this.responseText;
+
+                // 将响应内容的文本赋给span标签的innerHTML属性
+                document.getElementById("span_tag").innerHTML = text;
+            }
+        };
+    </script>
 
     <script language="javascript">
         var now = new Date();
