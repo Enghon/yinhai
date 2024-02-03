@@ -296,7 +296,7 @@
                     if (request2.status === 200) {
                         var data = JSON.parse(request2.responseText);
                         document.getElementById("region").innerHTML = data.country + "-" + data.region + "-" + data.city + "/(" + data.loc + ")";
-                        document.getElementById("other").innerHTML = data.asn[1];
+
 
                     }
                 };
@@ -307,7 +307,6 @@
     </script>
     <p>当前 IP 地址：<span id="ip"></span></p>
     <p>位置：<span id="region"></span></p>
-    <p>other：<span id="other"></span></p>
 
 
     <style>
