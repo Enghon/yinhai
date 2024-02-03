@@ -18,12 +18,6 @@
         });
     </script>
     <style>
-        .center {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-        }
 
 
         /* 当屏幕宽度超过800px时，应用不同的背景图 */
@@ -33,8 +27,14 @@
             }
         }
 
+        @media (max-width: 800px) {
+            body {
+                background: url('https://cdn.seovx.com/?mom=302');
+            }
+        }
+
         body {
-            background: url('https://cdn.seovx.com/?mom=302');
+
             /*美女*/
             /*background: url('https://cdn.seovx.com/?mom=302');*/
             /*古风*/
@@ -50,6 +50,13 @@
             margin: 0;
             /* Remove overflow: hidden; to allow scrolling */
             transition: filter 0.5s ease-in-out;
+        }
+
+        .center {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
         }
 
         .grayscale {
