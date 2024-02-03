@@ -13,7 +13,9 @@
         window.addEventListener('load', function () {
             // 判断屏幕宽度并弹窗提示
             if (window.innerWidth < 800) {
-                alert('古风壁纸');
+                alert('你现在是手机访问');
+            } else {
+                alert('电脑访问');
             }
         });
     </script>
@@ -21,13 +23,13 @@
 
 
         /* 当屏幕宽度超过800px时，应用不同的背景图 */
-        @media (min-width: 800px) {
+        @media (min-width: 531px) {
             body {
                 background: url('https://cdn.seovx.com/?mom=302');
             }
         }
 
-        @media (max-width: 799px) {
+        @media (max-width: 530px) {
             body {
                 background: url('https://cdn.seovx.com/ha/?mom=302');
             }
