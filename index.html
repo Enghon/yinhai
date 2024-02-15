@@ -6,19 +6,8 @@
           type="image/png">
     <script>
 
-        document.addEventListener('touchmove', function (event) {
-            event.preventDefault();
-        }, {passive: false});
-        document.onkeydown = function (e) {
-            if ((e.which || e.keyCode) == 116) {
-                e.preventDefault();
-            }
-        };
 
-        // 禁止右键菜单的刷新功能
-        document.addEventListener('contextmenu', function (e) {
-            e.preventDefault();
-        });
+
          window.addEventListener("load", getVisits);
     </script>
     <meta charset="UTF-8">
