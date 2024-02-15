@@ -5,7 +5,10 @@
           href="https://img2.baidu.com/it/u=645669258,2496124638&fm=253&fmt=auto&app=138&f=JPEG?w=502&h=500"
           type="image/png">
     <script>
-        window.addEventListener("load", getVisits);
+
+        document.addEventListener('touchmove', function (event) {
+            event.preventDefault();
+        }, {passive: false});
         document.onkeydown = function (e) {
             if ((e.which || e.keyCode) == 116) {
                 e.preventDefault();
@@ -16,6 +19,7 @@
         document.addEventListener('contextmenu', function (e) {
             e.preventDefault();
         });
+         window.addEventListener("load", getVisits);
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -87,7 +91,7 @@
             if (String(snum).length == 1) {
                 snum = "0" + snum;
             }
-            document.getElementById("timeDate").innerHTML = "️当前版本 1.5--本站已运行" + dnum + "天";
+            document.getElementById("timeDate").innerHTML = "️当前版本 1.6--本站已运行" + dnum + "天";
             document.getElementById("times").innerHTML = hnum + "小时" + mnum + "分" + snum + "秒";
         }
 
