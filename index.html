@@ -1,301 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-      <link rel="icon"
-            href="https://img2.baidu.com/it/u=645669258,2496124638&fm=253&fmt=auto&app=138&f=JPEG?w=502&h=500"
-            type="image/png">
+    <link rel="icon"
+          href="https://img2.baidu.com/it/u=645669258,2496124638&fm=253&fmt=auto&app=138&f=JPEG?w=502&h=500"
+          type="image/png">
     <script>
         window.addEventListener("load", getVisits);
-
-
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>资源收藏</title>
-    <script>
-        function getDeviceInfo() {
-            var userAgent = navigator.userAgent;
-            var deviceInfo = {};
-
-            // 获取手机品牌
-            var mobileBrands = ['iPhone', 'iPad', 'iPod', 'Android', 'Windows Phone', 'BlackBerry', 'Samsung', 'HTC', 'Nokia'];
-            for (var i = 0; i < mobileBrands.length; i++) {
-                if (userAgent.indexOf(mobileBrands[i]) !== -1) {
-                    deviceInfo.mobileBrand = mobileBrands[i];
-                    break;
-                }
-            }
-
-            // 获取手机型号
-            var mobileModelMatch = userAgent.match(/(iPhone|iPad|iPod|Android|Windows Phone|BlackBerry);? ([^)\s]+)/);
-            if (mobileModelMatch) {
-                deviceInfo.mobileModel = mobileModelMatch[2];
-            }
-
-            // 获取手机系统版本
-            var mobileSystemVersionMatch = userAgent.match(/(Android|iPhone|iPad|iPod)\s([\d_]+)/);
-            if (mobileSystemVersionMatch) {
-                deviceInfo.mobileSystemVersion = mobileSystemVersionMatch[2].replace(/_/g, '.');
-            }
-
-            // 获取电脑品牌
-            var computerBrands = ['Dell', 'HP', 'Lenovo', 'Acer', 'Asus', 'Apple', 'Microsoft', 'Sony', 'Toshiba'];
-            for (var j = 0; j < computerBrands.length; j++) {
-                if (userAgent.indexOf(computerBrands[j]) !== -1) {
-                    deviceInfo.computerBrand = computerBrands[j];
-                    break;
-                }
-            }
-
-            // 获取电脑型号
-            var computerModelMatch = userAgent.match(/Windows NT\s([\w.]+)/);
-            if (computerModelMatch) {
-                deviceInfo.computerModel = computerModelMatch[1];
-            }
-
-            // 获取电脑系统
-            var computerSystemMatch = userAgent.match(/(Windows NT|Mac OS|Linux)\s?([\d._]*)/);
-            if (computerSystemMatch) {
-                deviceInfo.computerSystem = computerSystemMatch[1];
-                deviceInfo.computerSystemVersion = computerSystemMatch[2];
-            }
-
-            return deviceInfo;
-        }
-
-        // 调用函数获取设备信息
-        var deviceInfo = getDeviceInfo();
-        var screenWidth = window.innerWidth;
-        var screenHeight = window.innerHeight;
-
-        window.addEventListener('load', function () {
-            // 判断屏幕宽度并弹窗提示
-            if (window.innerWidth < 530) {
-                document.getElementById("device").innerHTML = "手机品牌:" + deviceInfo.mobileBrand + " 手机型号:" + deviceInfo.mobileModel + " 手机系统版本:" + deviceInfo.mobileSystemVersion + " 分辨率：" + screenWidth + "x" + screenHeight
-                // var p1 = 'https://cdn.seovx.com/?mom=302'
-                alert('你正在用手机访问');
-            } else if (window.innerWidth < 1200) {
-                document.getElementById("device").innerHTML = "平板品牌:" + deviceInfo.mobileBrand + " 平板型号:" + deviceInfo.mobileModel + " 平板系统版本:" + deviceInfo.mobileSystemVersion + " 分辨率：" + screenWidth + "x" + screenHeight
-                // var p1 = 'https://cdn.seovx.com/?mom=302'
-                alert('你正在用平板电脑访问');
-
-            } else {
-                document.getElementById("device").innerHTML = "电脑品牌1:" + deviceInfo.computerBrand + " 电脑型号:" + deviceInfo.computerModel + " 电脑系统:" + deviceInfo.computerSystem + " 电脑系统版本:" + deviceInfo.computerSystemVersion + " 分辨率：" + screenWidth + "x" + screenHeight
-                alert('你正在用电脑访问');
-            }
-        });
-    </script>
-
-    <style>
-
-
-        /* 当屏幕宽度超过800px时，应用不同的背景图 */
-        @media (min-width: 531px) {
-            body {
-                background: url('https://cdn.seovx.com/?mom=302');
-            }
-        }
-
-        @media (max-width: 530px) {
-            body {
-                background: url('https://cdn.seovx.com/ha/?mom=302');
-            }
-        }
-
-        body {
-
-            /*美女*/
-            /*background: url('https://cdn.seovx.com/?mom=302');*/
-            /*古风*/
-            /*background: url('https://cdn.seovx.com/ha/?mom=302');*/
-            /*表情包*/
-            /*background: url('https://api.isoyu.com/ARU_GIF_S.php');*/
-
-            /*background-size: 600px auto;*/
-            background-size: 600px auto;
-            font-family: 'Arial', sans-serif;
-            line-height: 1.6;
-            padding: 20px;
-            margin: 0;
-            /* Remove overflow: hidden; to allow scrolling */
-            transition: filter 0.5s ease-in-out;
-        }
-
-        .center {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-        }
-
-        .grayscale {
-            filter: grayscale(100%);
-        }
-
-        .popup-overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            justify-content: center;
-            align-items: center;
-            z-index: 999;
-        }
-
-        .popup-overlay1 {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            justify-content: center;
-            align-items: center;
-            z-index: 999;
-        }
-
-        .popup {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 5px;
-            text-align: center;
-        }
-
-        code {
-            display: block;
-            padding: 10px;
-            background-color: #f0f0f0;
-            margin: 10px 0;
-            word-wrap: break-word;
-        }
-
-        .copy-btn, .visit-btn {
-            background-color: #4caf50;
-            border: none;
-            color: white;
-            padding: 8px 16px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 14px;
-            margin: 4px 2px;
-            cursor: pointer;
-            border-radius: 4px;
-        }
-
-        #password-input {
-            margin-top: 10px;
-            padding: 5px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-
-        #submit-password {
-            margin-top: 10px;
-            padding: 8px 16px;
-            background-color: #4caf50;
-            border: none;
-            color: white;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-
-        #fullscreenContainer {
-            display: flex;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-            justify-content: center;
-            align-items: center;
-            visibility: hidden; /* 初始隐藏 */
-        }
-
-        /* 按钮样式 */
-        #fullscreenButton {
-            padding: 20px;
-            font-size: 18px;
-            background-color: #2ecc71;
-            color: #fff;
-            border: none;
-            border-radius: 10px;
-            cursor: pointer;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-            transition: background-color 0.3s ease, transform 0.3s ease;
-        }
-
-        #fullscreenButton:hover {
-            background-color: #27ae60;
-            transform: scale(1.05);
-        }
-
-
-    </style>
-
-
-    <script>
-        ((function () {
-            var callbacks = [],
-                timeLimit = 50,
-                open = false;
-            setInterval(loop, 1);
-            return {
-                addListener: function (fn) {
-                    callbacks.push(fn);
-                },
-                cancleListenr: function (fn) {
-                    callbacks = callbacks.filter(function (v) {
-                        return v !== fn;
-                    });
-                }
-            }
-
-            function loop() {
-                var startTime = new Date();
-                debugger;
-                if (new Date() - startTime > timeLimit) {
-                    if (!open) {
-                        callbacks.forEach(function (fn) {
-                            fn.call(null);
-                        });
-                    }
-                    open = true;
-                    window.stop();
-                    alert('不要扒我了');
-                    window.location.reload();
-                } else {
-                    open = false;
-                }
-            }
-        })()).addListener(function () {
-            window.location.reload();
-        });
-
-        document.oncontextmenu = function () {
-            var audio = document.getElementById('myAudio');
-            audio.play();
-            alert("禁止右键");
-
-            return false;
-        };
-
-        document.onkeydown = function (e) {
-            if (e.keyCode == 123) {
-                var audio = document.getElementById('myAudio');
-                audio.play();
-                alert("禁止使用 F12 和开发者工具！");
-                return false;
-            }
-        };
-    </script>
-
-
 </head>
 <body>
 <div id="content">
@@ -311,54 +25,7 @@
             Your browser does not support the video tag.
         </video>
     </div>
-    <!-- JavaScript for Image and Video -->
-    <script>
-        // JavaScript function to show images
-        function showImage(imagePath) {
-            var imageContainer = document.getElementById('imageContainer');
-            var displayedImage = document.getElementById('displayedImage');
-            // Set the image source
-            displayedImage.src = imagePath;
-            // Show the image container
-            imageContainer.style.display = 'block';
-            // Show the close button for video player
-            document.getElementById('closeButton').style.display = 'none';
-        }
-
-        // JavaScript functions for video playback and download
-        function playVideo(videoPath) {
-            var video = document.getElementById('videoPlayer');
-            var closeButton = document.getElementById('closeButton');
-            // Set the video source dynamically
-            video.src = videoPath;
-            // Show the video player
-            video.style.display = 'block';
-            // Show the close button for video player
-            closeButton.style.display = 'block';
-            // Play the video
-            video.play();
-        }
-
-        // JavaScript function to close the video player
-        function closeVideo() {
-            var video = document.getElementById('videoPlayer');
-            var closeButton = document.getElementById('closeButton');
-            // Pause the video
-            video.pause();
-            // Hide the video player and close button
-            video.style.display = 'none';
-            closeButton.style.display = 'none';
-        }
-    </script>
-
-
-    <!-- Spacer -->
     <div style="height: 20px;"></div>
-
-    <!--    <button style="margin: 0 auto;background-color: red" class="visit-btn"-->
-    <!--            onclick="visitLink('http://hbkgds.com/api/tj.php?name=yhAPI&a=1')">-->
-    <!--        访问网站请点击一次-->
-    <!--    </button>-->
 
     <style>
         .button-container {
@@ -377,94 +44,23 @@
             显示所有内容请用浏览器访问点击这里，然后返回此网页
         </button>
     </div>
-    <script>
-        // 获取当前 IP 地址
-        var ip = "";
-        var request = new XMLHttpRequest();
-        request.open("GET", "https://api.ipify.org/?format=json", true);
-        request.onload = function () {
-            if (request.status === 200) {
-                ip = JSON.parse(request.responseText).ip;
-                document.getElementById("ip").innerHTML = ip;
 
-                // 获取当前 IP 地址的地区和运营商
-                var request2 = new XMLHttpRequest();
-                request2.open("GET", "https://ipinfo.io/" + ip + "/json", true);
-                request2.onload = function () {
-                    if (request2.status === 200) {
-                        var data = JSON.parse(request2.responseText);
-                        document.getElementById("region").innerHTML = data.country + "-" + data.region + "-" + data.city + "/(" + data.loc + ")";
-
-
-                    }
-                };
-                request2.send();
-            }
-        };
-        request.send();
-    </script>
     <button class="visit-btn" onclick="visitLink('https://qr.alipay.com/fkx11377f1hr6zddl1zxg31')">支付宝捐赠</button>
     <button class="visit-btn" onclick="visitLink('http://hbkgds.com/api/tj.php?name=yhAPI&a=2')">网站被访问的次数
     </button>
     <br>
-    <span id="timeDate" style="color: #b41919;horiz-align: center"></span><span id="times"
-                                                                                style="color: deeppink"></span>
+    <span id="timeDate" style="color: #b41919;horiz-align: center"></span>
+    <span id="times" style="color: deeppink"></span>
     <p>当前 IP 地址：<span id="ip"></span></p>
     <p>位置：<span id="region"></span></p>
     <p>设备信息：<span id="device"></span></p>
 
 
-    <style>
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% {
-                transform: translateY(0);
-            }
-            40% {
-                transform: translateY(-40px);
-            }
-            60% {
-                transform: translateY(-40px);
-            }
-        }
-
-        .visit-btn1 {
-            margin: 0 auto;
-            background-color: red;
-            animation: bounce 1s infinite;
-        }
-    </style>
     <audio id="myAudio">
         <source src="movie/鸡你太美.mp3" type="audio/mp3">
         Your browser does not support the audio element.
     </audio>
 
-    <script>
-        function showElements() {
-            // 获取用户的 IP 地址，这是一个简化的示例，实际中需要使用后端服务获取
-
-
-            var audio = document.getElementById('myAudio');
-            //audio.play();
-
-            // Show the initially hidden elements
-            document.getElementById('hiddenElements').style.display = 'block';
-            // Call the function to visit the website if needed
-            visitLink('http://hbkgds.com/api/tj.php?name=yhAPI&a=1');
-
-            // Show the initially hidden elements
-            // Show the initially hidden elements
-            document.getElementById('hiddenElements').style.display = 'block';
-
-            // Hide the button
-            document.querySelector('.visit-btn1').style.display = 'none';
-        }
-
-        // If you have the visitLink function, you can define it here
-        function visitLink(url) {
-            // Implement the logic to visit the link
-            window.location.href = url;
-        }
-    </script>
 
     <div id="hiddenElements" style="display: none;">
 
@@ -489,7 +85,7 @@
             </div>
             <!--            <button class="copy-btn" onclick="copyToClipboard('839795444', 'link7')">拼车-->
             <!--            </button>-->
-                        <button class="visit-btn" onclick="visitLink('https://fk.jiejingfan.vip?from=2690')">晴天源</button>
+            <button class="visit-btn" onclick="visitLink('https://fk.jiejingfan.vip?from=2690')">晴天源</button>
             <button class="copy-btn" onclick="copyToClipboard('#小程序://91IOS/hXIgxc5oSntvwuD', 'link9')">点击复制91ios 小程序地址
             </button>
             <button class="visit-btn" onclick="visitLink('https://alist.91ios.fun')">访问91ios网盘</button>
@@ -686,20 +282,129 @@
 
     <!--开站时间开始-->
     </a>
-    <center><a class="nav-link"
+    <div style="text-align: center;"><a class="nav-link"
 
     >
         <br>
 
         <span class="nav-item">
-                </span></a><a class="nav-link"
+                </span></a><a class="nav-link">
 
-    >
-        <!--    <span id="timeDate"></span><span id="times"></span>-->
+    </a></div>
+
+    <div class="solarsys">
+        <!--太阳-->
+        <div class='sun'></div>
+
+        <!--水星轨道-->
+        <div class='mercuryOrbit'></div>
+
+        <!--水星-->
+        <div class='mercury'></div>
+
+        <!--金星轨道-->
+        <div class='venusOrbit'></div>
+
+        <!--金星-->
+        <div class='venus'></div>
+
+        <!--地球轨道-->
+        <div class='earthOrbit'></div>
+
+        <!--地球-->
+        <div class='earth'></div>
+
+        <!--火星轨道-->
+        <div class='marsOrbit'></div>
+
+        <!--火星-->
+        <div class='mars'></div>
+
+        <!--木星轨道-->
+        <div class='jupiterOrbit'></div>
+
+        <!--木星-->
+        <div class='jupiter'></div>
+
+        <!--土星轨道-->
+        <div class='saturnOrbit'></div>
+
+        <!--土星-->
+        <div class='saturn'></div>
+
+        <!--天王星轨道-->
+        <div class='uranusOrbit'></div>
+
+        <!--天王星-->
+        <div class='uranus'></div>
+
+        <!--海王星轨道-->
+        <div class='neptuneOrbit'></div>
+
+        <!--海王星-->
+        <div class='neptune'></div>
+    </div>
+    <iframe src="https://chat03.a1r.cc" width="100%" height="800px" frameborder="0"
+            style="background-color: rgba(229,13,13,0)!important;"></iframe>
+    <iframe src="https://tool.liumingye.cn/music" width="100%" height="800px" frameborder="0"
+            style="background-color: rgba(229,13,13,0)!important;"></iframe>
+
+    <iframe src="https://chat18.aichatos.xyz/" width="0px" height="0px" frameborder="0"
+            style="background-color: rgba(229,13,13,0)!important;"></iframe>
+    以下视频西瓜视频在线，请关闭梯子看
+    <iframe src="https://www.y821.com/" width="100%" height="800px" frameborder="0"
+            style="background-color: rgba(229,13,13,0)!important;"></iframe>
+    <span id="span_tag"></span>
+
+    <script>
+        // 发送HTTP GET请求，获取响应内容
+        var response = new XMLHttpRequest();
+        response.open("GET", "http://hbkgds.com/api/tj.php?name=yhAPI&a=2", true);
+        response.send();
+
+        // 获取响应内容的文本
+        response.onreadystatechange = function () {
+            if (this.readyState == 4 || this.status == 200) {
+                var text = this.responseText;
+
+                // 将响应内容的文本赋给span标签的innerHTML属性
+                document.getElementById("span_tag").innerHTML = text;
+            }
+        };
+    </script>
+
+    <script language="javascript">
+        var now = new Date();
+
+        function createtime() {
+            var grt = new Date("01/13/2024 00:00:00");/*---这里是网站的启用时间--*/
+            now.setTime(now.getTime() + 250);
+            days = (now - grt) / 1000 / 60 / 60 / 24;
+            dnum = Math.floor(days);
+            hours = (now - grt) / 1000 / 60 / 60 - (24 * dnum);
+            hnum = Math.floor(hours);
+            if (String(hnum).length == 1) {
+                hnum = "0" + hnum;
+            }
+            minutes = (now - grt) / 1000 / 60 - (24 * 60 * dnum) - (60 * hnum);
+            mnum = Math.floor(minutes);
+            if (String(mnum).length == 1) {
+                mnum = "0" + mnum;
+            }
+            seconds = (now - grt) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+            snum = Math.round(seconds);
+            if (String(snum).length == 1) {
+                snum = "0" + snum;
+            }
+            document.getElementById("timeDate").innerHTML = "️当前版本 1.3--本站已运行" + dnum + "天";
+            document.getElementById("times").innerHTML = hnum + "小时" + mnum + "分" + snum + "秒";
+        }
+
+        setInterval("createtime()", 250);
+    </script>
 
 
-        <!--延迟加载范围到这里结束-->
-    </a></center>
+    </span>
     <style>
         /*太阳系*/
         .solarsys {
@@ -971,119 +676,377 @@
             }
         }
     </style>
-    <div class="solarsys">
-        <!--太阳-->
-        <div class='sun'></div>
+    <style>
 
-        <!--水星轨道-->
-        <div class='mercuryOrbit'></div>
 
-        <!--水星-->
-        <div class='mercury'></div>
+        /* 当屏幕宽度超过800px时，应用不同的背景图 */
+        @media (min-width: 531px) {
+            body {
+                background: url('https://cdn.seovx.com/?mom=302');
+            }
+        }
 
-        <!--金星轨道-->
-        <div class='venusOrbit'></div>
+        @media (max-width: 530px) {
+            body {
+                background: url('https://cdn.seovx.com/ha/?mom=302');
+            }
+        }
 
-        <!--金星-->
-        <div class='venus'></div>
+        body {
 
-        <!--地球轨道-->
-        <div class='earthOrbit'></div>
+            /*美女*/
+            /*background: url('https://cdn.seovx.com/?mom=302');*/
+            /*古风*/
+            /*background: url('https://cdn.seovx.com/ha/?mom=302');*/
+            /*表情包*/
+            /*background: url('https://api.isoyu.com/ARU_GIF_S.php');*/
 
-        <!--地球-->
-        <div class='earth'></div>
+            /*background-size: 600px auto;*/
+            background-size: 600px auto;
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            padding: 20px;
+            margin: 0;
+            /* Remove overflow: hidden; to allow scrolling */
+            transition: filter 0.5s ease-in-out;
+        }
 
-        <!--火星轨道-->
-        <div class='marsOrbit'></div>
+        .center {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
 
-        <!--火星-->
-        <div class='mars'></div>
+        .grayscale {
+            filter: grayscale(100%);
+        }
 
-        <!--木星轨道-->
-        <div class='jupiterOrbit'></div>
+        .popup-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+            z-index: 999;
+        }
 
-        <!--木星-->
-        <div class='jupiter'></div>
+        .popup-overlay1 {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+            z-index: 999;
+        }
 
-        <!--土星轨道-->
-        <div class='saturnOrbit'></div>
+        .popup {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            text-align: center;
+        }
 
-        <!--土星-->
-        <div class='saturn'></div>
+        code {
+            display: block;
+            padding: 10px;
+            background-color: #f0f0f0;
+            margin: 10px 0;
+            word-wrap: break-word;
+        }
 
-        <!--天王星轨道-->
-        <div class='uranusOrbit'></div>
+        .copy-btn, .visit-btn {
+            background-color: #4caf50;
+            border: none;
+            color: white;
+            padding: 8px 16px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 14px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
 
-        <!--天王星-->
-        <div class='uranus'></div>
+        #password-input {
+            margin-top: 10px;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
 
-        <!--海王星轨道-->
-        <div class='neptuneOrbit'></div>
+        #submit-password {
+            margin-top: 10px;
+            padding: 8px 16px;
+            background-color: #4caf50;
+            border: none;
+            color: white;
+            border-radius: 4px;
+            cursor: pointer;
+        }
 
-        <!--海王星-->
-        <div class='neptune'></div>
-    </div>
-    <iframe src="https://chat03.a1r.cc" width="100%" height="800px" frameborder="0"
-            style="background-color: rgba(229,13,13,0)!important;"></iframe>
-    <iframe src="https://tool.liumingye.cn/music" width="100%" height="800px" frameborder="0"
-            style="background-color: rgba(229,13,13,0)!important;"></iframe>
+        #fullscreenContainer {
+            display: flex;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+            visibility: hidden; /* 初始隐藏 */
+        }
 
-        <iframe src="https://chat18.aichatos.xyz/" width="0px" height="0px" frameborder="0"
-            style="background-color: rgba(229,13,13,0)!important;"></iframe>
-    以下视频西瓜视频在线，请关闭梯子看
-    <iframe src="https://www.y821.com/" width="100%" height="800px" frameborder="0"
-            style="background-color: rgba(229,13,13,0)!important;"></iframe>
-    <span id="span_tag"></span>
+        /* 按钮样式 */
+        #fullscreenButton {
+            padding: 20px;
+            font-size: 18px;
+            background-color: #2ecc71;
+            color: #fff;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        #fullscreenButton:hover {
+            background-color: #27ae60;
+            transform: scale(1.05);
+        }
+
+
+    </style>
+    <script>
+        // JavaScript function to show images
+        function showImage(imagePath) {
+            var imageContainer = document.getElementById('imageContainer');
+            var displayedImage = document.getElementById('displayedImage');
+            // Set the image source
+            displayedImage.src = imagePath;
+            // Show the image container
+            imageContainer.style.display = 'block';
+            // Show the close button for video player
+            document.getElementById('closeButton').style.display = 'none';
+        }
+
+        // JavaScript functions for video playback and download
+        function playVideo(videoPath) {
+            var video = document.getElementById('videoPlayer');
+            var closeButton = document.getElementById('closeButton');
+            // Set the video source dynamically
+            video.src = videoPath;
+            // Show the video player
+            video.style.display = 'block';
+            // Show the close button for video player
+            closeButton.style.display = 'block';
+            // Play the video
+            video.play();
+        }
+
+        // JavaScript function to close the video player
+        function closeVideo() {
+            var video = document.getElementById('videoPlayer');
+            var closeButton = document.getElementById('closeButton');
+            // Pause the video
+            video.pause();
+            // Hide the video player and close button
+            video.style.display = 'none';
+            closeButton.style.display = 'none';
+        }
+    </script>
+    <script>
+        function showElements() {
+            // 获取用户的 IP 地址，这是一个简化的示例，实际中需要使用后端服务获取
+
+
+            var audio = document.getElementById('myAudio');
+            //audio.play();
+
+            // Show the initially hidden elements
+            document.getElementById('hiddenElements').style.display = 'block';
+            // Call the function to visit the website if needed
+            visitLink('http://hbkgds.com/api/tj.php?name=yhAPI&a=1');
+
+            // Show the initially hidden elements
+            // Show the initially hidden elements
+            document.getElementById('hiddenElements').style.display = 'block';
+
+            // Hide the button
+            document.querySelector('.visit-btn1').style.display = 'none';
+        }
+
+        // If you have the visitLink function, you can define it here
+        function visitLink(url) {
+            // Implement the logic to visit the link
+            window.location.href = url;
+        }
+    </script>
 
     <script>
-        // 发送HTTP GET请求，获取响应内容
-        var response = new XMLHttpRequest();
-        response.open("GET", "http://hbkgds.com/api/tj.php?name=yhAPI&a=2", true);
-        response.send();
+        ((function () {
+            var callbacks = [],
+                timeLimit = 50,
+                open = false;
+            setInterval(loop, 1);
+            return {
+                addListener: function (fn) {
+                    callbacks.push(fn);
+                },
+                cancleListenr: function (fn) {
+                    callbacks = callbacks.filter(function (v) {
+                        return v !== fn;
+                    });
+                }
+            }
 
-        // 获取响应内容的文本
-        response.onreadystatechange = function () {
-            if (this.readyState == 4 || this.status == 200) {
-                var text = this.responseText;
+            function loop() {
+                var startTime = new Date();
+                debugger;
+                if (new Date() - startTime > timeLimit) {
+                    if (!open) {
+                        callbacks.forEach(function (fn) {
+                            fn.call(null);
+                        });
+                    }
+                    open = true;
+                    window.stop();
+                    alert('不要扒我了');
+                    window.location.reload();
+                } else {
+                    open = false;
+                }
+            }
+        })()).addListener(function () {
+            window.location.reload();
+        });
 
-                // 将响应内容的文本赋给span标签的innerHTML属性
-                document.getElementById("span_tag").innerHTML = text;
+        document.oncontextmenu = function () {
+            var audio = document.getElementById('myAudio');
+            audio.play();
+            alert("禁止右键");
+
+            return false;
+        };
+
+        document.onkeydown = function (e) {
+            if (e.keyCode == 123) {
+                var audio = document.getElementById('myAudio');
+                audio.play();
+                alert("禁止使用 F12 和开发者工具！");
+                return false;
             }
         };
     </script>
+    <script>
+        function getDeviceInfo() {
+            var userAgent = navigator.userAgent;
+            var deviceInfo = {};
 
-    <script language="javascript">
-        var now = new Date();
+            // 获取手机品牌
+            var mobileBrands = ['iPhone', 'iPad', 'iPod', 'Android', 'Windows Phone', 'BlackBerry', 'Samsung', 'HTC', 'Nokia'];
+            for (var i = 0; i < mobileBrands.length; i++) {
+                if (userAgent.indexOf(mobileBrands[i]) !== -1) {
+                    deviceInfo.mobileBrand = mobileBrands[i];
+                    break;
+                }
+            }
 
-        function createtime() {
-            var grt = new Date("01/13/2024 00:00:00");/*---这里是网站的启用时间--*/
-            now.setTime(now.getTime() + 250);
-            days = (now - grt) / 1000 / 60 / 60 / 24;
-            dnum = Math.floor(days);
-            hours = (now - grt) / 1000 / 60 / 60 - (24 * dnum);
-            hnum = Math.floor(hours);
-            if (String(hnum).length == 1) {
-                hnum = "0" + hnum;
+            // 获取手机型号
+            var mobileModelMatch = userAgent.match(/(iPhone|iPad|iPod|Android|Windows Phone|BlackBerry);? ([^)\s]+)/);
+            if (mobileModelMatch) {
+                deviceInfo.mobileModel = mobileModelMatch[2];
             }
-            minutes = (now - grt) / 1000 / 60 - (24 * 60 * dnum) - (60 * hnum);
-            mnum = Math.floor(minutes);
-            if (String(mnum).length == 1) {
-                mnum = "0" + mnum;
+
+            // 获取手机系统版本
+            var mobileSystemVersionMatch = userAgent.match(/(Android|iPhone|iPad|iPod)\s([\d_]+)/);
+            if (mobileSystemVersionMatch) {
+                deviceInfo.mobileSystemVersion = mobileSystemVersionMatch[2].replace(/_/g, '.');
             }
-            seconds = (now - grt) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
-            snum = Math.round(seconds);
-            if (String(snum).length == 1) {
-                snum = "0" + snum;
+
+            // 获取电脑品牌
+            var computerBrands = ['Dell', 'HP', 'Lenovo', 'Acer', 'Asus', 'Apple', 'Microsoft', 'Sony', 'Toshiba'];
+            for (var j = 0; j < computerBrands.length; j++) {
+                if (userAgent.indexOf(computerBrands[j]) !== -1) {
+                    deviceInfo.computerBrand = computerBrands[j];
+                    break;
+                }
             }
-            document.getElementById("timeDate").innerHTML = "️当前版本 1.3--本站已运行" + dnum + "天";
-            document.getElementById("times").innerHTML = hnum + "小时" + mnum + "分" + snum + "秒";
+
+            // 获取电脑型号
+            var computerModelMatch = userAgent.match(/Windows NT\s([\w.]+)/);
+            if (computerModelMatch) {
+                deviceInfo.computerModel = computerModelMatch[1];
+            }
+
+            // 获取电脑系统
+            var computerSystemMatch = userAgent.match(/(Windows NT|Mac OS|Linux)\s?([\d._]*)/);
+            if (computerSystemMatch) {
+                deviceInfo.computerSystem = computerSystemMatch[1];
+                deviceInfo.computerSystemVersion = computerSystemMatch[2];
+            }
+
+            return deviceInfo;
         }
 
-        setInterval("createtime()", 250);
+        // 调用函数获取设备信息
+        var deviceInfo = getDeviceInfo();
+        var screenWidth = window.innerWidth;
+        var screenHeight = window.innerHeight;
+
+        window.addEventListener('load', function () {
+            // 判断屏幕宽度并弹窗提示
+            if (window.innerWidth < 530) {
+                document.getElementById("device").innerHTML = "手机品牌:" + deviceInfo.mobileBrand + " 手机型号:" + deviceInfo.mobileModel + " 手机系统版本:" + deviceInfo.mobileSystemVersion + " 分辨率：" + screenWidth + "x" + screenHeight
+                // var p1 = 'https://cdn.seovx.com/?mom=302'
+                alert('你正在用手机访问');
+            } else if (window.innerWidth < 1200) {
+                document.getElementById("device").innerHTML = "平板品牌:" + deviceInfo.mobileBrand + " 平板型号:" + deviceInfo.mobileModel + " 平板系统版本:" + deviceInfo.mobileSystemVersion + " 分辨率：" + screenWidth + "x" + screenHeight
+                // var p1 = 'https://cdn.seovx.com/?mom=302'
+                alert('你正在用平板电脑访问');
+
+            } else {
+                document.getElementById("device").innerHTML = "电脑品牌1:" + deviceInfo.computerBrand + " 电脑型号:" + deviceInfo.computerModel + " 电脑系统:" + deviceInfo.computerSystem + " 电脑系统版本:" + deviceInfo.computerSystemVersion + " 分辨率：" + screenWidth + "x" + screenHeight
+                alert('你正在用电脑访问');
+            }
+        });
     </script>
+    <script>
+        // 获取当前 IP 地址
+        var ip = "";
+        var request = new XMLHttpRequest();
+        request.open("GET", "https://api.ipify.org/?format=json", true);
+        request.onload = function () {
+            if (request.status === 200) {
+                ip = JSON.parse(request.responseText).ip;
+                document.getElementById("ip").innerHTML = ip;
+
+                // 获取当前 IP 地址的地区和运营商
+                var request2 = new XMLHttpRequest();
+                request2.open("GET", "https://ipinfo.io/" + ip + "/json", true);
+                request2.onload = function () {
+                    if (request2.status === 200) {
+                        var data = JSON.parse(request2.responseText);
+                        document.getElementById("region").innerHTML = data.country + "-" + data.region + "-" + data.city + "/(" + data.loc + ")";
 
 
-    </span>
+                    }
+                };
+                request2.send();
+            }
+        };
+        request.send();
+    </script>
 
     <script>
 
