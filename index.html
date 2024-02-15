@@ -6,9 +6,16 @@
           type="image/png">
     <script>
         window.addEventListener("load", getVisits);
-        window.onbeforeunload = function() {
-    return "确定要离开吗？";
-};
+        document.onkeydown = function (e) {
+            if ((e.which || e.keyCode) == 116) {
+                e.preventDefault();
+            }
+        };
+
+        // 禁止右键菜单的刷新功能
+        document.addEventListener('contextmenu', function (e) {
+            e.preventDefault();
+        });
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -57,7 +64,7 @@
     <p>当前 IP 地址：<span id="ip"></span></p>
     <p>位置：<span id="region"></span></p>
     <p>设备信息：<span id="device"></span></p>
-   <script language="javascript">
+    <script language="javascript">
         var now = new Date();
 
         function createtime() {
@@ -80,7 +87,7 @@
             if (String(snum).length == 1) {
                 snum = "0" + snum;
             }
-            document.getElementById("timeDate").innerHTML = "️当前版本 1.4--本站已运行" + dnum + "天";
+            document.getElementById("timeDate").innerHTML = "️当前版本 1.5--本站已运行" + dnum + "天";
             document.getElementById("times").innerHTML = hnum + "小时" + mnum + "分" + snum + "秒";
         }
 
@@ -391,8 +398,6 @@
             }
         };
     </script>
-
-
 
 
     </span>
