@@ -183,7 +183,9 @@
             <button class="visit-btn" onclick="visitLink('https://www.y821.com/')">西瓜视频在线看</button>
 
             <button class="visit-btn" onclick="visitLink('https://www.94speed.com')">百度网盘解析下载</button>
-            <button class="visit-btn" onclick="visitLink('https://z.wf0.top')">苹果绕ID，配置锁，监管锁</button>
+            <button class="visit-btn" onclick="visitLink('sileo://source/https://byg.iosios.net/')">搬运工越狱源</button>
+            <button class="visit-btn" onclick="visitLink('sileo://source/https://xiangfeidexiaohuo.github.io/')">刀刀越狱源</button>
+            <button class="visit-btn" onclick="visitLink('sileo://source/https://z.wf0.top')">来了老弟越狱源</button>
             <br>
 
 
@@ -252,7 +254,8 @@
             <button class="visit-btn" onclick="visitLink('https://1.1.1.1')">wrap 无限流量 VPN</button>
             <button class="visit-btn" onclick="visitLink('https://suburl.v1.mk/')">节点链接客户端转换</button>
 
-            <button class="visit-btn" onclick="promptForPassword()">外区苹果🆔密码是今天的月日，例0123</button>
+            <button class="visit-btn "  onclick="promptForPassword()">外区苹果🆔密码是今天的月日，例0123</button>
+            <span id="psw1"> </span>
 
 
             <div class="category-header"
@@ -1096,6 +1099,7 @@
 
             var expectedPassword = month + day;
             document.getElementById('password-input').innerHTML = expectedPassword;
+            document.getElementById('psw1').innerHTML = "外区苹果🆔密码是";
             if (passwordInput.value === expectedPassword) {
                 window.open('https://ccbaohe.com/appleID/', '_blank');
                 popupOverlay.style.display = "none";
