@@ -93,9 +93,43 @@
     </audio>
 
 
+    <script>
+        const searchInput = document.getElementById('searchInput');
+        searchInput.addEventListener('keyup', function(event) {
+            if (event.key === 'Enter') {
+                search();
+            }
+        });
+        function search() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            const allContent = document.body.innerText.toLowerCase();
+            const searchResults = [];
+            let currentIndex = allContent.indexOf(searchTerm);
+            while (currentIndex !== -1) {
+                const start = Math.max(0, currentIndex - 10); // 匹配文本前面显示20个字符
+                const end = Math.min(allContent.length, currentIndex + searchTerm.length + 10); // 匹配文本后面显示20个字符
+                const matchedText = allContent.substring(start, end);
+                searchResults.push({index: currentIndex, text: matchedText});
+                currentIndex = allContent.indexOf(searchTerm, currentIndex + 1);
+            }
+            const searchResultsDiv = document.getElementById('searchResults');
+            searchResultsDiv.innerHTML = '';
+            searchResults.forEach(result => {
+                const p = document.createElement('p');
+                const link = document.createElement('a');
+                link.textContent = result.text;
+                link.href = `javascript:window.scrollTo(0, ${result.index});`;
+                p.appendChild(link);
+                searchResultsDiv.appendChild(p);
+            });
+        }
+    </script>
+
     <div id="hiddenElements" style="display: none;">
 
-
+ <input type="text" id="searchInput" placeholder="请输入搜索关键词模糊搜索">
+    <button id="searchButton" onclick="search()">搜索</button>
+    <div id="searchResults"></div>
         <code id="link12"
               style=" background-color: rgba(253,158,158,0.09); padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(234,92,92,0.55);">
             <h2 style="color: #ff0000">注意：此网站在国外服务器上，没有🪜访问慢请耐心等待，苹果用户建议 Safari浏览器访问，刷新网站有惊喜</h2>
@@ -667,6 +701,7 @@
                 display: none;
             }
         }
+
     </style>
     <style>
 
@@ -818,6 +853,42 @@
         }
 
 
+    </style>
+    <style>
+        #searchInput {
+            padding: 8px;
+            margin-right: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        #searchButton {
+            padding: 8px 16px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        #searchResults {
+            margin-top: 20px;
+        }
+
+        .searchResult {
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+
+        .searchResult a {
+            text-decoration: none;
+            color: #333;
+        }
     </style>
     <script>
         // JavaScript function to show images
