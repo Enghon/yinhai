@@ -1,5 +1,5 @@
 :ST
 start cmd %%0
 goto ST
-ctfc
+chdh
 839795444
