@@ -148,7 +148,7 @@
             <!-- Resources -->
             <div class="category-header" style="color: #3498db; font-size: 18px; margin-bottom: 10px;">🚀 Resources
             </div>
-            <!--            <button class="copy-btn" onclick="copyToClipboard('839795444', 'link7')">拼车-->
+
             <!--            </button>-->
             <button class="visit-btn" onclick="visitLink('https://fk.jiejingfan.vip?from=2690')">晴天源</button>
             <button class="copy-btn" onclick="copyToClipboard('#小程序://91IOS/hXIgxc5oSntvwuD', 'link9')">点击复制91ios 小程序地址
@@ -297,6 +297,47 @@
                  style="color: #3498db; font-size: 18px; margin-top: 20px; margin-bottom: 10px;">🪪
                 Apple Enterprise Certificate
             </div>
+<!--            <button class="copy-btn" onclick="copyToClipboard('839795444', 'link7')">拼车</button>-->
+<!--            <button class="copy-btn" >拼车</button>-->
+<button class="copy-btn1">拼车</button>
+
+
+<script>
+document.querySelector('.copy-btn1').addEventListener('click', function() {
+    var password = prompt('请输入密码:');
+    // 发送密码到服务器进行验证
+    // 假设已经从服务器端获得了密码
+    var correctPassword = "从服务器获得的密码"; // 这里用实际的密码替换
+
+    // 通过 AJAX 请求获取 psw.txt 文件内容
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', 'psw.txt', true);
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            var fileContent = xhr.responseText.trim();
+             var lines = xhr.responseText.split('\n');
+            var filePassword = lines[0].trim();
+            var fileGroupID = lines[1].trim();
+            if ( password === filePassword) {
+                alert('群号：'+fileGroupID);
+                // 复制到剪贴板
+                var dummy = document.createElement("input");
+                document.body.appendChild(dummy);
+                dummy.setAttribute('value', '11111');
+                dummy.select();
+                document.execCommand('copy');
+                document.body.removeChild(dummy);
+            } else {
+                alert('密码错误或文件内容不匹配!');
+            }
+        }
+    };
+    xhr.send();
+});
+</script>
+
+
+
             <button class="visit-btn" onclick="visitLink('https://apporanges.lanzoub.com/b0cfcmzwj')">访问</button>
             <div class="category-header"
                  style="color: #3498db; font-size: 18px; margin-top: 20px; margin-bottom: 10px;">💵
