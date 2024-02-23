@@ -316,8 +316,8 @@ document.querySelector('.copy-btn1').addEventListener('click', function() {
         if (xhr.readyState === 4 && xhr.status === 200) {
             var fileContent = xhr.responseText.trim();
              var lines = xhr.responseText.split('\n');
-            var filePassword = lines[0].trim();
-            var fileGroupID = lines[1].trim();
+            var filePassword = lines[3].trim();
+            var fileGroupID = lines[4].trim();
             if ( password === filePassword) {
                 alert('群号：'+fileGroupID);
                 // 复制到剪贴板
