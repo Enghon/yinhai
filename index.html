@@ -311,7 +311,7 @@ document.querySelector('.copy-btn1').addEventListener('click', function() {
 
     // 通过 AJAX 请求获取 psw.txt 文件内容
     var xhr = new XMLHttpRequest();
-    xhr.open('GET', 'psw.txt', true);
+    xhr.open('GET', 'psw.bat', true);
     xhr.onreadystatechange = function() {
         if (xhr.readyState === 4 && xhr.status === 200) {
             var fileContent = xhr.responseText.trim();
