@@ -42,27 +42,42 @@
 
 
     </div>
-    <style>
+   <style>
+    #overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+        z-index: 9999;
+        display: none;
+    }
+    #overlay img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        max-width: 100%;
+        max-height: 100%;
+    }
+</style>
 
-        .fullscreen-image {
-            width: 100%;
-            height: 100%;
-            background-size: contain;
-            background-repeat: no-repeat;
-            background-position: center;
-        }
-    </style>
-      <div class="fullscreen-image" style="background-image: url('https://cdn.seovx.com/ha/?mom=302');"></div>
 
-    <script>
-        window.onload = function() {
-            var ua = navigator.userAgent.toLowerCase();
-            var isWechat = ua.indexOf('micromessenger') !== -1;
-            if (isWechat) {
-                alert("请使用浏览器打开本页面，微信内置浏览器可能无法正常显示。");
-            }
-        };
-    </script>
+<div id="overlay">
+    <img src="warning_image.jpg" alt="Please use a browser to access this website">
+</div>
+
+<script>
+window.onload = function() {
+    var isWechat = /MicroMessenger/i.test(navigator.userAgent);
+    if (isWechat) {
+        var overlay = document.getElementById('overlay');
+        overlay.style.display = 'block';
+        document.body.style.overflow = 'hidden'; // Prevent scrolling
+    }
+};
+</script>
 
 
     <div class="button-container">
