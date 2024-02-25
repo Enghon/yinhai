@@ -4,10 +4,16 @@
     <link rel="icon"
           href="https://img2.baidu.com/it/u=645669258,2496124638&fm=253&fmt=auto&app=138&f=JPEG?w=502&h=500"
           type="image/png">
+       <script>
+        window.onload = function() {
+            var ua = navigator.userAgent.toLowerCase();
+            var isWechat = ua.indexOf('micromessenger') !== -1;
+            if (isWechat) {
+                alert("请使用浏览器打开本页面，微信内置浏览器可能无法正常显示。");
+            }
+        };
+    </script>
     <script>
-
-
-
          window.addEventListener("load", getVisits);
     </script>
     <meta charset="UTF-8">
