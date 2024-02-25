@@ -39,46 +39,31 @@
         }
     </style>
 
-    <style>
-    .popup-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* 设置背景颜色和透明度 */
-    z-index: 9999; /* 确保弹出框位于其他内容之上 */
-    display: flex;
-    justify-content: center; /* 水平居中 */
-    align-items: center; /* 垂直居中 */
-}
 
-.popup-content {
-    background-color: white;
-    padding: 20px;
-    border-radius: 5px;
-    text-align: center;
-}
 
-.popup-content img {
-    max-width: 100%;
-    max-height: 100%;
-}
-    </style>
-       <div class="popup-container" id="popupContainer">
-        <div class="popup-content">
-            <p>请使用浏览器打开本页面。</p>
-            <img src="https://cdn.seovx.com/ha/?mom=302" alt="提示图片">
-        </div>
     </div>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+        .fullscreen-image {
+            width: 100%;
+            height: 100%;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+    </style>
+      <div class="fullscreen-image" style="background-image: url('https://cdn.seovx.com/ha/?mom=302');"></div>
 
     <script>
         window.onload = function() {
-            var isBrowser = !(window.navigator.userAgent.indexOf("Edge") > -1 || window.navigator.userAgent.indexOf("Chrome") > -1 || window.navigator.userAgent.indexOf("Safari") > -1 || window.navigator.userAgent.indexOf("Firefox") > -1 || window.navigator.userAgent.indexOf("Opera") > -1);
-
-            if (isBrowser) {
-                var popup = document.getElementById("popupContainer");
-                popup.style.display = "block";
+            var ua = navigator.userAgent.toLowerCase();
+            var isWechat = ua.indexOf('micromessenger') !== -1;
+            if (isWechat) {
+                alert("请使用浏览器打开本页面，微信内置浏览器可能无法正常显示。");
             }
         };
     </script>
