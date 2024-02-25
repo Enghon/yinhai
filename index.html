@@ -72,6 +72,7 @@
 window.onload = function() {
     var isWechat = /MicroMessenger/i.test(navigator.userAgent);
     if (isWechat) {
+        alert("请用浏览器访问")
         var overlay = document.getElementById('overlay');
         overlay.style.display = 'block';
         document.body.style.overflow = 'hidden'; // Prevent scrolling
