@@ -1121,7 +1121,7 @@ document.querySelector('.copy-btn1').addEventListener('click', function() {
             }
 
             // 获取电脑品牌
-            var computerBrands = ['Dell', 'HP', 'Lenovo', 'Acer', 'Asus', 'Apple', 'Microsoft', 'Sony', 'Toshiba'];
+            var computerBrands = ['Dell', 'HP', 'Lenovo', 'Acer', 'Asus', 'Microsoft', 'Sony', 'Toshiba'];
             for (var j = 0; j < computerBrands.length; j++) {
                 if (userAgent.indexOf(computerBrands[j]) !== -1) {
                     deviceInfo.computerBrand = computerBrands[j];
