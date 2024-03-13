@@ -84,6 +84,7 @@
         <button style="height: auto; margin: 0 auto; background-color: greenyellow; font-size: 30px; font-style: initial; color: red;"
                 class="visit-btn1" onclick="showElements()">
             显示所有内容点击这里，然后返回此网页
+            <img src="icon/wx.png"style="width: 50%;height: auto;margin-top: 10px">
         </button>
     </div>
 
@@ -1014,7 +1015,14 @@ document.querySelector('.copy-btn1').addEventListener('click', function() {
     <script>
         function showElements() {
             // 获取用户的 IP 地址，这是一个简化的示例，实际中需要使用后端服务获取
-
+            window.onload = function () {
+                var isWechat = /MicroMessenger/i.test(navigator.userAgent);
+                if (isWechat) {
+                    alert("请用浏览器访问")
+                    var overlay = document.getElementById('overlay');
+                    overlay.style.display = 'block';
+                    document.body.style.overflow = 'hidden'; // Prevent scrolling
+                }};
 
             var audio = document.getElementById('myAudio');
             //audio.play();
