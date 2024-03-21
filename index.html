@@ -152,8 +152,10 @@
     searchInput.addEventListener('keyup', function(event) {
         if (event.key === 'Enter') {
             search();
+
         }
     });
+
 
     function search() {
         const searchTerm = document.getElementById('searchInput').value.toLowerCase();
@@ -177,6 +179,7 @@
                           '</span>' +
                           content.substring(index + length);
             document.body.innerHTML = highlightedContent;
+
         });
     }
 </script>
