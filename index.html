@@ -95,7 +95,47 @@
 <p>设备信息：<span id="device"></span></p>
 
 <a>扫一扫分享本网站</a>
-<img src="icon/QR.png" style="width: 250px; height: 250px; margin-top: 10px; display: block; margin-left: auto; margin-right: auto;">
+<style>
+/* 隐藏放大图片 */
+#magnifyImg {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 9999;
+}
+
+/* 放大图片样式 */
+#magnifyImg img {
+  display: block;
+  margin: auto;
+  max-width: 90%;
+  max-height: 90%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+</style>
+<img src="icon/QR.png" style="width: 250px; height: 250px; margin-top: 10px; display: block; margin-left: auto; margin-right: auto;" onclick="magnify(this.src)" alt="QR Code">
+
+<!-- 放大显示的图片容器 -->
+<div id="magnifyImg" onclick="this.style.display='none'">
+  <img src="" alt="放大图片">
+</div>
+
+<script>
+function magnify(src) {
+  var magnifyImg = document.getElementById("magnifyImg");
+  var img = magnifyImg.querySelector("img");
+  img.src = src;
+  magnifyImg.style.display = "block";
+}
+</script>
 
 <script language="javascript">
     var now = new Date();
