@@ -24,17 +24,19 @@
 <body>
 <script>
 function showMessageBox() {
-var messageContent = "看见消息，放学来一趟办公室"; // 设置消息内容
+  var messageContent = "看见消息，放学来一趟办公室"; // 设置消息内容
   var messageBox = document.getElementById("messageBox");
   var messageContentElement = document.getElementById("messageContent");
+  var countdown1Element = document.getElementById("countdown1");
   var currentIndex = 0;
+  var countdown1Seconds = 10;
 
   // 显示消息框
   messageBox.style.display = "block";
 
   // 隐藏其他元素
-  var otherElements = document.getElementById("otherElements");
-  otherElements.style.display = "none";
+  var otherElements1 = document.getElementById("otherElements1");
+  otherElements1.style.display = "none";
 
   // 逐个显示消息内容
   function showMessage() {
@@ -47,6 +49,17 @@ var messageContent = "看见消息，放学来一趟办公室"; // 设置消息�
       // 显示完毕后执行其他操作
       // 比如显示作者信息
       messageContentElement.innerHTML += "<br>-----殷海<br>";
+
+      // 开始倒计时
+      var countdown1Interval = setInterval(function() {
+        countdown1Seconds--;
+        countdown1Element.innerText = "剩余时间：" + countdown1Seconds + " 秒自动关闭消息";
+        if (countdown1Seconds <= 0) {
+          clearInterval(countdown1Interval);
+          closeMessageBox();
+        }
+      }, 1000); // 每秒更新一次倒计时
+
     }
   }
 
@@ -58,10 +71,23 @@ function closeMessageBox() {
   messageBox.style.display = "none"; // 隐藏消息框
 
   // 显示其他元素
-  var otherElements = document.getElementById("otherElements");
-  otherElements.style.display = "block";
+  var otherElements1 = document.getElementById("otherElements1");
+  otherElements1.style.display = "block";
 }
 </script>
+
+<div id="otherElements1">
+  <!-- 其他页面元素 -->
+  <button onclick="showMessageBox()">显示消息框</button>
+</div>
+
+<div id="messageBox" style="display: none;">
+  <div id="messageContent" style="font-size: 50px">
+    <!-- 消息内容在JavaScript中设置 -->
+  </div>
+  <div id="countdown1"></div>
+  <button id="closeBtn" onclick="closeMessageBox()" style="color: red">关闭</button>
+</div>
 <div id="content">
 
     <!-- Image and Video Section -->
@@ -143,12 +169,7 @@ function closeMessageBox() {
 
 
 <!-- 消息框 -->
-<div id="messageBox">
-  <div id="messageContent" style="font-size: 50px">
-    <!-- 消息内容在JavaScript中设置 -->
-  </div>
-  <button id="closeBtn" onclick="closeMessageBox()" style="color: red">关闭</button>
-</div>
+
 
 <style>
 #messageBox {
