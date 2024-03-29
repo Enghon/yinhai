@@ -88,6 +88,68 @@
 <button class="visit-btn" onclick="visitLink('https://qr.alipay.com/fkx11377f1hr6zddl1zxg31')">支付宝付款</button>
 <button class="visit-btn" onclick="visitLink('http://hbkgds.com/api/tj.php?name=yhAPI&a=2')">查看网站访问次数</button>
 <button class="visit-btn" onclick="visitLink('https://enghon.lanzoum.com/b05f5hqla')">计算机组装课件密码：1234</button>
+
+<button class="visit-btn" onclick="showMessageBox()">查看消息</button>
+
+<!-- 消息框 -->
+<div id="messageBox">
+  <div id="messageContent">
+    <!-- 消息内容在JavaScript中设置 -->
+  </div>
+  <button id="closeBtn" onclick="closeMessageBox()">关闭</button>
+</div>
+
+<script>
+function showMessageBox() {
+  // 获取消息框和消息内容元素
+  var messageBox = document.getElementById("messageBox");
+  var messageContent = document.getElementById("messageContent");
+
+  // 设置消息内容----------------------------------------------------------------------------------------------------------------------
+  messageContent.innerHTML = "看见消息，放学走一趟办公室"; // 在这里设置您的消息内容
+
+  //--------------------------------------------------------------------------------------------------------------------------------
+  messageBox.style.display = "block";
+}
+
+function closeMessageBox() {
+  // 获取消息框元素
+  var messageBox = document.getElementById("messageBox");
+
+  // 隐藏消息框
+  messageBox.style.display = "none";
+}
+</script>
+<style>
+/* 消息框样式 */
+#messageBox {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  border: 2px solid #ccc;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 9999;
+}
+
+/* 消息框内容样式 */
+#messageContent {
+  margin-bottom: 20px;
+}
+
+/* 关闭按钮样式 */
+#closeBtn {
+  background-color: #ccc;
+  border: none;
+  color: white;
+  padding: 8px 12px;
+  font-size: 14px;
+  cursor: pointer;
+}
+</style>
 <br>
 <span id="timeDate" style="color: blue; text-align: center;"></span>
 <span id="times" style="color: deeppink;"></span>
