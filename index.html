@@ -92,9 +92,9 @@
 <span id="timeDate" style="color: blue; text-align: center;"></span>
 <span id="times" style="color: deeppink;"></span>
 <p>当前 IP 地址：<span id="ip"></span></p>
-<p>设备信息：<span id="device"></span></p>
+<span>设备信息：<span id="device"></span>
 
-<a>扫一扫分享本网站</a>
+<p style="text-align: center">扫一扫分享本网站，点击放大图片</p>
 <style>
 /* 隐藏放大图片 */
 #magnifyImg {
@@ -121,7 +121,7 @@
   right: 0;
 }
 </style>
-<img src="icon/QR.png" style="width: 250px; height: 250px; margin-top: 10px; display: block; margin-left: auto; margin-right: auto;" onclick="magnify(this.src)" alt="QR Code">
+<img src="icon/QR.png" style="width: 250px; height: 250px; margin-top: 0px; display: block; margin-left: auto; margin-right: auto;" onclick="magnify(this.src)" alt="QR Code">
 
 <!-- 放大显示的图片容器 -->
 <div id="magnifyImg" onclick="this.style.display='none'">
