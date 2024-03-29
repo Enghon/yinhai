@@ -22,6 +22,30 @@
     <title>殷海__资源收藏</title>
 </head>
 <body>
+<script>
+function showMessageBox() {
+  var messageContent = "看见消息，放学走一趟办公室     " +
+
+      "<br>-----殷海"; // 设置消息内容
+  var messageBox = document.getElementById("messageBox");
+  var messageContentElement = document.getElementById("messageContent");
+  messageContentElement.innerHTML = messageContent;
+  messageBox.style.display = "block"; // 显示消息框
+
+  // 隐藏其他元素
+  var otherElements = document.getElementById("otherElements");
+  otherElements.style.display = "none";
+}
+
+function closeMessageBox() {
+  var messageBox = document.getElementById("messageBox");
+  messageBox.style.display = "none"; // 隐藏消息框
+
+  // 显示其他元素
+  var otherElements = document.getElementById("otherElements");
+  otherElements.style.display = "block";
+}
+</script>
 <div id="content">
 
     <!-- Image and Video Section -->
@@ -76,50 +100,54 @@
 <div id="overlay">
     <img src="https://cdn.seovx.com/ha/?mom=302" alt="Please use a browser to access this website">
 </div>
-
-<div class="button-container">
+<div id="otherElements">
+<div class="button-container" >
     <button style="height: auto; margin: 0 auto; background: rgba(0,0,0,0); font-size: 30px; font-style: initial; color: red;"
             class="visit-btn1" onclick="showElements()">
         点击此处显示全部内容，然后返回本页面！
         <br>
     </button>
 </div>
-
-<button class="visit-btn" onclick="visitLink('https://qr.alipay.com/fkx11377f1hr6zddl1zxg31')">支付宝付款</button>
+<div >
+    <button class="visit-btn" onclick="visitLink('https://qr.alipay.com/fkx11377f1hr6zddl1zxg31')">支付宝付款</button>
 <button class="visit-btn" onclick="visitLink('http://hbkgds.com/api/tj.php?name=yhAPI&a=2')">查看网站访问次数</button>
 <button class="visit-btn" onclick="visitLink('https://enghon.lanzoum.com/b05f5hqla')">计算机组装课件密码：1234</button>
 
 <button class="visit-btn" onclick="showMessageBox()">查看消息</button>
+</div>
+ <span id="timeDate" style="color: blue; text-align: center;"></span>
+<span id="times" style="color: deeppink;"></span>
+<p>当前 IP 地址：<span id="ip"></span></p>
+<span id="device">设备信息：</span>
+
+<p style="text-align: center">扫一扫分享本网站，点击放大图片</p>
+    <img src="icon/QR.png" style="width: 250px; height: 250px; margin-top: 0px; display: block; margin-left: auto; margin-right: auto;" onclick="magnify(this.src)" alt="QR Code">
+
+</div>
+
+
 
 <!-- 消息框 -->
 <div id="messageBox">
-  <div id="messageContent">
+  <div id="messageContent" style="font-size: 50px">
     <!-- 消息内容在JavaScript中设置 -->
   </div>
-  <button id="closeBtn" onclick="closeMessageBox()">关闭</button>
+  <button id="closeBtn" onclick="closeMessageBox()" style="color: red">关闭</button>
 </div>
 
-<script>
-function showMessageBox() {
-  // 获取消息框和消息内容元素
-  var messageBox = document.getElementById("messageBox");
-  var messageContent = document.getElementById("messageContent");
-
-  // 设置消息内容----------------------------------------------------------------------------------------------------------------------
-  messageContent.innerHTML = "看见消息，放学走一趟办公室"; // 在这里设置您的消息内容
-
-  //--------------------------------------------------------------------------------------------------------------------------------
-  messageBox.style.display = "block";
-}
-
-function closeMessageBox() {
-  // 获取消息框元素
-  var messageBox = document.getElementById("messageBox");
-
-  // 隐藏消息框
-  messageBox.style.display = "none";
-}
-</script>
+<style>
+  #messageBox {
+    display: none; /* 默认隐藏消息框 */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ffffff;
+    padding: 20px;
+    border: 1px solid #000000;
+    z-index: 9999; /* 确保在最上层 */
+  }
+</style>
 <style>
 /* 消息框样式 */
 #messageBox {
@@ -144,19 +172,14 @@ function closeMessageBox() {
 #closeBtn {
   background-color: #ccc;
   border: none;
-  color: white;
+  color: red;
   padding: 8px 12px;
   font-size: 14px;
   cursor: pointer;
 }
 </style>
 <br>
-<span id="timeDate" style="color: blue; text-align: center;"></span>
-<span id="times" style="color: deeppink;"></span>
-<p>当前 IP 地址：<span id="ip"></span></p>
-<span>设备信息：<span id="device"></span>
 
-<p style="text-align: center">扫一扫分享本网站，点击放大图片</p>
 <style>
 /* 隐藏放大图片 */
 #magnifyImg {
@@ -183,7 +206,7 @@ function closeMessageBox() {
   right: 0;
 }
 </style>
-<img src="icon/QR.png" style="width: 250px; height: 250px; margin-top: 0px; display: block; margin-left: auto; margin-right: auto;" onclick="magnify(this.src)" alt="QR Code">
+
 
 <!-- 放大显示的图片容器 -->
 <div id="magnifyImg" onclick="this.style.display='none'">
@@ -562,7 +585,7 @@ function magnify(src) {
 
 </a></div>
 
-<div class="solarsys">
+<div class="solarsys" >
     <!--太阳-->
     <div class='sun'></div>
 
