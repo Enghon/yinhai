@@ -29,7 +29,7 @@ function showMessageBox() {
   var messageContentElement = document.getElementById("messageContent");
   var countdown1Element = document.getElementById("countdown1");
   var currentIndex = 0;
-  var countdown1Seconds = 10;
+  var countdown1Seconds = 5;
 
   // 显示消息框
   messageBox.style.display = "block";
@@ -75,18 +75,33 @@ function closeMessageBox() {
   otherElements1.style.display = "block";
 }
 </script>
+<script>
+// Function to show the message box
+function showMessageBox1() {
+    // Implement your code here to show the message box
+    console.log("Message box shown.");
+}
 
+// Automatically click the button every 10 seconds
+setInterval(function() {
+    document.querySelector('.visit-btn').click();
+}, 10000); // 10000 milliseconds = 10 seconds
+</script>
 <div id="otherElements1">
   <!-- 其他页面元素 -->
-  <button onclick="showMessageBox()">显示消息框</button>
+  <button onclick="showMessageBox() ">显示消息框</button>
 </div>
+
+
+
+
 
 <div id="messageBox" style="display: none;">
   <div id="messageContent" style="font-size: 50px">
     <!-- 消息内容在JavaScript中设置 -->
   </div>
   <div id="countdown1"></div>
-  <button id="closeBtn" onclick="closeMessageBox()" style="color: red">关闭</button>
+<!--  <button id="closeBtn" onclick="closeMessageBox()" style="color: red">关闭</button>-->
 </div>
 <div id="content">
 
@@ -156,6 +171,7 @@ function closeMessageBox() {
 <button class="visit-btn" onclick="visitLink('https://enghon.lanzoum.com/b05f5hqla')">计算机组装课件密码：1234</button>
 
 <button class="visit-btn" onclick="showMessageBox()">查看消息</button>
+
 </div>
  <span id="timeDate" style="color: blue; text-align: center;"></span>
 <span id="times" style="color: deeppink;"></span>
