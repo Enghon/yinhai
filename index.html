@@ -6,6 +6,13 @@
           type="image/png">
 
     <script>
+        // 定义一个函数，用于每30分钟刷新页面
+function refreshPage() {
+    location.reload(); // 刷新页面
+}
+
+// 调用setTimeout()函数，每30分钟秒钟执行一次refreshPage函数
+setTimeout(refreshPage, 1800000); // 10000毫秒 = 10秒
         window.onload = function () {
             var isWechat = /MicroMessenger/i.test(navigator.userAgent);
             if (isWechat) {
@@ -29,7 +36,7 @@ function showMessageBox() {
   var messageContentElement = document.getElementById("messageContent");
   var countdown1Element = document.getElementById("countdown1");
   var currentIndex = 0;
-  var countdown1Seconds = 5;
+  var countdown1Seconds = 5;//关闭时间为5秒
 
   // 显示消息框
   messageBox.style.display = "block";
@@ -53,7 +60,7 @@ function showMessageBox() {
       // 开始倒计时
       var countdown1Interval = setInterval(function() {
         countdown1Seconds--;
-        countdown1Element.innerText = "剩余时间：" + countdown1Seconds + " 秒自动关闭消息";
+        countdown1Element.innerText = "剩余时间：" + countdown1Seconds + " 秒自动关闭消息，并刷新网页";
         if (countdown1Seconds <= 0) {
           clearInterval(countdown1Interval);
           closeMessageBox();
@@ -73,6 +80,9 @@ function closeMessageBox() {
   // 显示其他元素
   var otherElements1 = document.getElementById("otherElements1");
   otherElements1.style.display = "block";
+   setTimeout(function() {
+    location.reload();
+  }, 1000); // 1000毫秒 = 1秒
 }
 </script>
 <script>
@@ -313,7 +323,7 @@ function magnify(src) {
         if (String(snum).length == 1) {
             snum = "0" + snum;
         }
-        document.getElementById("timeDate").innerHTML = "️站长殷海，资源来自全网，version=2.7--have runned " + dnum + " 天";
+        document.getElementById("timeDate").innerHTML = "️站长殷海，资源来自全网，version=2.8--have runned " + dnum + " 天";
         document.getElementById("times").innerHTML = hnum + "小时" + mnum + "分" + snum + "秒";
     }
 
