@@ -24,18 +24,34 @@
 <body>
 <script>
 function showMessageBox() {
-  var messageContent = "看见消息，放学来一趟办公室     " +
-
-      "<br>-----殷海"; // 设置消息内容
+var messageContent = "看见消息，放学来一趟办公室"; // 设置消息内容
   var messageBox = document.getElementById("messageBox");
   var messageContentElement = document.getElementById("messageContent");
-  messageContentElement.innerHTML = messageContent;
-  messageBox.style.display = "block"; // 显示消息框
+  var currentIndex = 0;
+
+  // 显示消息框
+  messageBox.style.display = "block";
 
   // 隐藏其他元素
   var otherElements = document.getElementById("otherElements");
   otherElements.style.display = "none";
-}
+
+  // 逐个显示消息内容
+  function showMessage() {
+    if (currentIndex < messageContent.length) {
+      messageContentElement.innerHTML += messageContent[currentIndex];
+      currentIndex++;
+      setTimeout(showMessage, 100); // 每100毫秒显示一个字，可以根据需要调整速度
+    }
+    else {
+      // 显示完毕后执行其他操作
+      // 比如显示作者信息
+      messageContentElement.innerHTML += "<br>-----殷海";
+    }
+  }
+
+  showMessage();
+};
 
 function closeMessageBox() {
   var messageBox = document.getElementById("messageBox");
@@ -164,24 +180,30 @@ function closeMessageBox() {
   position: fixed;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: #f1a7a7;
+  transform: translate(-50%, -50%) rotateX(30deg) rotateY(20deg) scale(1.1);
+  background: linear-gradient(135deg, #00f3ff, #0033ff);
   padding: 20px;
-  border: 2px solid #ccc;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border: 2px solid #00f3ff;
+  box-shadow: 0 0 50px rgba(0, 255, 255, 0.5), 0 0 20px rgba(0, 255, 255, 0.5);
+  color: #fff;
+  font-family: Arial, sans-serif;
+  text-align: center;
   z-index: 9999;
 }
 
+
+
+
 /* 消息框内容样式 */
 #messageContent {
-  margin-bottom: 20px;
+  margin-bottom: 40px;
 }
 
 /* 关闭按钮样式 */
 #closeBtn {
-  background-color: #ccc;
+  background-color: #f6ecec;
   border: none;
-  color: red;
+  color: #100f0f;
   padding: 8px 12px;
   font-size: 14px;
   cursor: pointer;
