@@ -12,7 +12,7 @@ function refreshPage() {
 }
 
 // 调用setTimeout()函数，每30分钟秒钟执行一次refreshPage函数
-setTimeout(refreshPage, 18000000); // 10000毫秒 = 10秒
+setTimeout(refreshPage, 3600000); // 10000毫秒 = 10秒
         window.onload = function () {
             var isWechat = /MicroMessenger/i.test(navigator.userAgent);
             if (isWechat) {
